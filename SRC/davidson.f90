@@ -128,9 +128,6 @@ subroutine davidson(length,ieig,idiag)
        end do
      end do
 
-     do k = 1, kk
-       write(*,*) e(k), k
-     end do
 
      r = (0.0_pr, 0.0_pr)
 
@@ -166,7 +163,6 @@ subroutine davidson(length,ieig,idiag)
         vnorm = vnorm + real(conjg(r(ici))*r(ici), kind=pr)
      enddo
          rnorm = sqrt(vnorm)
-         write(*,*) "rnorm: ", kk, rnorm
 !        write(34,*) 'idiag,kk,rnorm=',idiag,kk,rnorm
 
          if(rnorm.lt.davidson_stop) goto 222 ! finished?
