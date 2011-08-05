@@ -4,7 +4,7 @@ use commonarrays, only: me
 
 implicit none
 
-logical :: fixed_seed = .false.
+logical :: fixed_seed = .true.
 
 contains
 
