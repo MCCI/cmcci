@@ -1,14 +1,14 @@
 #!/bin/sh
 
-reference_energies=`grep "E   =" e_summary.reference`
-
 toplevel=`git rev-parse --show-toplevel`
+
+reference_energies=`grep "E   =" $toplevel/TESTS/N2/e_summary.reference`
 
 ln -s $toplevel/SRC/mcci $toplevel/TESTS/N2/
 
 nice $toplevel/TESTS/N2/mcci > $toplevel/TESTS/N2/out
 
-new_energies=`grep "E   =" e_summary`
+new_energies=`grep "E   =" $toplevel/TESTS/N2/e_summary`
 
 if [ "$new_energies" != "$reference_energies" ]
 then
