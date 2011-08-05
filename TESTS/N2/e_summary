@@ -1,0 +1,6001 @@
+Wed Jul 28 17:52:26 2010
+ 
+                    m c c i  3.0
+ 
+               written by J.C. Greer
+ 
+    =============================================
+    J.C. Greer, J. Chem. Phys. 103 (1995) p. 1821
+    J.C. Greer, J. Comp. Phys. 146 (1998) p. 181 
+    =============================================
+ 
+ 
+ The following parameters were read from mcci.in
+ 
+ parameters with no default values:
+ ----------------------------------
+ 
+ inflg                        =      0
+ n_alpha                      =      7
+ n_beta                       =      7
+ s                            =      0.0000
+ cmin                         =      1.00E-02
+ maxtry                       =  10000
+ 
+ 
+ parameters with default values:
+ -------------------------------
+ 
+ SCF_integral_filename        = moints.TM   
+ 
+ ieig                         =      1
+ mo_up(1:n_alpha)             =      1   2   3  34  35  47  54
+ mo_dn(1:n_beta)              =      1   2   3  34  35  47  54
+ 
+ nfreeze                      =      0
+ 
+ nactive                      =      0
+ lmin                         =    100
+ nbyte                        =      4
+ int_bits                     =     32
+ npfull                       =      2
+ lref                         =      0
+ lkeep                        =      0
+ conv_average                 =      7
+ conv_history                 =      7
+ hmin                         =      1.00E-18
+ davidson_stop                =      1.00E-07
+ bmin                         =      0.0000
+ bmax                         =      1.0000
+ cref                         =      0.1000
+ total frac                   =      2.0000
+ conv_thresh_e                =      1.0000
+ conv_thresh_l                =      0.0001
+ test                         =      F
+ time                         =      T
+ time_all                     =      F
+ generate_cfgs                =      T
+ nobrnch_first                =      F
+ nodiag                       =      F
+ i_want_conv                  =      T
+ npfull_conv                  =      T
+ 
+ Getting the one- and two-electron integrals from moints.TM
+ Calculating 1 th state in this irrep
+ Running on 2  nodes
+ Branching factor      f = 2.
+ Davidson tolerance stop = 9.99999999999999955E-8
+ Coef.    tolerance cmin = 1.00000000000000002E-2
+ H        tolerance hmin = 1.00000000000000007E-18
+ 
+ 
+ Diagonalization 1
+ 
+ Boosted CI vector length = 74
+ f boost=  0.E+0
+ Iterations to convergence 1
+ E   =  -108.98855158152600 from iter. diag.
+ Branched  CI vector length= 74
+ Pruned    CI vector length= 3    *** Full pruning ***
+ Exchanged CI vector length= 5
+ Cycle WALL time       0.046 s
+       USER time       0.028 s
+       SYS  time       0.018 s
+ Cumul. run time       0.046 s
+Wed Jul 28 17:52:27 2010
+ 
+ 
+ Diagonalization 2
+ 
+ Boosted CI vector length = 96
+ f boost=  1.
+ Iterations to convergence 1
+ E   =  -108.98995661748535 from iter. diag.
+ Branched  CI vector length= 96
+ Pruned    CI vector length= 6    *** Full pruning ***
+ Exchanged CI vector length= 7
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       0.076 s
+Wed Jul 28 17:52:27 2010
+ 
+ 
+ Diagonalization 3
+ 
+ Boosted CI vector length = 107
+ f boost=  1.
+ Iterations to convergence 1
+ E   =  -108.99480078125575 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 8
+ Exchanged CI vector length= 12
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.106 s
+Wed Jul 28 17:52:27 2010
+ 
+ 
+ Diagonalization 4
+ 
+ Boosted CI vector length = 97
+ f boost=  0.E+0
+ Iterations to convergence 1
+ E   =  -108.99932968106839 from iter. diag.
+ Branched  CI vector length= 97
+ Pruned    CI vector length= 13    *** Full pruning ***
+ Exchanged CI vector length= 13
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       0.137 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 5
+ 
+ Boosted CI vector length = 100
+ f boost=  0.25
+ Iterations to convergence 1
+ E   =  -108.99941052876216 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 13
+ Exchanged CI vector length= 14
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.167 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 6
+ 
+ Boosted CI vector length = 100
+ f boost=  0.25
+ Iterations to convergence 1
+ E   =  -109.00013514734533 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 14    *** Full pruning ***
+ Exchanged CI vector length= 14
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       0.196 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 7
+ 
+ Boosted CI vector length = 103
+ f boost=  0.25
+ Iterations to convergence 1
+ E   =  -109.00061507535696 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 14
+ Exchanged CI vector length= 15
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.225 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 8
+ 
+ Boosted CI vector length = 98
+ f boost=  3.57142857142857262E-2
+ Iterations to convergence 1
+ E   =  -109.00207521925773 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 15    *** Full pruning ***
+ Exchanged CI vector length= 15
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       0.255 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 9
+ 
+ Boosted CI vector length = 101
+ f boost=  0.16904761904761906
+ Iterations to convergence 1
+ E   =  -109.00210774809850 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 15
+ Exchanged CI vector length= 15
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.284 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 10
+ 
+ Boosted CI vector length = 100
+ f boost=  0.10238095238095239
+ Iterations to convergence 1
+ E   =  -109.00232165747525 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 15    *** Full pruning ***
+ Exchanged CI vector length= 15
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       0.314 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 11
+ 
+ Boosted CI vector length = 101
+ f boost=  0.10238095238095239
+ Iterations to convergence 1
+ E   =  -109.00575141625819 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 16
+ Exchanged CI vector length= 16
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.343 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 12
+ 
+ Boosted CI vector length = 99
+ f boost=  3.57142857142857262E-2
+ Iterations to convergence 1
+ E   =  -109.00598524147907 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 16    *** Full pruning ***
+ Exchanged CI vector length= 16
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.373 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 13
+ 
+ Boosted CI vector length = 98
+ f boost=  9.82142857142857262E-2
+ Iterations to convergence 1
+ E   =  -109.00762125432684 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 17
+ Exchanged CI vector length= 17
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.403 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 14
+ 
+ Boosted CI vector length = 99
+ f boost=  0.22321428571428573
+ Iterations to convergence 1
+ E   =  -109.00807548330536 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 17    *** Full pruning ***
+ Exchanged CI vector length= 18
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.432 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 15
+ 
+ Boosted CI vector length = 103
+ f boost=  0.28203781512605042
+ Iterations to convergence 1
+ E   =  -109.00839515274478 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 18
+ Exchanged CI vector length= 18
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.461 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 16
+ 
+ Boosted CI vector length = 99
+ f boost=  0.11537114845938376
+ Iterations to convergence 1
+ E   =  -109.00801098678443 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 18    *** Full pruning ***
+ Exchanged CI vector length= 18
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.490 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 17
+ 
+ Boosted CI vector length = 102
+ f boost=  0.17092670401493931
+ Iterations to convergence 1
+ E   =  -109.00819368050702 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 18
+ Exchanged CI vector length= 18
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.520 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 18
+ 
+ Boosted CI vector length = 99
+ f boost=  5.98155929038282075E-2
+ Iterations to convergence 1
+ E   =  -109.00803430455881 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 18    *** Full pruning ***
+ Exchanged CI vector length= 18
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.549 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 19
+ 
+ Boosted CI vector length = 102
+ f boost=  0.11537114845938376
+ Iterations to convergence 1
+ E   =  -109.00939575094540 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 19
+ Exchanged CI vector length= 19
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.579 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 20
+ 
+ Boosted CI vector length = 99
+ f boost=  4.26003734827265501E-3
+ Iterations to convergence 1
+ E   =  -109.00955458605972 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 19    *** Full pruning ***
+ Exchanged CI vector length= 19
+ Cycle WALL time       0.031 s
+       USER time       0.030 s
+       SYS  time       0.001 s
+ Cumul. run time       0.610 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 21
+ 
+ Boosted CI vector length = 98
+ f boost=  5.68916162956410731E-2
+ Iterations to convergence 1
+ E   =  -109.00971645144838 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 19
+ Exchanged CI vector length= 20
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.639 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 22
+ 
+ Boosted CI vector length = 98
+ f boost=  0.16215477419037791
+ Iterations to convergence 1
+ E   =  -109.01007413921013 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 20    *** Full pruning ***
+ Exchanged CI vector length= 22
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.668 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 23
+ 
+ Boosted CI vector length = 103
+ f boost=  0.26215477419037791
+ Iterations to convergence 1
+ E   =  -109.01090091128336 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 22
+ Exchanged CI vector length= 23
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.698 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 24
+ 
+ Boosted CI vector length = 99
+ f boost=  0.12579113782674156
+ Iterations to convergence 1
+ E   =  -109.01103798752550 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 22    *** Full pruning ***
+ Exchanged CI vector length= 22
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.727 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 25
+ 
+ Boosted CI vector length = 101
+ f boost=  0.16926939869630678
+ Iterations to convergence 1
+ E   =  -109.01164668728595 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 23
+ Exchanged CI vector length= 23
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.757 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 26
+ 
+ Boosted CI vector length = 100
+ f boost=  0.12381485324176132
+ Iterations to convergence 1
+ E   =  -109.01109826367386 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 23    *** Full pruning ***
+ Exchanged CI vector length= 23
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       0.785 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 27
+ 
+ Boosted CI vector length = 101
+ f boost=  0.12381485324176132
+ Iterations to convergence 1
+ E   =  -109.01144876288529 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 23
+ Exchanged CI vector length= 24
+ Cycle WALL time       0.028 s
+       USER time       0.027 s
+       SYS  time       0.001 s
+ Cumul. run time       0.813 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 28
+ 
+ Boosted CI vector length = 98
+ f boost=  8.03365923721961056E-2
+ Iterations to convergence 1
+ E   =  -109.01203247264502 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 24    *** Full pruning ***
+ Exchanged CI vector length= 25
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       0.843 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 29
+ 
+ Boosted CI vector length = 101
+ f boost=  0.16366992570552943
+ Iterations to convergence 1
+ E   =  -109.01191191937488 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 25
+ Exchanged CI vector length= 25
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.872 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 30
+ 
+ Boosted CI vector length = 103
+ f boost=  0.12366992570552943
+ Iterations to convergence 1
+ E   =  -109.01194850132910 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 25    *** Full pruning ***
+ Exchanged CI vector length= 25
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       0.900 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 31
+ 
+ Boosted CI vector length = 99
+ f boost=  3.66992570552943098E-3
+ Iterations to convergence 1
+ E   =  -109.01195456307258 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 25
+ Exchanged CI vector length= 25
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       0.929 s
+Wed Jul 28 17:52:28 2010
+ 
+ 
+ Diagonalization 32
+ 
+ Boosted CI vector length = 101
+ f boost=  4.36699257055294318E-2
+ Iterations to convergence 1
+ E   =  -109.01201052926658 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 25    *** Full pruning ***
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       0.958 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 33
+ 
+ Boosted CI vector length = 100
+ f boost=  3.66992570552943098E-3
+ Iterations to convergence 1
+ E   =  -109.01224817662123 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 26
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.031 s
+       USER time       0.029 s
+       SYS  time       0.002 s
+ Cumul. run time       0.989 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 34
+ 
+ Boosted CI vector length = 98
+ f boost=  3.66992570552943098E-3
+ Iterations to convergence 1
+ E   =  -109.01245812982933 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 26    *** Full pruning ***
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       1.018 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 35
+ 
+ Boosted CI vector length = 100
+ f boost=  8.05930026286063583E-2
+ Iterations to convergence 1
+ E   =  -109.01250022718244 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 26
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       1.046 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 36
+ 
+ Boosted CI vector length = 102
+ f boost=  8.05930026286063583E-2
+ Iterations to convergence 1
+ E   =  -109.01239987801026 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 26    *** Full pruning ***
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.075 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 37
+ 
+ Boosted CI vector length = 99
+ f boost=  3.66992570552943098E-3
+ Iterations to convergence 1
+ E   =  -109.01230236394906 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 26
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.104 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 38
+ 
+ Boosted CI vector length = 101
+ f boost=  4.21314641670678947E-2
+ Iterations to convergence 1
+ E   =  -109.01276531013701 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 26    *** Full pruning ***
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.031 s
+       USER time       0.030 s
+       SYS  time       0.001 s
+ Cumul. run time       1.135 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 39
+ 
+ Boosted CI vector length = 100
+ f boost=  3.66992570552943098E-3
+ Iterations to convergence 1
+ E   =  -109.01258932991252 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 26
+ Exchanged CI vector length= 26
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       1.165 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 40
+ 
+ Boosted CI vector length = 100
+ f boost=  3.66992570552943098E-3
+ Iterations to convergence 1
+ E   =  -109.01274426970974 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 27    *** Full pruning ***
+ Exchanged CI vector length= 28
+ Cycle WALL time       0.031 s
+       USER time       0.030 s
+       SYS  time       0.001 s
+ Cumul. run time       1.196 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 41
+ 
+ Boosted CI vector length = 97
+ f boost=  3.66992570552943098E-3
+ Iterations to convergence 1
+ E   =  -109.01495056414626 from iter. diag.
+ Branched  CI vector length= 97
+ Pruned    CI vector length= 29
+ Exchanged CI vector length= 30
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       1.226 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 42
+ 
+ Boosted CI vector length = 101
+ f boost=  0.11081278284838657
+ Iterations to convergence 1
+ E   =  -109.01505752914457 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 30    *** Full pruning ***
+ Exchanged CI vector length= 30
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       1.256 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 43
+ 
+ Boosted CI vector length = 100
+ f boost=  7.74794495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.01509381712600 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 30
+ Exchanged CI vector length= 31
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.285 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 44
+ 
+ Boosted CI vector length = 100
+ f boost=  7.74794495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.01605355298071 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 31    *** Full pruning ***
+ Exchanged CI vector length= 32
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.314 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 45
+ 
+ Boosted CI vector length = 98
+ f boost=  7.74794495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.02127677578710 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 32
+ Exchanged CI vector length= 32
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       1.345 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 46
+ 
+ Boosted CI vector length = 103
+ f boost=  0.13997944951505323
+ Iterations to convergence 1
+ E   =  -109.02123814484798 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 32    *** Full pruning ***
+ Exchanged CI vector length= 32
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       1.375 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 47
+ 
+ Boosted CI vector length = 100
+ f boost=  4.62294495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.02092710080422 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 32
+ Exchanged CI vector length= 32
+ Cycle WALL time       0.028 s
+       USER time       0.027 s
+       SYS  time       0.001 s
+ Cumul. run time       1.403 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 48
+ 
+ Boosted CI vector length = 100
+ f boost=  4.62294495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.02116413185229 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 32    *** Full pruning ***
+ Exchanged CI vector length= 32
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       1.431 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 49
+ 
+ Boosted CI vector length = 101
+ f boost=  4.62294495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.02171140330276 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 33
+ Exchanged CI vector length= 33
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       1.462 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 50
+ 
+ Boosted CI vector length = 100
+ f boost=  1.49794495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.02144782244719 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 33    *** Full pruning ***
+ Exchanged CI vector length= 33
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.491 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 51
+ 
+ Boosted CI vector length = 98
+ f boost=  1.49794495150532281E-2
+ Iterations to convergence 1
+ E   =  -109.02171272765023 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 34
+ Exchanged CI vector length= 34
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       1.519 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 52
+ 
+ Boosted CI vector length = 99
+ f boost=  7.55855101211138358E-2
+ Iterations to convergence 1
+ E   =  -109.02485610111563 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       1.549 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 53
+ 
+ Boosted CI vector length = 102
+ f boost=  0.1049972748269962
+ Iterations to convergence 1
+ E   =  -109.02475620390325 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.028 s
+       USER time       0.027 s
+       SYS  time       0.001 s
+ Cumul. run time       1.577 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 54
+ 
+ Boosted CI vector length = 100
+ f boost=  4.94417192714406428E-2
+ Iterations to convergence 1
+ E   =  -109.02481781087272 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       1.606 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 55
+ 
+ Boosted CI vector length = 101
+ f boost=  4.94417192714406428E-2
+ Iterations to convergence 1
+ E   =  -109.02476010160464 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       1.636 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 56
+ 
+ Boosted CI vector length = 99
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02465135776569 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.665 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 57
+ 
+ Boosted CI vector length = 101
+ f boost=  4.94417192714406428E-2
+ Iterations to convergence 1
+ E   =  -109.02519383762299 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       1.695 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 58
+ 
+ Boosted CI vector length = 99
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02510107398032 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.724 s
+Wed Jul 28 17:52:29 2010
+ 
+ 
+ Diagonalization 59
+ 
+ Boosted CI vector length = 100
+ f boost=  4.94417192714406428E-2
+ Iterations to convergence 1
+ E   =  -109.02468660426644 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       1.754 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 60
+ 
+ Boosted CI vector length = 101
+ f boost=  4.94417192714406428E-2
+ Iterations to convergence 1
+ E   =  -109.02492955985636 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       1.785 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 61
+ 
+ Boosted CI vector length = 98
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02483794422585 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       1.816 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 62
+ 
+ Boosted CI vector length = 101
+ f boost=  7.72194970492184191E-2
+ Iterations to convergence 1
+ E   =  -109.02477905469144 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       1.844 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 63
+ 
+ Boosted CI vector length = 100
+ f boost=  4.94417192714406428E-2
+ Iterations to convergence 1
+ E   =  -109.02504434955853 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       1.873 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 64
+ 
+ Boosted CI vector length = 99
+ f boost=  4.94417192714406428E-2
+ Iterations to convergence 1
+ E   =  -109.02475178839381 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       1.901 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 65
+ 
+ Boosted CI vector length = 102
+ f boost=  7.72194970492184191E-2
+ Iterations to convergence 1
+ E   =  -109.02498324248086 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       1.931 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 66
+ 
+ Boosted CI vector length = 98
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02467150790369 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 36    *** Full pruning ***
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.028 s
+       USER time       0.027 s
+       SYS  time       0.001 s
+ Cumul. run time       1.959 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 67
+ 
+ Boosted CI vector length = 102
+ f boost=  7.72194970492184191E-2
+ Iterations to convergence 1
+ E   =  -109.02461719661787 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 36
+ Exchanged CI vector length= 36
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       1.987 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 68
+ 
+ Boosted CI vector length = 100
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02526493215814 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37    *** Full pruning ***
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.032 s
+       USER time       0.032 s
+       SYS  time       0.000 s
+ Cumul. run time       2.019 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 69
+ 
+ Boosted CI vector length = 98
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02533832664054 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 37
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.047 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 70
+ 
+ Boosted CI vector length = 101
+ f boost=  7.57179955477169236E-2
+ Iterations to convergence 1
+ E   =  -109.02545439828415 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37    *** Full pruning ***
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.075 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 71
+ 
+ Boosted CI vector length = 100
+ f boost=  4.86909685206898951E-2
+ Iterations to convergence 1
+ E   =  -109.02529125688679 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       2.104 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 72
+ 
+ Boosted CI vector length = 100
+ f boost=  4.86909685206898951E-2
+ Iterations to convergence 1
+ E   =  -109.02528746832095 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37    *** Full pruning ***
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       2.134 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 73
+ 
+ Boosted CI vector length = 99
+ f boost=  4.86909685206898951E-2
+ Iterations to convergence 1
+ E   =  -109.02547004483748 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 37
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       2.165 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 74
+ 
+ Boosted CI vector length = 102
+ f boost=  7.57179955477169236E-2
+ Iterations to convergence 1
+ E   =  -109.02527991104765 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37    *** Full pruning ***
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       2.195 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 75
+ 
+ Boosted CI vector length = 100
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02586105396080 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       2.224 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 76
+ 
+ Boosted CI vector length = 99
+ f boost=  2.16639414936628666E-2
+ Iterations to convergence 1
+ E   =  -109.02828380453337 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 37    *** Full pruning ***
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       2.254 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 77
+ 
+ Boosted CI vector length = 100
+ f boost=  4.86909685206898951E-2
+ Iterations to convergence 1
+ E   =  -109.02856511730548 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       2.284 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 78
+ 
+ Boosted CI vector length = 97
+ f boost=  4.86909685206898951E-2
+ Iterations to convergence 1
+ E   =  -109.02815828552630 from iter. diag.
+ Branched  CI vector length= 97
+ Pruned    CI vector length= 37    *** Full pruning ***
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.312 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 79
+ 
+ Boosted CI vector length = 104
+ f boost=  0.12977204960177097
+ Iterations to convergence 1
+ E   =  -109.02813505909216 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 37
+ Exchanged CI vector length= 37
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.340 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 80
+ 
+ Boosted CI vector length = 98
+ f boost=  2.16639414936628527E-2
+ Iterations to convergence 1
+ E   =  -109.02863855619998 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 38    *** Full pruning ***
+ Exchanged CI vector length= 38
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       2.369 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 81
+ 
+ Boosted CI vector length = 97
+ f boost=  7.57179955477169098E-2
+ Iterations to convergence 1
+ E   =  -109.02881193040318 from iter. diag.
+ Branched  CI vector length= 97
+ Pruned    CI vector length= 38
+ Exchanged CI vector length= 38
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       2.398 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 82
+ 
+ Boosted CI vector length = 105
+ f boost=  0.15466536396876954
+ Iterations to convergence 1
+ E   =  -109.02899759430585 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 38    *** Full pruning ***
+ Exchanged CI vector length= 38
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       2.427 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 83
+ 
+ Boosted CI vector length = 99
+ f boost=  2.30864166003484916E-2
+ Iterations to convergence 1
+ E   =  -109.02857684340754 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 38
+ Exchanged CI vector length= 38
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.455 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 84
+ 
+ Boosted CI vector length = 101
+ f boost=  4.94022060740327007E-2
+ Iterations to convergence 1
+ E   =  -109.02858438338902 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 38    *** Full pruning ***
+ Exchanged CI vector length= 38
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.483 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 85
+ 
+ Boosted CI vector length = 99
+ f boost=  2.30864166003484916E-2
+ Iterations to convergence 1
+ E   =  -109.02906027071862 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 38
+ Exchanged CI vector length= 38
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.511 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 86
+ 
+ Boosted CI vector length = 101
+ f boost=  4.94022060740327007E-2
+ Iterations to convergence 1
+ E   =  -109.02887223886705 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 38    *** Full pruning ***
+ Exchanged CI vector length= 38
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       2.541 s
+Wed Jul 28 17:52:30 2010
+ 
+ 
+ Diagonalization 87
+ 
+ Boosted CI vector length = 100
+ f boost=  2.30864166003484916E-2
+ Iterations to convergence 1
+ E   =  -109.02878462947160 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 38
+ Exchanged CI vector length= 39
+ Cycle WALL time       0.028 s
+       USER time       0.027 s
+       SYS  time       0.001 s
+ Cumul. run time       2.569 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 88
+ 
+ Boosted CI vector length = 100
+ f boost=  2.30864166003484916E-2
+ Iterations to convergence 1
+ E   =  -109.03146058842293 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 39    *** Full pruning ***
+ Exchanged CI vector length= 39
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       2.599 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 89
+ 
+ Boosted CI vector length = 100
+ f boost=  2.30864166003484916E-2
+ Iterations to convergence 1
+ E   =  -109.03099844892654 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 39
+ Exchanged CI vector length= 40
+ Cycle WALL time       0.027 s
+       USER time       0.027 s
+       SYS  time       0.000 s
+ Cumul. run time       2.626 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 90
+ 
+ Boosted CI vector length = 95
+ f boost=  2.30864166003484916E-2
+ Iterations to convergence 1
+ E   =  -109.03158765375019 from iter. diag.
+ Branched  CI vector length= 95
+ Pruned    CI vector length= 40    *** Full pruning ***
+ Exchanged CI vector length= 40
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       2.657 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 91
+ 
+ Boosted CI vector length = 101
+ f boost=  0.14808641660034849
+ Iterations to convergence 1
+ E   =  -109.03147625513591 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 40
+ Exchanged CI vector length= 41
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.685 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 92
+ 
+ Boosted CI vector length = 105
+ f boost=  0.1230864166003485
+ Iterations to convergence 1
+ E   =  -109.03405003003516 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 41    *** Full pruning ***
+ Exchanged CI vector length= 41
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       2.715 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 93
+ 
+ Boosted CI vector length = 97
+ f boost=  1.13519708815337794E-3
+ Iterations to convergence 1
+ E   =  -109.03366144064063 from iter. diag.
+ Branched  CI vector length= 97
+ Pruned    CI vector length= 41
+ Exchanged CI vector length= 41
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       2.744 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 94
+ 
+ Boosted CI vector length = 101
+ f boost=  7.43059287954704467E-2
+ Iterations to convergence 1
+ E   =  -109.03414273452734 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 42    *** Full pruning ***
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       2.773 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 95
+ 
+ Boosted CI vector length = 101
+ f boost=  4.99156848930314215E-2
+ Iterations to convergence 1
+ E   =  -109.03370987219472 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 42
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.028 s
+       USER time       0.027 s
+       SYS  time       0.001 s
+ Cumul. run time       2.801 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 96
+ 
+ Boosted CI vector length = 101
+ f boost=  2.61061610835076133E-2
+ Iterations to convergence 1
+ E   =  -109.03374358870784 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 41    *** Full pruning ***
+ Exchanged CI vector length= 41
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       2.831 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 97
+ 
+ Boosted CI vector length = 98
+ f boost=  2.29663727398380507E-3
+ Iterations to convergence 1
+ E   =  -109.03368847913575 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 41
+ Exchanged CI vector length= 41
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       2.860 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 98
+ 
+ Boosted CI vector length = 101
+ f boost=  5.10771250788618555E-2
+ Iterations to convergence 1
+ E   =  -109.03395459751999 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 42    *** Full pruning ***
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       2.889 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 99
+ 
+ Boosted CI vector length = 100
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03436792765532 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 42
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       2.918 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 100
+ 
+ Boosted CI vector length = 101
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03425158644001 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 42    *** Full pruning ***
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.027 s
+       USER time       0.026 s
+       SYS  time       0.001 s
+ Cumul. run time       2.945 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 101
+ 
+ Boosted CI vector length = 99
+ f boost=  2.87735736689902211E-3
+ Iterations to convergence 1
+ E   =  -109.03412938280354 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 42
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       2.973 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 102
+ 
+ Boosted CI vector length = 99
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03405786715044 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 42    *** Full pruning ***
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.001 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 103
+ 
+ Boosted CI vector length = 100
+ f boost=  5.04964049859466385E-2
+ Iterations to convergence 1
+ E   =  -109.03454750395036 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 42
+ Exchanged CI vector length= 42
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.029 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 104
+ 
+ Boosted CI vector length = 101
+ f boost=  5.04964049859466385E-2
+ Iterations to convergence 1
+ E   =  -109.03513029488175 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 43    *** Full pruning ***
+ Exchanged CI vector length= 43
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       3.060 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 105
+ 
+ Boosted CI vector length = 100
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03432139572399 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 43
+ Exchanged CI vector length= 43
+ Cycle WALL time       0.027 s
+       USER time       0.027 s
+       SYS  time       0.000 s
+ Cumul. run time       3.087 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 106
+ 
+ Boosted CI vector length = 100
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03461674034500 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 43    *** Full pruning ***
+ Exchanged CI vector length= 43
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       3.117 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 107
+ 
+ Boosted CI vector length = 100
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03456384972253 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 43
+ Exchanged CI vector length= 43
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       3.148 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 108
+ 
+ Boosted CI vector length = 99
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03450229146540 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 43    *** Full pruning ***
+ Exchanged CI vector length= 43
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       3.177 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 109
+ 
+ Boosted CI vector length = 101
+ f boost=  4.99426951299112021E-2
+ Iterations to convergence 1
+ E   =  -109.03430458275952 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 43
+ Exchanged CI vector length= 44
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.205 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 110
+ 
+ Boosted CI vector length = 94
+ f boost=  2.66868811764228303E-2
+ Iterations to convergence 1
+ E   =  -109.03585957984615 from iter. diag.
+ Branched  CI vector length= 94
+ Pruned    CI vector length= 44    *** Full pruning ***
+ Exchanged CI vector length= 44
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       3.235 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 111
+ 
+ Boosted CI vector length = 102
+ f boost=  0.16305051754005917
+ Iterations to convergence 1
+ E   =  -109.03554634275650 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 44
+ Exchanged CI vector length= 45
+ Cycle WALL time       0.027 s
+       USER time       0.026 s
+       SYS  time       0.001 s
+ Cumul. run time       3.262 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 112
+ 
+ Boosted CI vector length = 104
+ f boost=  0.11759597208551371
+ Iterations to convergence 1
+ E   =  -109.03621906526109 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 46    *** Full pruning ***
+ Exchanged CI vector length= 46
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       3.291 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 113
+ 
+ Boosted CI vector length = 98
+ f boost=  2.87070831966248219E-2
+ Iterations to convergence 1
+ E   =  -109.03641691598020 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 46
+ Exchanged CI vector length= 46
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.318 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 114
+ 
+ Boosted CI vector length = 102
+ f boost=  7.21853440661900381E-2
+ Iterations to convergence 1
+ E   =  -109.03643915401855 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 46    *** Full pruning ***
+ Exchanged CI vector length= 46
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       3.347 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 115
+ 
+ Boosted CI vector length = 100
+ f boost=  2.87070831966248219E-2
+ Iterations to convergence 1
+ E   =  -109.03643489585090 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 46
+ Exchanged CI vector length= 46
+ Cycle WALL time       0.027 s
+       USER time       0.027 s
+       SYS  time       0.000 s
+ Cumul. run time       3.374 s
+Wed Jul 28 17:52:31 2010
+ 
+ 
+ Diagonalization 116
+ 
+ Boosted CI vector length = 99
+ f boost=  2.87070831966248219E-2
+ Iterations to convergence 1
+ E   =  -109.03639754041220 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 46    *** Full pruning ***
+ Exchanged CI vector length= 46
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       3.403 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 117
+ 
+ Boosted CI vector length = 102
+ f boost=  5.044621363140743E-2
+ Iterations to convergence 1
+ E   =  -109.03715654739875 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 47
+ Exchanged CI vector length= 47
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.431 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 118
+ 
+ Boosted CI vector length = 98
+ f boost=  6.96795276184221379E-3
+ Iterations to convergence 1
+ E   =  -109.03705495487861 from iter. diag.
+ Branched  CI vector length= 98
+ Pruned    CI vector length= 47    *** Full pruning ***
+ Exchanged CI vector length= 48
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       3.461 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 119
+ 
+ Boosted CI vector length = 102
+ f boost=  4.95211442512039149E-2
+ Iterations to convergence 1
+ E   =  -109.04089828513480 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 48
+ Exchanged CI vector length= 48
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       3.491 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 120
+ 
+ Boosted CI vector length = 100
+ f boost=  7.85447758453725053E-3
+ Iterations to convergence 1
+ E   =  -109.04069330123934 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 47    *** Full pruning ***
+ Exchanged CI vector length= 48
+ Cycle WALL time       0.027 s
+       USER time       0.027 s
+       SYS  time       0.000 s
+ Cumul. run time       3.518 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 121
+ 
+ Boosted CI vector length = 99
+ f boost=  7.85447758453725053E-3
+ Iterations to convergence 1
+ E   =  -109.04180447963617 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 48
+ Exchanged CI vector length= 48
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       3.547 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 122
+ 
+ Boosted CI vector length = 100
+ f boost=  2.86878109178705827E-2
+ Iterations to convergence 1
+ E   =  -109.04222820199095 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 49    *** Full pruning ***
+ Exchanged CI vector length= 49
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       3.576 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 123
+ 
+ Boosted CI vector length = 101
+ f boost=  2.86878109178705827E-2
+ Iterations to convergence 1
+ E   =  -109.04219426785440 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 49
+ Exchanged CI vector length= 50
+ Cycle WALL time       0.027 s
+       USER time       0.026 s
+       SYS  time       0.001 s
+ Cumul. run time       3.603 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 124
+ 
+ Boosted CI vector length = 100
+ f boost=  8.27964765256446189E-3
+ Iterations to convergence 1
+ E   =  -109.04321781446387 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 50    *** Full pruning ***
+ Exchanged CI vector length= 50
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       3.632 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 125
+ 
+ Boosted CI vector length = 99
+ f boost=  8.27964765256446189E-3
+ Iterations to convergence 1
+ E   =  -109.04333343037746 from iter. diag.
+ Branched  CI vector length= 99
+ Pruned    CI vector length= 50
+ Exchanged CI vector length= 50
+ Cycle WALL time       0.027 s
+       USER time       0.027 s
+       SYS  time       0.000 s
+ Cumul. run time       3.659 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 126
+ 
+ Boosted CI vector length = 101
+ f boost=  2.82796476525644623E-2
+ Iterations to convergence 1
+ E   =  -109.04364093386874 from iter. diag.
+ Branched  CI vector length= 100
+ Pruned    CI vector length= 51    *** Full pruning ***
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       3.689 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 127
+ 
+ Boosted CI vector length = 102
+ f boost=  8.27964765256446189E-3
+ Iterations to convergence 1
+ E   =  -109.04365548848102 from iter. diag.
+ Branched  CI vector length= 102
+ Pruned    CI vector length= 51
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.717 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 128
+ 
+ Boosted CI vector length = 101
+ f boost=  8.27964765256446189E-3
+ Iterations to convergence 1
+ E   =  -109.04356500852376 from iter. diag.
+ Branched  CI vector length= 101
+ Pruned    CI vector length= 51    *** Full pruning ***
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.026 s
+       USER time       0.026 s
+       SYS  time       0.000 s
+ Cumul. run time       3.743 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 129
+ 
+ Boosted CI vector length = 102
+ f boost=  2.78874907898193636E-2
+ Iterations to convergence 1
+ E   =  -109.04380328535470 from iter. diag.
+ Branched  CI vector length= 102
+ Pruned    CI vector length= 51
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.771 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 130
+ 
+ Boosted CI vector length = 102
+ f boost=  2.78874907898193636E-2
+ Iterations to convergence 1
+ E   =  -109.04513936391061 from iter. diag.
+ Branched  CI vector length= 102
+ Pruned    CI vector length= 51    *** Full pruning ***
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.799 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 131
+ 
+ Boosted CI vector length = 102
+ f boost=  2.78874907898193636E-2
+ Iterations to convergence 1
+ E   =  -109.04390223720941 from iter. diag.
+ Branched  CI vector length= 102
+ Pruned    CI vector length= 51
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       3.829 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 132
+ 
+ Boosted CI vector length = 103
+ f boost=  2.78874907898193636E-2
+ Iterations to convergence 1
+ E   =  -109.04357448009901 from iter. diag.
+ Branched  CI vector length= 102
+ Pruned    CI vector length= 51    *** Full pruning ***
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.857 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 133
+ 
+ Boosted CI vector length = 102
+ f boost=  8.27964765256446189E-3
+ Iterations to convergence 1
+ E   =  -109.04385716638333 from iter. diag.
+ Branched  CI vector length= 102
+ Pruned    CI vector length= 51
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.028 s
+       USER time       0.027 s
+       SYS  time       0.001 s
+ Cumul. run time       3.885 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 134
+ 
+ Boosted CI vector length = 102
+ f boost=  8.27964765256446189E-3
+ Iterations to convergence 1
+ E   =  -109.04354025060599 from iter. diag.
+ Branched  CI vector length= 102
+ Pruned    CI vector length= 51    *** Full pruning ***
+ Exchanged CI vector length= 51
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       3.913 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 135
+ 
+ Boosted CI vector length = 101
+ f boost=  8.27964765256446189E-3
+ Iterations to convergence 1
+ E   =  -109.04829955343880 from iter. diag.
+ Branched  CI vector length= 101
+ Pruned    CI vector length= 52
+ Exchanged CI vector length= 52
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       3.943 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 136
+ 
+ Boosted CI vector length = 103
+ f boost=  2.78874907898193636E-2
+ Iterations to convergence 1
+ E   =  -109.04857943821938 from iter. diag.
+ Branched  CI vector length= 103
+ Pruned    CI vector length= 52    *** Full pruning ***
+ Exchanged CI vector length= 52
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       3.973 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 137
+ 
+ Boosted CI vector length = 106
+ f boost=  4.71182600205885954E-2
+ Iterations to convergence 1
+ E   =  -109.04817619561015 from iter. diag.
+ Branched  CI vector length= 104
+ Pruned    CI vector length= 52
+ Exchanged CI vector length= 52
+ Cycle WALL time       0.029 s
+       USER time       0.028 s
+       SYS  time       0.001 s
+ Cumul. run time       4.002 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 138
+ 
+ Boosted CI vector length = 103
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.04810969056513 from iter. diag.
+ Branched  CI vector length= 103
+ Pruned    CI vector length= 51    *** Full pruning ***
+ Exchanged CI vector length= 52
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       4.030 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 139
+ 
+ Boosted CI vector length = 105
+ f boost=  2.78874907898193636E-2
+ Iterations to convergence 1
+ E   =  -109.05018573504609 from iter. diag.
+ Branched  CI vector length= 104
+ Pruned    CI vector length= 52
+ Exchanged CI vector length= 53
+ Cycle WALL time       0.032 s
+       USER time       0.031 s
+       SYS  time       0.001 s
+ Cumul. run time       4.062 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 140
+ 
+ Boosted CI vector length = 106
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.06960166520309 from iter. diag.
+ Branched  CI vector length= 106
+ Pruned    CI vector length= 53    *** Full pruning ***
+ Exchanged CI vector length= 53
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       4.093 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 141
+ 
+ Boosted CI vector length = 105
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.06928058256057 from iter. diag.
+ Branched  CI vector length= 105
+ Pruned    CI vector length= 53
+ Exchanged CI vector length= 53
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       4.124 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 142
+ 
+ Boosted CI vector length = 107
+ f boost=  2.75246460873520178E-2
+ Iterations to convergence 1
+ E   =  -109.07038782120162 from iter. diag.
+ Branched  CI vector length= 106
+ Pruned    CI vector length= 54    *** Full pruning ***
+ Exchanged CI vector length= 55
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       4.154 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 143
+ 
+ Boosted CI vector length = 107
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.07012769426075 from iter. diag.
+ Branched  CI vector length= 107
+ Pruned    CI vector length= 54
+ Exchanged CI vector length= 54
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       4.185 s
+Wed Jul 28 17:52:32 2010
+ 
+ 
+ Diagonalization 144
+ 
+ Boosted CI vector length = 108
+ f boost=  2.71752400775686492E-2
+ Iterations to convergence 1
+ E   =  -109.06995277074586 from iter. diag.
+ Branched  CI vector length= 108
+ Pruned    CI vector length= 54    *** Full pruning ***
+ Exchanged CI vector length= 54
+ Cycle WALL time       0.029 s
+       USER time       0.029 s
+       SYS  time       0.000 s
+ Cumul. run time       4.214 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 145
+ 
+ Boosted CI vector length = 109
+ f boost=  2.71752400775686492E-2
+ Iterations to convergence 1
+ E   =  -109.07088769687036 from iter. diag.
+ Branched  CI vector length= 108
+ Pruned    CI vector length= 55
+ Exchanged CI vector length= 55
+ Cycle WALL time       0.028 s
+       USER time       0.028 s
+       SYS  time       0.000 s
+ Cumul. run time       4.242 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 146
+ 
+ Boosted CI vector length = 109
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.07052401306382 from iter. diag.
+ Branched  CI vector length= 109
+ Pruned    CI vector length= 55    *** Full pruning ***
+ Exchanged CI vector length= 55
+ Cycle WALL time       0.030 s
+       USER time       0.029 s
+       SYS  time       0.001 s
+ Cumul. run time       4.272 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 147
+ 
+ Boosted CI vector length = 110
+ f boost=  2.68385397408683127E-2
+ Iterations to convergence 1
+ E   =  -109.07042620008875 from iter. diag.
+ Branched  CI vector length= 110
+ Pruned    CI vector length= 55
+ Exchanged CI vector length= 55
+ Cycle WALL time       0.031 s
+       USER time       0.029 s
+       SYS  time       0.002 s
+ Cumul. run time       4.303 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 148
+ 
+ Boosted CI vector length = 111
+ f boost=  2.68385397408683127E-2
+ Iterations to convergence 1
+ E   =  -109.07071049127157 from iter. diag.
+ Branched  CI vector length= 110
+ Pruned    CI vector length= 55    *** Full pruning ***
+ Exchanged CI vector length= 55
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       4.333 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 149
+ 
+ Boosted CI vector length = 110
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.07068060891336 from iter. diag.
+ Branched  CI vector length= 110
+ Pruned    CI vector length= 56
+ Exchanged CI vector length= 56
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       4.364 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 150
+ 
+ Boosted CI vector length = 112
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.07108219602532 from iter. diag.
+ Branched  CI vector length= 112
+ Pruned    CI vector length= 56    *** Full pruning ***
+ Exchanged CI vector length= 57
+ Cycle WALL time       0.031 s
+       USER time       0.030 s
+       SYS  time       0.001 s
+ Cumul. run time       4.395 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 151
+ 
+ Boosted CI vector length = 113
+ f boost=  8.65672155905013174E-3
+ Iterations to convergence 1
+ E   =  -109.07102051612111 from iter. diag.
+ Branched  CI vector length= 113
+ Pruned    CI vector length= 57
+ Exchanged CI vector length= 57
+ Cycle WALL time       0.032 s
+       USER time       0.032 s
+       SYS  time       0.000 s
+ Cumul. run time       4.427 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 152
+ 
+ Boosted CI vector length = 114
+ f boost=  2.62005812081729378E-2
+ Iterations to convergence 1
+ E   =  -109.07130231753362 from iter. diag.
+ Branched  CI vector length= 114
+ Pruned    CI vector length= 57    *** Full pruning ***
+ Exchanged CI vector length= 57
+ Cycle WALL time       0.033 s
+       USER time       0.032 s
+       SYS  time       0.001 s
+ Cumul. run time       4.460 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 153
+ 
+ Boosted CI vector length = 114
+ f boost=  2.62005812081729378E-2
+ Iterations to convergence 1
+ E   =  -109.07143602650925 from iter. diag.
+ Branched  CI vector length= 114
+ Pruned    CI vector length= 57
+ Exchanged CI vector length= 58
+ Cycle WALL time       0.032 s
+       USER time       0.031 s
+       SYS  time       0.001 s
+ Cumul. run time       4.492 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 154
+ 
+ Boosted CI vector length = 113
+ f boost=  2.62005812081729378E-2
+ Iterations to convergence 1
+ E   =  -109.07221972937637 from iter. diag.
+ Branched  CI vector length= 113
+ Pruned    CI vector length= 58    *** Full pruning ***
+ Exchanged CI vector length= 59
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       4.525 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 155
+ 
+ Boosted CI vector length = 122
+ f boost=  7.79247191392074268E-2
+ Iterations to convergence 1
+ E   =  -109.07266071607796 from iter. diag.
+ Branched  CI vector length= 118
+ Pruned    CI vector length= 60
+ Exchanged CI vector length= 60
+ Cycle WALL time       0.034 s
+       USER time       0.034 s
+       SYS  time       0.000 s
+ Cumul. run time       4.559 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 156
+ 
+ Boosted CI vector length = 118
+ f boost=  1.01281089697159016E-2
+ Iterations to convergence 1
+ E   =  -109.07263425936463 from iter. diag.
+ Branched  CI vector length= 118
+ Pruned    CI vector length= 60    *** Full pruning ***
+ Exchanged CI vector length= 60
+ Cycle WALL time       0.033 s
+       USER time       0.032 s
+       SYS  time       0.001 s
+ Cumul. run time       4.592 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 157
+ 
+ Boosted CI vector length = 121
+ f boost=  4.34614423030492344E-2
+ Iterations to convergence 1
+ E   =  -109.07271840400060 from iter. diag.
+ Branched  CI vector length= 120
+ Pruned    CI vector length= 60
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.033 s
+       USER time       0.032 s
+       SYS  time       0.001 s
+ Cumul. run time       4.625 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 158
+ 
+ Boosted CI vector length = 121
+ f boost=  2.6794775636382568E-2
+ Iterations to convergence 1
+ E   =  -109.07324638489408 from iter. diag.
+ Branched  CI vector length= 121
+ Pruned    CI vector length= 61    *** Full pruning ***
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.033 s
+       USER time       0.032 s
+       SYS  time       0.001 s
+ Cumul. run time       4.658 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 159
+ 
+ Boosted CI vector length = 122
+ f boost=  4.31882182593333885E-2
+ Iterations to convergence 1
+ E   =  -109.07323776595382 from iter. diag.
+ Branched  CI vector length= 122
+ Pruned    CI vector length= 62
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.034 s
+       USER time       0.034 s
+       SYS  time       0.000 s
+ Cumul. run time       4.692 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 160
+ 
+ Boosted CI vector length = 121
+ f boost=  4.31882182593333885E-2
+ Iterations to convergence 1
+ E   =  -109.07368324602334 from iter. diag.
+ Branched  CI vector length= 121
+ Pruned    CI vector length= 61    *** Full pruning ***
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.036 s
+       USER time       0.035 s
+       SYS  time       0.001 s
+ Cumul. run time       4.728 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 161
+ 
+ Boosted CI vector length = 128
+ f boost=  9.15753150335269356E-2
+ Iterations to convergence 1
+ E   =  -109.07656423430788 from iter. diag.
+ Branched  CI vector length= 124
+ Pruned    CI vector length= 62
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.040 s
+       USER time       0.040 s
+       SYS  time       0.000 s
+ Cumul. run time       4.768 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 162
+ 
+ Boosted CI vector length = 122
+ f boost=  2.70591860012688729E-2
+ Iterations to convergence 1
+ E   =  -109.07656718755422 from iter. diag.
+ Branched  CI vector length= 122
+ Pruned    CI vector length= 60    *** Full pruning ***
+ Exchanged CI vector length= 60
+ Cycle WALL time       0.032 s
+       USER time       0.032 s
+       SYS  time       0.000 s
+ Cumul. run time       4.800 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 163
+ 
+ Boosted CI vector length = 120
+ f boost=  5.93172505173979042E-2
+ Iterations to convergence 1
+ E   =  -109.07595827454406 from iter. diag.
+ Branched  CI vector length= 120
+ Pruned    CI vector length= 60
+ Exchanged CI vector length= 60
+ Cycle WALL time       0.036 s
+       USER time       0.035 s
+       SYS  time       0.001 s
+ Cumul. run time       4.836 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 164
+ 
+ Boosted CI vector length = 122
+ f boost=  5.93172505173979042E-2
+ Iterations to convergence 1
+ E   =  -109.07614047323926 from iter. diag.
+ Branched  CI vector length= 120
+ Pruned    CI vector length= 60    *** Full pruning ***
+ Exchanged CI vector length= 60
+ Cycle WALL time       0.032 s
+       USER time       0.031 s
+       SYS  time       0.001 s
+ Cumul. run time       4.868 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 165
+ 
+ Boosted CI vector length = 121
+ f boost=  2.59839171840645713E-2
+ Iterations to convergence 1
+ E   =  -109.07584366266323 from iter. diag.
+ Branched  CI vector length= 120
+ Pruned    CI vector length= 60
+ Exchanged CI vector length= 60
+ Cycle WALL time       0.030 s
+       USER time       0.030 s
+       SYS  time       0.000 s
+ Cumul. run time       4.898 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 166
+ 
+ Boosted CI vector length = 120
+ f boost=  9.31725051739790491E-3
+ Iterations to convergence 1
+ E   =  -109.07643887895244 from iter. diag.
+ Branched  CI vector length= 120
+ Pruned    CI vector length= 60    *** Full pruning ***
+ Exchanged CI vector length= 60
+ Cycle WALL time       0.035 s
+       USER time       0.034 s
+       SYS  time       0.001 s
+ Cumul. run time       4.933 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 167
+ 
+ Boosted CI vector length = 118
+ f boost=  9.31725051739790491E-3
+ Iterations to convergence 1
+ E   =  -109.07592903635413 from iter. diag.
+ Branched  CI vector length= 118
+ Pruned    CI vector length= 60
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.032 s
+       USER time       0.032 s
+       SYS  time       0.000 s
+ Cumul. run time       4.965 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 168
+ 
+ Boosted CI vector length = 124
+ f boost=  4.26505838507312413E-2
+ Iterations to convergence 1
+ E   =  -109.07637282293470 from iter. diag.
+ Branched  CI vector length= 122
+ Pruned    CI vector length= 61    *** Full pruning ***
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       4.998 s
+Wed Jul 28 17:52:33 2010
+ 
+ 
+ Diagonalization 169
+ 
+ Boosted CI vector length = 122
+ f boost=  9.8636986048296002E-3
+ Iterations to convergence 1
+ E   =  -109.07622960164710 from iter. diag.
+ Branched  CI vector length= 122
+ Pruned    CI vector length= 61
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.032 s
+       USER time       0.031 s
+       SYS  time       0.001 s
+ Cumul. run time       5.030 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 170
+ 
+ Boosted CI vector length = 119
+ f boost=  9.8636986048296002E-3
+ Iterations to convergence 1
+ E   =  -109.07638285522975 from iter. diag.
+ Branched  CI vector length= 119
+ Pruned    CI vector length= 61    *** Full pruning ***
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.032 s
+       USER time       0.031 s
+       SYS  time       0.001 s
+ Cumul. run time       5.062 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 171
+ 
+ Boosted CI vector length = 123
+ f boost=  5.90440264736820583E-2
+ Iterations to convergence 1
+ E   =  -109.07625715151150 from iter. diag.
+ Branched  CI vector length= 122
+ Pruned    CI vector length= 61
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.032 s
+       USER time       0.031 s
+       SYS  time       0.001 s
+ Cumul. run time       5.094 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 172
+ 
+ Boosted CI vector length = 124
+ f boost=  4.26505838507312413E-2
+ Iterations to convergence 1
+ E   =  -109.07632074086081 from iter. diag.
+ Branched  CI vector length= 122
+ Pruned    CI vector length= 61    *** Full pruning ***
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.033 s
+       USER time       0.032 s
+       SYS  time       0.001 s
+ Cumul. run time       5.127 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 173
+ 
+ Boosted CI vector length = 121
+ f boost=  9.8636986048296002E-3
+ Iterations to convergence 1
+ E   =  -109.07620443554219 from iter. diag.
+ Branched  CI vector length= 121
+ Pruned    CI vector length= 61
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.034 s
+       USER time       0.032 s
+       SYS  time       0.002 s
+ Cumul. run time       5.161 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 174
+ 
+ Boosted CI vector length = 121
+ f boost=  2.62571412277804207E-2
+ Iterations to convergence 1
+ E   =  -109.07688539957468 from iter. diag.
+ Branched  CI vector length= 121
+ Pruned    CI vector length= 61    *** Full pruning ***
+ Exchanged CI vector length= 61
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       5.194 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 175
+ 
+ Boosted CI vector length = 123
+ f boost=  4.26505838507312413E-2
+ Iterations to convergence 1
+ E   =  -109.07624535756923 from iter. diag.
+ Branched  CI vector length= 122
+ Pruned    CI vector length= 62
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.032 s
+       USER time       0.031 s
+       SYS  time       0.001 s
+ Cumul. run time       5.226 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 176
+ 
+ Boosted CI vector length = 124
+ f boost=  2.62571412277804207E-2
+ Iterations to convergence 1
+ E   =  -109.07743174330153 from iter. diag.
+ Branched  CI vector length= 124
+ Pruned    CI vector length= 62    *** Full pruning ***
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.034 s
+       USER time       0.034 s
+       SYS  time       0.000 s
+ Cumul. run time       5.260 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 177
+ 
+ Boosted CI vector length = 124
+ f boost=  2.62571412277804207E-2
+ Iterations to convergence 1
+ E   =  -109.07632588166794 from iter. diag.
+ Branched  CI vector length= 124
+ Pruned    CI vector length= 62
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.034 s
+       USER time       0.034 s
+       SYS  time       0.000 s
+ Cumul. run time       5.294 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 178
+ 
+ Boosted CI vector length = 125
+ f boost=  2.62571412277804207E-2
+ Iterations to convergence 1
+ E   =  -109.07698348401163 from iter. diag.
+ Branched  CI vector length= 124
+ Pruned    CI vector length= 63    *** Full pruning ***
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.034 s
+       USER time       0.034 s
+       SYS  time       0.000 s
+ Cumul. run time       5.328 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 179
+ 
+ Boosted CI vector length = 125
+ f boost=  1.0128108969715905E-2
+ Iterations to convergence 1
+ E   =  -109.07708903908127 from iter. diag.
+ Branched  CI vector length= 125
+ Pruned    CI vector length= 63
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.033 s
+       USER time       0.032 s
+       SYS  time       0.001 s
+ Cumul. run time       5.361 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 180
+ 
+ Boosted CI vector length = 127
+ f boost=  2.60011248427317772E-2
+ Iterations to convergence 1
+ E   =  -109.07720187566832 from iter. diag.
+ Branched  CI vector length= 126
+ Pruned    CI vector length= 63    *** Full pruning ***
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       5.394 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 181
+ 
+ Boosted CI vector length = 125
+ f boost=  1.0128108969715905E-2
+ Iterations to convergence 1
+ E   =  -109.07708684269929 from iter. diag.
+ Branched  CI vector length= 125
+ Pruned    CI vector length= 63
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       5.427 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 182
+ 
+ Boosted CI vector length = 127
+ f boost=  2.60011248427317772E-2
+ Iterations to convergence 1
+ E   =  -109.07709412870619 from iter. diag.
+ Branched  CI vector length= 126
+ Pruned    CI vector length= 62    *** Full pruning ***
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       5.460 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 183
+ 
+ Boosted CI vector length = 124
+ f boost=  1.0128108969715905E-2
+ Iterations to convergence 1
+ E   =  -109.07679228686033 from iter. diag.
+ Branched  CI vector length= 124
+ Pruned    CI vector length= 62
+ Exchanged CI vector length= 62
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       5.493 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 184
+ 
+ Boosted CI vector length = 123
+ f boost=  1.0128108969715905E-2
+ Iterations to convergence 1
+ E   =  -109.07806203226889 from iter. diag.
+ Branched  CI vector length= 123
+ Pruned    CI vector length= 63    *** Full pruning ***
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.035 s
+       USER time       0.035 s
+       SYS  time       0.000 s
+ Cumul. run time       5.528 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 185
+ 
+ Boosted CI vector length = 126
+ f boost=  2.62571412277804207E-2
+ Iterations to convergence 1
+ E   =  -109.07764988342711 from iter. diag.
+ Branched  CI vector length= 126
+ Pruned    CI vector length= 63
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       5.561 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 186
+ 
+ Boosted CI vector length = 125
+ f boost=  2.62571412277804207E-2
+ Iterations to convergence 1
+ E   =  -109.07763708702163 from iter. diag.
+ Branched  CI vector length= 125
+ Pruned    CI vector length= 63    *** Full pruning ***
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.034 s
+       USER time       0.034 s
+       SYS  time       0.000 s
+ Cumul. run time       5.595 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 187
+ 
+ Boosted CI vector length = 127
+ f boost=  4.21301571007962894E-2
+ Iterations to convergence 1
+ E   =  -109.07749130475338 from iter. diag.
+ Branched  CI vector length= 126
+ Pruned    CI vector length= 63
+ Exchanged CI vector length= 63
+ Cycle WALL time       0.034 s
+       USER time       0.033 s
+       SYS  time       0.001 s
+ Cumul. run time       5.629 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 188
+ 
+ Boosted CI vector length = 126
+ f boost=  2.62571412277804173E-2
+ Iterations to convergence 1
+ E   =  -109.07839917448058 from iter. diag.
+ Branched  CI vector length= 126
+ Pruned    CI vector length= 64    *** Full pruning ***
+ Exchanged CI vector length= 64
+ Cycle WALL time       0.035 s
+       USER time       0.035 s
+       SYS  time       0.000 s
+ Cumul. run time       5.664 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 189
+ 
+ Boosted CI vector length = 128
+ f boost=  2.62571412277804173E-2
+ Iterations to convergence 1
+ E   =  -109.07914646776450 from iter. diag.
+ Branched  CI vector length= 128
+ Pruned    CI vector length= 65
+ Exchanged CI vector length= 65
+ Cycle WALL time       0.038 s
+       USER time       0.036 s
+       SYS  time       0.002 s
+ Cumul. run time       5.702 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 190
+ 
+ Boosted CI vector length = 131
+ f boost=  2.62571412277804173E-2
+ Iterations to convergence 1
+ E   =  -109.07852213737465 from iter. diag.
+ Branched  CI vector length= 130
+ Pruned    CI vector length= 64    *** Full pruning ***
+ Exchanged CI vector length= 64
+ Cycle WALL time       0.035 s
+       USER time       0.035 s
+       SYS  time       0.000 s
+ Cumul. run time       5.737 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 191
+ 
+ Boosted CI vector length = 126
+ f boost=  1.08725258431650318E-2
+ Iterations to convergence 1
+ E   =  -109.07826476972124 from iter. diag.
+ Branched  CI vector length= 126
+ Pruned    CI vector length= 64
+ Exchanged CI vector length= 64
+ Cycle WALL time       0.035 s
+       USER time       0.035 s
+       SYS  time       0.000 s
+ Cumul. run time       5.772 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 192
+ 
+ Boosted CI vector length = 129
+ f boost=  4.21225258431650318E-2
+ Iterations to convergence 1
+ E   =  -109.07830978717001 from iter. diag.
+ Branched  CI vector length= 128
+ Pruned    CI vector length= 64    *** Full pruning ***
+ Exchanged CI vector length= 65
+ Cycle WALL time       0.033 s
+       USER time       0.033 s
+       SYS  time       0.000 s
+ Cumul. run time       5.805 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 193
+ 
+ Boosted CI vector length = 131
+ f boost=  2.64975258431650318E-2
+ Iterations to convergence 1
+ E   =  -109.08152904001179 from iter. diag.
+ Branched  CI vector length= 130
+ Pruned    CI vector length= 65
+ Exchanged CI vector length= 65
+ Cycle WALL time       0.037 s
+       USER time       0.035 s
+       SYS  time       0.002 s
+ Cumul. run time       5.842 s
+Wed Jul 28 17:52:34 2010
+ 
+ 
+ Diagonalization 194
+ 
+ Boosted CI vector length = 128
+ f boost=  1.11129104585496463E-2
+ Iterations to convergence 1
+ E   =  -109.08115082789712 from iter. diag.
+ Branched  CI vector length= 128
+ Pruned    CI vector length= 65    *** Full pruning ***
+ Exchanged CI vector length= 65
+ Cycle WALL time       0.031 s
+       USER time       0.031 s
+       SYS  time       0.000 s
+ Cumul. run time       5.873 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 195
+ 
+ Boosted CI vector length = 132
+ f boost=  4.18821412277804173E-2
+ Iterations to convergence 1
+ E   =  -109.08108905102077 from iter. diag.
+ Branched  CI vector length= 130
+ Pruned    CI vector length= 65
+ Exchanged CI vector length= 65
+ Cycle WALL time       0.034 s
+       USER time       0.033 s
+       SYS  time       0.001 s
+ Cumul. run time       5.907 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 196
+ 
+ Boosted CI vector length = 129
+ f boost=  1.11129104585496463E-2
+ Iterations to convergence 1
+ E   =  -109.08262574904811 from iter. diag.
+ Branched  CI vector length= 129
+ Pruned    CI vector length= 66    *** Full pruning ***
+ Exchanged CI vector length= 66
+ Cycle WALL time       0.035 s
+       USER time       0.035 s
+       SYS  time       0.000 s
+ Cumul. run time       5.942 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 197
+ 
+ Boosted CI vector length = 131
+ f boost=  2.64975258431650318E-2
+ Iterations to convergence 1
+ E   =  -109.08305632079646 from iter. diag.
+ Branched  CI vector length= 131
+ Pruned    CI vector length= 66
+ Exchanged CI vector length= 66
+ Cycle WALL time       0.036 s
+       USER time       0.036 s
+       SYS  time       0.000 s
+ Cumul. run time       5.978 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 198
+ 
+ Boosted CI vector length = 134
+ f boost=  4.16490409946801837E-2
+ Iterations to convergence 1
+ E   =  -109.08270926451047 from iter. diag.
+ Branched  CI vector length= 132
+ Pruned    CI vector length= 66    *** Full pruning ***
+ Exchanged CI vector length= 67
+ Cycle WALL time       0.036 s
+       USER time       0.034 s
+       SYS  time       0.002 s
+ Cumul. run time       6.014 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 199
+ 
+ Boosted CI vector length = 132
+ f boost=  1.13460106916498799E-2
+ Iterations to convergence 1
+ E   =  -109.08357976765677 from iter. diag.
+ Branched  CI vector length= 132
+ Pruned    CI vector length= 67
+ Exchanged CI vector length= 67
+ Cycle WALL time       0.037 s
+       USER time       0.037 s
+       SYS  time       0.000 s
+ Cumul. run time       6.051 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 200
+ 
+ Boosted CI vector length = 135
+ f boost=  4.11967569603065992E-2
+ Iterations to convergence 1
+ E   =  -109.08354519132934 from iter. diag.
+ Branched  CI vector length= 134
+ Pruned    CI vector length= 67    *** Full pruning ***
+ Exchanged CI vector length= 68
+ Cycle WALL time       0.036 s
+       USER time       0.036 s
+       SYS  time       0.000 s
+ Cumul. run time       6.087 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 201
+ 
+ Boosted CI vector length = 136
+ f boost=  2.62713838259782395E-2
+ Iterations to convergence 1
+ E   =  -109.08491733506179 from iter. diag.
+ Branched  CI vector length= 136
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 70
+ Cycle WALL time       0.042 s
+       USER time       0.041 s
+       SYS  time       0.001 s
+ Cumul. run time       6.129 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 202
+ 
+ Boosted CI vector length = 139
+ f boost=  2.62713838259782395E-2
+ Iterations to convergence 1
+ E   =  -109.09146338372378 from iter. diag.
+ Branched  CI vector length= 139
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.045 s
+       USER time       0.043 s
+       SYS  time       0.002 s
+ Cumul. run time       6.174 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 203
+ 
+ Boosted CI vector length = 140
+ f boost=  4.0557098111692523E-2
+ Iterations to convergence 1
+ E   =  -109.09204306187465 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.040 s
+       USER time       0.040 s
+       SYS  time       0.000 s
+ Cumul. run time       6.214 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 204
+ 
+ Boosted CI vector length = 136
+ f boost=  1.15715908653157111E-2
+ Iterations to convergence 1
+ E   =  -109.09144630611368 from iter. diag.
+ Branched  CI vector length= 136
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.039 s
+       USER time       0.039 s
+       SYS  time       0.000 s
+ Cumul. run time       6.253 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 205
+ 
+ Boosted CI vector length = 137
+ f boost=  4.0557098111692523E-2
+ Iterations to convergence 1
+ E   =  -109.09190731940490 from iter. diag.
+ Branched  CI vector length= 137
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.039 s
+       USER time       0.038 s
+       SYS  time       0.001 s
+ Cumul. run time       6.292 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 206
+ 
+ Boosted CI vector length = 140
+ f boost=  5.50498517348809308E-2
+ Iterations to convergence 1
+ E   =  -109.09188907346908 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.039 s
+       USER time       0.038 s
+       SYS  time       0.001 s
+ Cumul. run time       6.331 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 207
+ 
+ Boosted CI vector length = 139
+ f boost=  2.60643444885041188E-2
+ Iterations to convergence 1
+ E   =  -109.09143355857452 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.038 s
+       USER time       0.038 s
+       SYS  time       0.000 s
+ Cumul. run time       6.369 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 208
+ 
+ Boosted CI vector length = 134
+ f boost=  1.15715908653157128E-2
+ Iterations to convergence 1
+ E   =  -109.09137959326245 from iter. diag.
+ Branched  CI vector length= 134
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.034 s
+       USER time       0.034 s
+       SYS  time       0.000 s
+ Cumul. run time       6.403 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 209
+ 
+ Boosted CI vector length = 140
+ f boost=  6.95426053580693315E-2
+ Iterations to convergence 1
+ E   =  -109.09135602173095 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.036 s
+       USER time       0.036 s
+       SYS  time       0.000 s
+ Cumul. run time       6.439 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 210
+ 
+ Boosted CI vector length = 139
+ f boost=  4.05570981116925161E-2
+ Iterations to convergence 1
+ E   =  -109.09136246355990 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.036 s
+       USER time       0.035 s
+       SYS  time       0.001 s
+ Cumul. run time       6.475 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 211
+ 
+ Boosted CI vector length = 139
+ f boost=  2.60643444885041084E-2
+ Iterations to convergence 1
+ E   =  -109.09187648348689 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.038 s
+       USER time       0.038 s
+       SYS  time       0.000 s
+ Cumul. run time       6.513 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 212
+ 
+ Boosted CI vector length = 138
+ f boost=  1.15715908653157024E-2
+ Iterations to convergence 1
+ E   =  -109.09142543079278 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.038 s
+       USER time       0.038 s
+       SYS  time       0.000 s
+ Cumul. run time       6.551 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 213
+ 
+ Boosted CI vector length = 138
+ f boost=  1.15715908653157024E-2
+ Iterations to convergence 1
+ E   =  -109.09158138402691 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.035 s
+       USER time       0.035 s
+       SYS  time       0.000 s
+ Cumul. run time       6.586 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 214
+ 
+ Boosted CI vector length = 138
+ f boost=  1.15715908653157024E-2
+ Iterations to convergence 1
+ E   =  -109.09189254055582 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.038 s
+       USER time       0.038 s
+       SYS  time       0.000 s
+ Cumul. run time       6.624 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 215
+ 
+ Boosted CI vector length = 137
+ f boost=  1.15715908653157024E-2
+ Iterations to convergence 1
+ E   =  -109.09179023017001 from iter. diag.
+ Branched  CI vector length= 137
+ Pruned    CI vector length= 69
+ Exchanged CI vector length= 69
+ Cycle WALL time       0.037 s
+       USER time       0.037 s
+       SYS  time       0.000 s
+ Cumul. run time       6.661 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 216
+ 
+ Boosted CI vector length = 139
+ f boost=  2.60643444885041084E-2
+ Iterations to convergence 1
+ E   =  -109.09166897044744 from iter. diag.
+ Branched  CI vector length= 138
+ Pruned    CI vector length= 69    *** Full pruning ***
+ Exchanged CI vector length= 70
+ Cycle WALL time       0.038 s
+       USER time       0.038 s
+       SYS  time       0.000 s
+ Cumul. run time       6.699 s
+Wed Jul 28 17:52:35 2010
+ 
+ 
+ Diagonalization 217
+ 
+ Boosted CI vector length = 140
+ f boost=  1.15715908653157024E-2
+ Iterations to convergence 1
+ E   =  -109.09179332571330 from iter. diag.
+ Branched  CI vector length= 140
+ Pruned    CI vector length= 70
+ Exchanged CI vector length= 70
+ Cycle WALL time       0.039 s
+       USER time       0.039 s
+       SYS  time       0.000 s
+ Cumul. run time       6.738 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 218
+ 
+ Boosted CI vector length = 140
+ f boost=  1.15715908653157024E-2
+ Iterations to convergence 1
+ E   =  -109.09172167534012 from iter. diag.
+ Branched  CI vector length= 140
+ Pruned    CI vector length= 70    *** Full pruning ***
+ Exchanged CI vector length= 71
+ Cycle WALL time       0.036 s
+       USER time       0.036 s
+       SYS  time       0.000 s
+ Cumul. run time       6.774 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 219
+ 
+ Boosted CI vector length = 141
+ f boost=  1.15715908653157024E-2
+ Iterations to convergence 1
+ E   =  -109.09275931147735 from iter. diag.
+ Branched  CI vector length= 141
+ Pruned    CI vector length= 71
+ Exchanged CI vector length= 72
+ Cycle WALL time       0.042 s
+       USER time       0.042 s
+       SYS  time       0.000 s
+ Cumul. run time       6.816 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 220
+ 
+ Boosted CI vector length = 142
+ f boost=  2.56560979075692239E-2
+ Iterations to convergence 1
+ E   =  -109.09286841276815 from iter. diag.
+ Branched  CI vector length= 142
+ Pruned    CI vector length= 71    *** Full pruning ***
+ Exchanged CI vector length= 72
+ Cycle WALL time       0.042 s
+       USER time       0.042 s
+       SYS  time       0.000 s
+ Cumul. run time       6.858 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 221
+ 
+ Boosted CI vector length = 147
+ f boost=  5.34338756853470001E-2
+ Iterations to convergence 1
+ E   =  -109.09377148610542 from iter. diag.
+ Branched  CI vector length= 144
+ Pruned    CI vector length= 72
+ Exchanged CI vector length= 72
+ Cycle WALL time       0.053 s
+       USER time       0.052 s
+       SYS  time       0.001 s
+ Cumul. run time       6.911 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 222
+ 
+ Boosted CI vector length = 143
+ f boost=  1.17672090186803358E-2
+ Iterations to convergence 1
+ E   =  -109.09296868428891 from iter. diag.
+ Branched  CI vector length= 143
+ Pruned    CI vector length= 72    *** Full pruning ***
+ Exchanged CI vector length= 72
+ Cycle WALL time       0.040 s
+       USER time       0.039 s
+       SYS  time       0.001 s
+ Cumul. run time       6.951 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 223
+ 
+ Boosted CI vector length = 145
+ f boost=  2.56560979075692239E-2
+ Iterations to convergence 1
+ E   =  -109.09306317870238 from iter. diag.
+ Branched  CI vector length= 144
+ Pruned    CI vector length= 72
+ Exchanged CI vector length= 72
+ Cycle WALL time       0.038 s
+       USER time       0.038 s
+       SYS  time       0.000 s
+ Cumul. run time       6.989 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 224
+ 
+ Boosted CI vector length = 144
+ f boost=  1.17672090186803358E-2
+ Iterations to convergence 1
+ E   =  -109.09314371876516 from iter. diag.
+ Branched  CI vector length= 144
+ Pruned    CI vector length= 72    *** Full pruning ***
+ Exchanged CI vector length= 74
+ Cycle WALL time       0.039 s
+       USER time       0.039 s
+       SYS  time       0.000 s
+ Cumul. run time       7.028 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 225
+ 
+ Boosted CI vector length = 148
+ f boost=  1.17672090186803358E-2
+ Iterations to convergence 1
+ E   =  -109.09515636747312 from iter. diag.
+ Branched  CI vector length= 148
+ Pruned    CI vector length= 75
+ Exchanged CI vector length= 75
+ Cycle WALL time       0.043 s
+       USER time       0.043 s
+       SYS  time       0.000 s
+ Cumul. run time       7.071 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 226
+ 
+ Boosted CI vector length = 149
+ f boost=  1.17672090186803358E-2
+ Iterations to convergence 1
+ E   =  -109.09466389698167 from iter. diag.
+ Branched  CI vector length= 149
+ Pruned    CI vector length= 74    *** Full pruning ***
+ Exchanged CI vector length= 74
+ Cycle WALL time       0.041 s
+       USER time       0.040 s
+       SYS  time       0.001 s
+ Cumul. run time       7.112 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 227
+ 
+ Boosted CI vector length = 146
+ f boost=  2.51005423520136717E-2
+ Iterations to convergence 1
+ E   =  -109.09444611403700 from iter. diag.
+ Branched  CI vector length= 146
+ Pruned    CI vector length= 75
+ Exchanged CI vector length= 75
+ Cycle WALL time       0.046 s
+       USER time       0.046 s
+       SYS  time       0.000 s
+ Cumul. run time       7.158 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 228
+ 
+ Boosted CI vector length = 151
+ f boost=  5.21275693790407002E-2
+ Iterations to convergence 1
+ E   =  -109.09465621399065 from iter. diag.
+ Branched  CI vector length= 150
+ Pruned    CI vector length= 75    *** Full pruning ***
+ Exchanged CI vector length= 75
+ Cycle WALL time       0.041 s
+       USER time       0.041 s
+       SYS  time       0.000 s
+ Cumul. run time       7.199 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 229
+ 
+ Boosted CI vector length = 151
+ f boost=  3.87942360457073643E-2
+ Iterations to convergence 1
+ E   =  -109.09471678626289 from iter. diag.
+ Branched  CI vector length= 150
+ Pruned    CI vector length= 75
+ Exchanged CI vector length= 75
+ Cycle WALL time       0.041 s
+       USER time       0.041 s
+       SYS  time       0.000 s
+ Cumul. run time       7.240 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 230
+ 
+ Boosted CI vector length = 149
+ f boost=  2.54609027123740284E-2
+ Iterations to convergence 1
+ E   =  -109.09551060424590 from iter. diag.
+ Branched  CI vector length= 149
+ Pruned    CI vector length= 76    *** Full pruning ***
+ Exchanged CI vector length= 76
+ Cycle WALL time       0.041 s
+       USER time       0.041 s
+       SYS  time       0.000 s
+ Cumul. run time       7.281 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 231
+ 
+ Boosted CI vector length = 152
+ f boost=  3.87942360457073643E-2
+ Iterations to convergence 1
+ E   =  -109.09536145090038 from iter. diag.
+ Branched  CI vector length= 152
+ Pruned    CI vector length= 76
+ Exchanged CI vector length= 76
+ Cycle WALL time       0.042 s
+       USER time       0.042 s
+       SYS  time       0.000 s
+ Cumul. run time       7.323 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 232
+ 
+ Boosted CI vector length = 153
+ f boost=  3.87942360457073643E-2
+ Iterations to convergence 1
+ E   =  -109.09600197829792 from iter. diag.
+ Branched  CI vector length= 152
+ Pruned    CI vector length= 76    *** Full pruning ***
+ Exchanged CI vector length= 76
+ Cycle WALL time       0.045 s
+       USER time       0.045 s
+       SYS  time       0.000 s
+ Cumul. run time       7.368 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 233
+ 
+ Boosted CI vector length = 152
+ f boost=  2.56363413088652597E-2
+ Iterations to convergence 1
+ E   =  -109.09616400673443 from iter. diag.
+ Branched  CI vector length= 152
+ Pruned    CI vector length= 76
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.043 s
+       USER time       0.043 s
+       SYS  time       0.000 s
+ Cumul. run time       7.411 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 234
+ 
+ Boosted CI vector length = 152
+ f boost=  2.56363413088652597E-2
+ Iterations to convergence 1
+ E   =  -109.09557088205264 from iter. diag.
+ Branched  CI vector length= 152
+ Pruned    CI vector length= 77    *** Full pruning ***
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.043 s
+       USER time       0.043 s
+       SYS  time       0.000 s
+ Cumul. run time       7.454 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 235
+ 
+ Boosted CI vector length = 152
+ f boost=  5.16103672828912355E-2
+ Iterations to convergence 1
+ E   =  -109.09611263036226 from iter. diag.
+ Branched  CI vector length= 152
+ Pruned    CI vector length= 77
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.042 s
+       USER time       0.042 s
+       SYS  time       0.000 s
+ Cumul. run time       7.496 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 236
+ 
+ Boosted CI vector length = 158
+ f boost=  7.75843932569172112E-2
+ Iterations to convergence 1
+ E   =  -109.09570683555373 from iter. diag.
+ Branched  CI vector length= 154
+ Pruned    CI vector length= 77    *** Full pruning ***
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.042 s
+       USER time       0.042 s
+       SYS  time       0.000 s
+ Cumul. run time       7.538 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 237
+ 
+ Boosted CI vector length = 153
+ f boost=  2.56363413088652597E-2
+ Iterations to convergence 1
+ E   =  -109.09558897063303 from iter. diag.
+ Branched  CI vector length= 153
+ Pruned    CI vector length= 77
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.040 s
+       USER time       0.040 s
+       SYS  time       0.000 s
+ Cumul. run time       7.578 s
+Wed Jul 28 17:52:36 2010
+ 
+ 
+ Diagonalization 238
+ 
+ Boosted CI vector length = 152
+ f boost=  3.86233542958782511E-2
+ Iterations to convergence 1
+ E   =  -109.09564108508857 from iter. diag.
+ Branched  CI vector length= 152
+ Pruned    CI vector length= 77    *** Full pruning ***
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.041 s
+       USER time       0.040 s
+       SYS  time       0.001 s
+ Cumul. run time       7.619 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 239
+ 
+ Boosted CI vector length = 158
+ f boost=  6.45973802699042199E-2
+ Iterations to convergence 1
+ E   =  -109.09589019076697 from iter. diag.
+ Branched  CI vector length= 154
+ Pruned    CI vector length= 77
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.043 s
+       USER time       0.042 s
+       SYS  time       0.001 s
+ Cumul. run time       7.662 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 240
+ 
+ Boosted CI vector length = 152
+ f boost=  1.26493283218522684E-2
+ Iterations to convergence 1
+ E   =  -109.09568421511335 from iter. diag.
+ Branched  CI vector length= 152
+ Pruned    CI vector length= 77    *** Full pruning ***
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.045 s
+       USER time       0.045 s
+       SYS  time       0.000 s
+ Cumul. run time       7.707 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 241
+ 
+ Boosted CI vector length = 154
+ f boost=  3.86233542958782441E-2
+ Iterations to convergence 1
+ E   =  -109.09561361366556 from iter. diag.
+ Branched  CI vector length= 154
+ Pruned    CI vector length= 77
+ Exchanged CI vector length= 77
+ Cycle WALL time       0.043 s
+       USER time       0.040 s
+       SYS  time       0.003 s
+ Cumul. run time       7.750 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 242
+ 
+ Boosted CI vector length = 153
+ f boost=  3.86233542958782441E-2
+ Iterations to convergence 1
+ E   =  -109.09607882258999 from iter. diag.
+ Branched  CI vector length= 153
+ Pruned    CI vector length= 78    *** Full pruning ***
+ Exchanged CI vector length= 78
+ Cycle WALL time       0.043 s
+       USER time       0.042 s
+       SYS  time       0.001 s
+ Cumul. run time       7.793 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 243
+ 
+ Boosted CI vector length = 160
+ f boost=  5.16103672828912285E-2
+ Iterations to convergence 1
+ E   =  -109.09614735786022 from iter. diag.
+ Branched  CI vector length= 156
+ Pruned    CI vector length= 78
+ Exchanged CI vector length= 79
+ Cycle WALL time       0.043 s
+       USER time       0.041 s
+       SYS  time       0.002 s
+ Cumul. run time       7.836 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 244
+ 
+ Boosted CI vector length = 158
+ f boost=  3.28316000839948274E-4
+ Iterations to convergence 1
+ E   =  -109.09797200613943 from iter. diag.
+ Branched  CI vector length= 158
+ Pruned    CI vector length= 80    *** Full pruning ***
+ Exchanged CI vector length= 80
+ Cycle WALL time       0.048 s
+       USER time       0.047 s
+       SYS  time       0.001 s
+ Cumul. run time       7.884 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 245
+ 
+ Boosted CI vector length = 159
+ f boost=  3.28316000839948274E-4
+ Iterations to convergence 1
+ E   =  -109.09801804527629 from iter. diag.
+ Branched  CI vector length= 159
+ Pruned    CI vector length= 80
+ Exchanged CI vector length= 81
+ Cycle WALL time       0.043 s
+       USER time       0.043 s
+       SYS  time       0.000 s
+ Cumul. run time       7.927 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 246
+ 
+ Boosted CI vector length = 161
+ f boost=  1.2828316000839949E-2
+ Iterations to convergence 1
+ E   =  -109.09940208118422 from iter. diag.
+ Branched  CI vector length= 161
+ Pruned    CI vector length= 81    *** Full pruning ***
+ Exchanged CI vector length= 81
+ Cycle WALL time       0.048 s
+       USER time       0.048 s
+       SYS  time       0.000 s
+ Cumul. run time       7.975 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 247
+ 
+ Boosted CI vector length = 163
+ f boost=  2.51739950131856273E-2
+ Iterations to convergence 1
+ E   =  -109.09963214650625 from iter. diag.
+ Branched  CI vector length= 162
+ Pruned    CI vector length= 82
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.045 s
+       USER time       0.044 s
+       SYS  time       0.001 s
+ Cumul. run time       8.020 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 248
+ 
+ Boosted CI vector length = 162
+ f boost=  1.2828316000839949E-2
+ Iterations to convergence 1
+ E   =  -109.09954926561707 from iter. diag.
+ Branched  CI vector length= 162
+ Pruned    CI vector length= 82    *** Full pruning ***
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.045 s
+       USER time       0.045 s
+       SYS  time       0.000 s
+ Cumul. run time       8.065 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 249
+ 
+ Boosted CI vector length = 163
+ f boost=  3.72185599032789777E-2
+ Iterations to convergence 1
+ E   =  -109.10000508881512 from iter. diag.
+ Branched  CI vector length= 163
+ Pruned    CI vector length= 82
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.050 s
+       USER time       0.050 s
+       SYS  time       0.000 s
+ Cumul. run time       8.115 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 250
+ 
+ Boosted CI vector length = 167
+ f boost=  4.94136818544984868E-2
+ Iterations to convergence 1
+ E   =  -109.09981982941980 from iter. diag.
+ Branched  CI vector length= 164
+ Pruned    CI vector length= 82    *** Full pruning ***
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.044 s
+       USER time       0.044 s
+       SYS  time       0.000 s
+ Cumul. run time       8.159 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 251
+ 
+ Boosted CI vector length = 163
+ f boost=  1.28283160008399524E-2
+ Iterations to convergence 1
+ E   =  -109.10022535956500 from iter. diag.
+ Branched  CI vector length= 163
+ Pruned    CI vector length= 82
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.047 s
+       USER time       0.046 s
+       SYS  time       0.001 s
+ Cumul. run time       8.206 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 252
+ 
+ Boosted CI vector length = 162
+ f boost=  2.50234379520594651E-2
+ Iterations to convergence 1
+ E   =  -109.09978664018300 from iter. diag.
+ Branched  CI vector length= 162
+ Pruned    CI vector length= 82    *** Full pruning ***
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.045 s
+       USER time       0.043 s
+       SYS  time       0.002 s
+ Cumul. run time       8.251 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 253
+ 
+ Boosted CI vector length = 167
+ f boost=  4.94136818544984868E-2
+ Iterations to convergence 1
+ E   =  -109.09948669240052 from iter. diag.
+ Branched  CI vector length= 164
+ Pruned    CI vector length= 82
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.044 s
+       USER time       0.042 s
+       SYS  time       0.002 s
+ Cumul. run time       8.295 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 254
+ 
+ Boosted CI vector length = 161
+ f boost=  1.28283160008399524E-2
+ Iterations to convergence 1
+ E   =  -109.09963300585122 from iter. diag.
+ Branched  CI vector length= 161
+ Pruned    CI vector length= 82    *** Full pruning ***
+ Exchanged CI vector length= 82
+ Cycle WALL time       0.045 s
+       USER time       0.045 s
+       SYS  time       0.000 s
+ Cumul. run time       8.340 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 255
+ 
+ Boosted CI vector length = 162
+ f boost=  4.94136818544984868E-2
+ Iterations to convergence 1
+ E   =  -109.09943894695039 from iter. diag.
+ Branched  CI vector length= 162
+ Pruned    CI vector length= 82
+ Exchanged CI vector length= 83
+ Cycle WALL time       0.044 s
+       USER time       0.043 s
+       SYS  time       0.001 s
+ Cumul. run time       8.384 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 256
+ 
+ Boosted CI vector length = 171
+ f boost=  7.38039257569375051E-2
+ Iterations to convergence 1
+ E   =  -109.10018099006297 from iter. diag.
+ Branched  CI vector length= 166
+ Pruned    CI vector length= 83    *** Full pruning ***
+ Exchanged CI vector length= 83
+ Cycle WALL time       0.048 s
+       USER time       0.047 s
+       SYS  time       0.001 s
+ Cumul. run time       8.432 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 257
+ 
+ Boosted CI vector length = 164
+ f boost=  1.35629619015158187E-2
+ Iterations to convergence 1
+ E   =  -109.09976219824134 from iter. diag.
+ Branched  CI vector length= 164
+ Pruned    CI vector length= 83
+ Exchanged CI vector length= 83
+ Cycle WALL time       0.043 s
+       USER time       0.043 s
+       SYS  time       0.000 s
+ Cumul. run time       8.475 s
+Wed Jul 28 17:52:37 2010
+ 
+ 
+ Diagonalization 258
+ 
+ Boosted CI vector length = 166
+ f boost=  3.76593474436844947E-2
+ Iterations to convergence 1
+ E   =  -109.09971295219739 from iter. diag.
+ Branched  CI vector length= 166
+ Pruned    CI vector length= 83    *** Full pruning ***
+ Exchanged CI vector length= 84
+ Cycle WALL time       0.043 s
+       USER time       0.043 s
+       SYS  time       0.000 s
+ Cumul. run time       8.518 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 259
+ 
+ Boosted CI vector length = 170
+ f boost=  3.76593474436844947E-2
+ Iterations to convergence 1
+ E   =  -109.10254545942740 from iter. diag.
+ Branched  CI vector length= 168
+ Pruned    CI vector length= 86
+ Exchanged CI vector length= 86
+ Cycle WALL time       0.050 s
+       USER time       0.050 s
+       SYS  time       0.000 s
+ Cumul. run time       8.568 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 260
+ 
+ Boosted CI vector length = 172
+ f boost=  1.38498236341606865E-2
+ Iterations to convergence 1
+ E   =  -109.10248055587246 from iter. diag.
+ Branched  CI vector length= 172
+ Pruned    CI vector length= 85    *** Full pruning ***
+ Exchanged CI vector length= 85
+ Cycle WALL time       0.047 s
+       USER time       0.047 s
+       SYS  time       0.000 s
+ Cumul. run time       8.615 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 261
+ 
+ Boosted CI vector length = 168
+ f boost=  1.38498236341606865E-2
+ Iterations to convergence 1
+ E   =  -109.10221461822306 from iter. diag.
+ Branched  CI vector length= 168
+ Pruned    CI vector length= 85
+ Exchanged CI vector length= 85
+ Cycle WALL time       0.048 s
+       USER time       0.047 s
+       SYS  time       0.001 s
+ Cumul. run time       8.663 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 262
+ 
+ Boosted CI vector length = 172
+ f boost=  3.73792353988665685E-2
+ Iterations to convergence 1
+ E   =  -109.10205574375567 from iter. diag.
+ Branched  CI vector length= 170
+ Pruned    CI vector length= 85    *** Full pruning ***
+ Exchanged CI vector length= 86
+ Cycle WALL time       0.046 s
+       USER time       0.045 s
+       SYS  time       0.001 s
+ Cumul. run time       8.709 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 263
+ 
+ Boosted CI vector length = 171
+ f boost=  1.38498236341606865E-2
+ Iterations to convergence 1
+ E   =  -109.10368362402724 from iter. diag.
+ Branched  CI vector length= 171
+ Pruned    CI vector length= 86
+ Exchanged CI vector length= 86
+ Cycle WALL time       0.049 s
+       USER time       0.049 s
+       SYS  time       0.000 s
+ Cumul. run time       8.758 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 264
+ 
+ Boosted CI vector length = 171
+ f boost=  2.54777306109048723E-2
+ Iterations to convergence 1
+ E   =  -109.10346814989464 from iter. diag.
+ Branched  CI vector length= 171
+ Pruned    CI vector length= 86    *** Full pruning ***
+ Exchanged CI vector length= 86
+ Cycle WALL time       0.047 s
+       USER time       0.046 s
+       SYS  time       0.001 s
+ Cumul. run time       8.805 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 265
+ 
+ Boosted CI vector length = 170
+ f boost=  3.71056375876490582E-2
+ Iterations to convergence 1
+ E   =  -109.10351999862658 from iter. diag.
+ Branched  CI vector length= 170
+ Pruned    CI vector length= 86
+ Exchanged CI vector length= 89
+ Cycle WALL time       0.046 s
+       USER time       0.046 s
+       SYS  time       0.000 s
+ Cumul. run time       8.851 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 266
+ 
+ Boosted CI vector length = 180
+ f boost=  6.036145154113743E-2
+ Iterations to convergence 1
+ E   =  -109.10651950356666 from iter. diag.
+ Branched  CI vector length= 176
+ Pruned    CI vector length= 88    *** Full pruning ***
+ Exchanged CI vector length= 88
+ Cycle WALL time       0.054 s
+       USER time       0.054 s
+       SYS  time       0.000 s
+ Cumul. run time       8.905 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 267
+ 
+ Boosted CI vector length = 173
+ f boost=  1.49069060865919742E-2
+ Iterations to convergence 1
+ E   =  -109.10587218374772 from iter. diag.
+ Branched  CI vector length= 173
+ Pruned    CI vector length= 88
+ Exchanged CI vector length= 88
+ Cycle WALL time       0.047 s
+       USER time       0.046 s
+       SYS  time       0.001 s
+ Cumul. run time       8.952 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 268
+ 
+ Boosted CI vector length = 180
+ f boost=  4.89978151775010626E-2
+ Iterations to convergence 1
+ E   =  -109.10659421425112 from iter. diag.
+ Branched  CI vector length= 176
+ Pruned    CI vector length= 89    *** Full pruning ***
+ Exchanged CI vector length= 90
+ Cycle WALL time       0.051 s
+       USER time       0.050 s
+       SYS  time       0.001 s
+ Cumul. run time       9.003 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 269
+ 
+ Boosted CI vector length = 178
+ f boost=  3.54326972295560677E-3
+ Iterations to convergence 1
+ E   =  -109.10727151788959 from iter. diag.
+ Branched  CI vector length= 178
+ Pruned    CI vector length= 90
+ Exchanged CI vector length= 91
+ Cycle WALL time       0.052 s
+       USER time       0.052 s
+       SYS  time       0.000 s
+ Cumul. run time       9.055 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 270
+ 
+ Boosted CI vector length = 181
+ f boost=  3.54326972295560677E-3
+ Iterations to convergence 1
+ E   =  -109.10681184020206 from iter. diag.
+ Branched  CI vector length= 181
+ Pruned    CI vector length= 91    *** Full pruning ***
+ Exchanged CI vector length= 91
+ Cycle WALL time       0.053 s
+       USER time       0.052 s
+       SYS  time       0.001 s
+ Cumul. run time       9.108 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 271
+ 
+ Boosted CI vector length = 181
+ f boost=  1.45322807119665966E-2
+ Iterations to convergence 1
+ E   =  -109.10736117903065 from iter. diag.
+ Branched  CI vector length= 181
+ Pruned    CI vector length= 91
+ Exchanged CI vector length= 92
+ Cycle WALL time       0.053 s
+       USER time       0.053 s
+       SYS  time       0.000 s
+ Cumul. run time       9.161 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 272
+ 
+ Boosted CI vector length = 181
+ f boost=  2.55212917009775865E-2
+ Iterations to convergence 1
+ E   =  -109.10770258900732 from iter. diag.
+ Branched  CI vector length= 181
+ Pruned    CI vector length= 92    *** Full pruning ***
+ Exchanged CI vector length= 93
+ Cycle WALL time       0.053 s
+       USER time       0.053 s
+       SYS  time       0.000 s
+ Cumul. run time       9.214 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 273
+ 
+ Boosted CI vector length = 190
+ f boost=  5.81299873531515021E-2
+ Iterations to convergence 1
+ E   =  -109.11220937422917 from iter. diag.
+ Branched  CI vector length= 186
+ Pruned    CI vector length= 93
+ Exchanged CI vector length= 93
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time       9.273 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 274
+ 
+ Boosted CI vector length = 186
+ f boost=  1.51192346649794557E-2
+ Iterations to convergence 1
+ E   =  -109.11198930714190 from iter. diag.
+ Branched  CI vector length= 186
+ Pruned    CI vector length= 92    *** Full pruning ***
+ Exchanged CI vector length= 92
+ Cycle WALL time       0.052 s
+       USER time       0.051 s
+       SYS  time       0.001 s
+ Cumul. run time       9.325 s
+Wed Jul 28 17:52:38 2010
+ 
+ 
+ Diagonalization 275
+ 
+ Boosted CI vector length = 185
+ f boost=  1.51192346649794557E-2
+ Iterations to convergence 1
+ E   =  -109.11198091544935 from iter. diag.
+ Branched  CI vector length= 184
+ Pruned    CI vector length= 92
+ Exchanged CI vector length= 92
+ Cycle WALL time       0.059 s
+       USER time       0.058 s
+       SYS  time       0.001 s
+ Cumul. run time       9.384 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 276
+ 
+ Boosted CI vector length = 177
+ f boost=  4.24966944758815163E-3
+ Iterations to convergence 1
+ E   =  -109.11146866627828 from iter. diag.
+ Branched  CI vector length= 177
+ Pruned    CI vector length= 92    *** Full pruning ***
+ Exchanged CI vector length= 92
+ Cycle WALL time       0.048 s
+       USER time       0.048 s
+       SYS  time       0.000 s
+ Cumul. run time       9.432 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 277
+ 
+ Boosted CI vector length = 191
+ f boost=  8.033662596932728E-2
+ Iterations to convergence 1
+ E   =  -109.11223932075390 from iter. diag.
+ Branched  CI vector length= 184
+ Pruned    CI vector length= 93
+ Exchanged CI vector length= 94
+ Cycle WALL time       0.051 s
+       USER time       0.051 s
+       SYS  time       0.000 s
+ Cumul. run time       9.483 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 278
+ 
+ Boosted CI vector length = 186
+ f boost=  4.24966944758814469E-3
+ Iterations to convergence 1
+ E   =  -109.11508692479686 from iter. diag.
+ Branched  CI vector length= 186
+ Pruned    CI vector length= 94    *** Full pruning ***
+ Exchanged CI vector length= 94
+ Cycle WALL time       0.058 s
+       USER time       0.058 s
+       SYS  time       0.000 s
+ Cumul. run time       9.541 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 279
+ 
+ Boosted CI vector length = 185
+ f boost=  2.55262651922689952E-2
+ Iterations to convergence 1
+ E   =  -109.11600430459080 from iter. diag.
+ Branched  CI vector length= 185
+ Pruned    CI vector length= 97
+ Exchanged CI vector length= 97
+ Cycle WALL time       0.060 s
+       USER time       0.059 s
+       SYS  time       0.001 s
+ Cumul. run time       9.601 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 280
+ 
+ Boosted CI vector length = 198
+ f boost=  5.74411588092902659E-2
+ Iterations to convergence 1
+ E   =  -109.11600287116772 from iter. diag.
+ Branched  CI vector length= 194
+ Pruned    CI vector length= 96    *** Full pruning ***
+ Exchanged CI vector length= 97
+ Cycle WALL time       0.056 s
+       USER time       0.056 s
+       SYS  time       0.000 s
+ Cumul. run time       9.657 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 281
+ 
+ Boosted CI vector length = 193
+ f boost=  1.6204045407228411E-2
+ Iterations to convergence 1
+ E   =  -109.11590637473162 from iter. diag.
+ Branched  CI vector length= 193
+ Pruned    CI vector length= 97
+ Exchanged CI vector length= 97
+ Cycle WALL time       0.067 s
+       USER time       0.067 s
+       SYS  time       0.000 s
+ Cumul. run time       9.724 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 282
+ 
+ Boosted CI vector length = 192
+ f boost=  2.6513323757743873E-2
+ Iterations to convergence 1
+ E   =  -109.11578837915255 from iter. diag.
+ Branched  CI vector length= 192
+ Pruned    CI vector length= 96    *** Full pruning ***
+ Exchanged CI vector length= 96
+ Cycle WALL time       0.058 s
+       USER time       0.058 s
+       SYS  time       0.000 s
+ Cumul. run time       9.782 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 283
+ 
+ Boosted CI vector length = 193
+ f boost=  4.71318804587747969E-2
+ Iterations to convergence 1
+ E   =  -109.11566339027618 from iter. diag.
+ Branched  CI vector length= 192
+ Pruned    CI vector length= 96
+ Exchanged CI vector length= 96
+ Cycle WALL time       0.061 s
+       USER time       0.061 s
+       SYS  time       0.000 s
+ Cumul. run time       9.843 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 284
+ 
+ Boosted CI vector length = 190
+ f boost=  3.67152137921081326E-2
+ Iterations to convergence 1
+ E   =  -109.11605957256270 from iter. diag.
+ Branched  CI vector length= 190
+ Pruned    CI vector length= 98    *** Full pruning ***
+ Exchanged CI vector length= 98
+ Cycle WALL time       0.054 s
+       USER time       0.053 s
+       SYS  time       0.001 s
+ Cumul. run time       9.896 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 285
+ 
+ Boosted CI vector length = 198
+ f boost=  5.75485471254414682E-2
+ Iterations to convergence 1
+ E   =  -109.11630415807301 from iter. diag.
+ Branched  CI vector length= 196
+ Pruned    CI vector length= 98
+ Exchanged CI vector length= 98
+ Cycle WALL time       0.054 s
+       USER time       0.054 s
+       SYS  time       0.000 s
+ Cumul. run time       9.950 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 286
+ 
+ Boosted CI vector length = 196
+ f boost=  3.71403838601353509E-2
+ Iterations to convergence 1
+ E   =  -109.11767039033492 from iter. diag.
+ Branched  CI vector length= 196
+ Pruned    CI vector length= 99    *** Full pruning ***
+ Exchanged CI vector length= 99
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time      10.009 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 287
+ 
+ Boosted CI vector length = 201
+ f boost=  3.71403838601353509E-2
+ Iterations to convergence 1
+ E   =  -109.11704284648607 from iter. diag.
+ Branched  CI vector length= 198
+ Pruned    CI vector length= 99
+ Exchanged CI vector length= 99
+ Cycle WALL time       0.054 s
+       USER time       0.053 s
+       SYS  time       0.001 s
+ Cumul. run time      10.063 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 288
+ 
+ Boosted CI vector length = 196
+ f boost=  6.837353557105047E-3
+ Iterations to convergence 1
+ E   =  -109.11735882317060 from iter. diag.
+ Branched  CI vector length= 196
+ Pruned    CI vector length= 99    *** Full pruning ***
+ Exchanged CI vector length= 99
+ Cycle WALL time       0.056 s
+       USER time       0.056 s
+       SYS  time       0.000 s
+ Cumul. run time      10.119 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 289
+ 
+ Boosted CI vector length = 200
+ f boost=  2.70393737591252507E-2
+ Iterations to convergence 1
+ E   =  -109.11733993384243 from iter. diag.
+ Branched  CI vector length= 198
+ Pruned    CI vector length= 99
+ Exchanged CI vector length= 99
+ Cycle WALL time       0.060 s
+       USER time       0.060 s
+       SYS  time       0.000 s
+ Cumul. run time      10.179 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 290
+ 
+ Boosted CI vector length = 193
+ f boost=  6.837353557105047E-3
+ Iterations to convergence 1
+ E   =  -109.11697764281948 from iter. diag.
+ Branched  CI vector length= 193
+ Pruned    CI vector length= 99    *** Full pruning ***
+ Exchanged CI vector length= 99
+ Cycle WALL time       0.053 s
+       USER time       0.052 s
+       SYS  time       0.001 s
+ Cumul. run time      10.232 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 291
+ 
+ Boosted CI vector length = 203
+ f boost=  5.73424040621555511E-2
+ Iterations to convergence 1
+ E   =  -109.11740903205325 from iter. diag.
+ Branched  CI vector length= 198
+ Pruned    CI vector length= 99
+ Exchanged CI vector length= 99
+ Cycle WALL time       0.055 s
+       USER time       0.055 s
+       SYS  time       0.000 s
+ Cumul. run time      10.287 s
+Wed Jul 28 17:52:39 2010
+ 
+ 
+ Diagonalization 292
+ 
+ Boosted CI vector length = 196
+ f boost=  6.837353557105047E-3
+ Iterations to convergence 1
+ E   =  -109.11724320672815 from iter. diag.
+ Branched  CI vector length= 196
+ Pruned    CI vector length= 99    *** Full pruning ***
+ Exchanged CI vector length= 99
+ Cycle WALL time       0.054 s
+       USER time       0.054 s
+       SYS  time       0.000 s
+ Cumul. run time      10.341 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 293
+ 
+ Boosted CI vector length = 200
+ f boost=  2.70393737591252507E-2
+ Iterations to convergence 1
+ E   =  -109.11709751544223 from iter. diag.
+ Branched  CI vector length= 198
+ Pruned    CI vector length= 99
+ Exchanged CI vector length= 100
+ Cycle WALL time       0.055 s
+       USER time       0.054 s
+       SYS  time       0.001 s
+ Cumul. run time      10.396 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 294
+ 
+ Boosted CI vector length = 197
+ f boost=  6.837353557105047E-3
+ Iterations to convergence 1
+ E   =  -109.11839880677107 from iter. diag.
+ Branched  CI vector length= 197
+ Pruned    CI vector length= 100    *** Full pruning ***
+ Exchanged CI vector length= 100
+ Cycle WALL time       0.060 s
+       USER time       0.059 s
+       SYS  time       0.001 s
+ Cumul. run time      10.456 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 295
+ 
+ Boosted CI vector length = 202
+ f boost=  3.68373535571050459E-2
+ Iterations to convergence 1
+ E   =  -109.11833443612682 from iter. diag.
+ Branched  CI vector length= 200
+ Pruned    CI vector length= 100
+ Exchanged CI vector length= 100
+ Cycle WALL time       0.057 s
+       USER time       0.057 s
+       SYS  time       0.000 s
+ Cumul. run time      10.513 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 296
+ 
+ Boosted CI vector length = 196
+ f boost=  1.68373535571050455E-2
+ Iterations to convergence 1
+ E   =  -109.11816583484614 from iter. diag.
+ Branched  CI vector length= 196
+ Pruned    CI vector length= 100    *** Full pruning ***
+ Exchanged CI vector length= 100
+ Cycle WALL time       0.055 s
+       USER time       0.055 s
+       SYS  time       0.000 s
+ Cumul. run time      10.568 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 297
+ 
+ Boosted CI vector length = 204
+ f boost=  5.68373535571050498E-2
+ Iterations to convergence 1
+ E   =  -109.11868670693087 from iter. diag.
+ Branched  CI vector length= 200
+ Pruned    CI vector length= 100
+ Exchanged CI vector length= 100
+ Cycle WALL time       0.061 s
+       USER time       0.058 s
+       SYS  time       0.003 s
+ Cumul. run time      10.629 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 298
+ 
+ Boosted CI vector length = 193
+ f boost=  1.68373535571050489E-2
+ Iterations to convergence 1
+ E   =  -109.11862382070905 from iter. diag.
+ Branched  CI vector length= 193
+ Pruned    CI vector length= 100    *** Full pruning ***
+ Exchanged CI vector length= 101
+ Cycle WALL time       0.058 s
+       USER time       0.058 s
+       SYS  time       0.000 s
+ Cumul. run time      10.687 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 299
+ 
+ Boosted CI vector length = 205
+ f boost=  8.68373535571050625E-2
+ Iterations to convergence 1
+ E   =  -109.11912515343573 from iter. diag.
+ Branched  CI vector length= 202
+ Pruned    CI vector length= 101
+ Exchanged CI vector length= 101
+ Cycle WALL time       0.062 s
+       USER time       0.061 s
+       SYS  time       0.001 s
+ Cumul. run time      10.749 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 300
+ 
+ Boosted CI vector length = 203
+ f boost=  5.71343832600753609E-2
+ Iterations to convergence 1
+ E   =  -109.11921482613917 from iter. diag.
+ Branched  CI vector length= 202
+ Pruned    CI vector length= 101    *** Full pruning ***
+ Exchanged CI vector length= 101
+ Cycle WALL time       0.058 s
+       USER time       0.058 s
+       SYS  time       0.000 s
+ Cumul. run time      10.807 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 301
+ 
+ Boosted CI vector length = 204
+ f boost=  4.72333931610654581E-2
+ Iterations to convergence 1
+ E   =  -109.11988157359974 from iter. diag.
+ Branched  CI vector length= 202
+ Pruned    CI vector length= 102
+ Exchanged CI vector length= 102
+ Cycle WALL time       0.057 s
+       USER time       0.057 s
+       SYS  time       0.000 s
+ Cumul. run time      10.864 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 302
+ 
+ Boosted CI vector length = 205
+ f boost=  2.74314129630456559E-2
+ Iterations to convergence 1
+ E   =  -109.12023426079236 from iter. diag.
+ Branched  CI vector length= 204
+ Pruned    CI vector length= 102    *** Full pruning ***
+ Exchanged CI vector length= 102
+ Cycle WALL time       0.058 s
+       USER time       0.058 s
+       SYS  time       0.000 s
+ Cumul. run time      10.922 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 303
+ 
+ Boosted CI vector length = 203
+ f boost=  1.7627491394418205E-2
+ Iterations to convergence 1
+ E   =  -109.12004165066273 from iter. diag.
+ Branched  CI vector length= 203
+ Pruned    CI vector length= 102
+ Exchanged CI vector length= 102
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time      10.981 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 304
+ 
+ Boosted CI vector length = 203
+ f boost=  2.74314129630456559E-2
+ Iterations to convergence 1
+ E   =  -109.12020326401353 from iter. diag.
+ Branched  CI vector length= 203
+ Pruned    CI vector length= 102    *** Full pruning ***
+ Exchanged CI vector length= 102
+ Cycle WALL time       0.059 s
+       USER time       0.058 s
+       SYS  time       0.001 s
+ Cumul. run time      11.040 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 305
+ 
+ Boosted CI vector length = 205
+ f boost=  3.72353345316731033E-2
+ Iterations to convergence 1
+ E   =  -109.12026528789769 from iter. diag.
+ Branched  CI vector length= 204
+ Pruned    CI vector length= 102
+ Exchanged CI vector length= 102
+ Cycle WALL time       0.056 s
+       USER time       0.055 s
+       SYS  time       0.001 s
+ Cumul. run time      11.096 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 306
+ 
+ Boosted CI vector length = 203
+ f boost=  2.74314129630456524E-2
+ Iterations to convergence 1
+ E   =  -109.11986307319799 from iter. diag.
+ Branched  CI vector length= 203
+ Pruned    CI vector length= 102    *** Full pruning ***
+ Exchanged CI vector length= 102
+ Cycle WALL time       0.056 s
+       USER time       0.055 s
+       SYS  time       0.001 s
+ Cumul. run time      11.152 s
+Wed Jul 28 17:52:40 2010
+ 
+ 
+ Diagonalization 307
+ 
+ Boosted CI vector length = 205
+ f boost=  3.72353345316731033E-2
+ Iterations to convergence 1
+ E   =  -109.12033269352230 from iter. diag.
+ Branched  CI vector length= 204
+ Pruned    CI vector length= 102
+ Exchanged CI vector length= 103
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time      11.211 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 308
+ 
+ Boosted CI vector length = 205
+ f boost=  2.74314129630456524E-2
+ Iterations to convergence 1
+ E   =  -109.12137348506812 from iter. diag.
+ Branched  CI vector length= 205
+ Pruned    CI vector length= 103    *** Full pruning ***
+ Exchanged CI vector length= 103
+ Cycle WALL time       0.064 s
+       USER time       0.063 s
+       SYS  time       0.001 s
+ Cumul. run time      11.275 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 309
+ 
+ Boosted CI vector length = 205
+ f boost=  3.71401508271233249E-2
+ Iterations to convergence 1
+ E   =  -109.12098367502813 from iter. diag.
+ Branched  CI vector length= 205
+ Pruned    CI vector length= 103
+ Exchanged CI vector length= 103
+ Cycle WALL time       0.060 s
+       USER time       0.060 s
+       SYS  time       0.000 s
+ Cumul. run time      11.335 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 310
+ 
+ Boosted CI vector length = 206
+ f boost=  4.68488886912009905E-2
+ Iterations to convergence 1
+ E   =  -109.12095138228159 from iter. diag.
+ Branched  CI vector length= 206
+ Pruned    CI vector length= 103    *** Full pruning ***
+ Exchanged CI vector length= 103
+ Cycle WALL time       0.058 s
+       USER time       0.056 s
+       SYS  time       0.002 s
+ Cumul. run time      11.393 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 311
+ 
+ Boosted CI vector length = 207
+ f boost=  4.68488886912009905E-2
+ Iterations to convergence 1
+ E   =  -109.12162924254048 from iter. diag.
+ Branched  CI vector length= 206
+ Pruned    CI vector length= 103
+ Exchanged CI vector length= 103
+ Cycle WALL time       0.060 s
+       USER time       0.060 s
+       SYS  time       0.000 s
+ Cumul. run time      11.453 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 312
+ 
+ Boosted CI vector length = 206
+ f boost=  3.71401508271233249E-2
+ Iterations to convergence 1
+ E   =  -109.12119110090327 from iter. diag.
+ Branched  CI vector length= 206
+ Pruned    CI vector length= 103    *** Full pruning ***
+ Exchanged CI vector length= 104
+ Cycle WALL time       0.056 s
+       USER time       0.055 s
+       SYS  time       0.001 s
+ Cumul. run time      11.509 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 313
+ 
+ Boosted CI vector length = 208
+ f boost=  3.71401508271233249E-2
+ Iterations to convergence 1
+ E   =  -109.12406063018062 from iter. diag.
+ Branched  CI vector length= 208
+ Pruned    CI vector length= 105
+ Exchanged CI vector length= 105
+ Cycle WALL time       0.064 s
+       USER time       0.064 s
+       SYS  time       0.000 s
+ Cumul. run time      11.573 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 314
+ 
+ Boosted CI vector length = 212
+ f boost=  3.71401508271233249E-2
+ Iterations to convergence 1
+ E   =  -109.12397480368912 from iter. diag.
+ Branched  CI vector length= 210
+ Pruned    CI vector length= 104    *** Full pruning ***
+ Exchanged CI vector length= 104
+ Cycle WALL time       0.061 s
+       USER time       0.060 s
+       SYS  time       0.001 s
+ Cumul. run time      11.634 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 315
+ 
+ Boosted CI vector length = 206
+ f boost=  1.80925317795042756E-2
+ Iterations to convergence 1
+ E   =  -109.12361872621207 from iter. diag.
+ Branched  CI vector length= 206
+ Pruned    CI vector length= 104
+ Exchanged CI vector length= 104
+ Cycle WALL time       0.074 s
+       USER time       0.074 s
+       SYS  time       0.000 s
+ Cumul. run time      11.708 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 316
+ 
+ Boosted CI vector length = 205
+ f boost=  3.73233010102735074E-2
+ Iterations to convergence 1
+ E   =  -109.12394992417649 from iter. diag.
+ Branched  CI vector length= 205
+ Pruned    CI vector length= 104    *** Full pruning ***
+ Exchanged CI vector length= 104
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time      11.767 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 317
+ 
+ Boosted CI vector length = 211
+ f boost=  6.61694548564273621E-2
+ Iterations to convergence 1
+ E   =  -109.12417074743220 from iter. diag.
+ Branched  CI vector length= 208
+ Pruned    CI vector length= 105
+ Exchanged CI vector length= 105
+ Cycle WALL time       0.060 s
+       USER time       0.060 s
+       SYS  time       0.000 s
+ Cumul. run time      11.827 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 318
+ 
+ Boosted CI vector length = 210
+ f boost=  3.73233010102735144E-2
+ Iterations to convergence 1
+ E   =  -109.12413242701408 from iter. diag.
+ Branched  CI vector length= 210
+ Pruned    CI vector length= 105    *** Full pruning ***
+ Exchanged CI vector length= 105
+ Cycle WALL time       0.061 s
+       USER time       0.060 s
+       SYS  time       0.001 s
+ Cumul. run time      11.888 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 319
+ 
+ Boosted CI vector length = 207
+ f boost=  3.73233010102735144E-2
+ Iterations to convergence 1
+ E   =  -109.12435382366360 from iter. diag.
+ Branched  CI vector length= 207
+ Pruned    CI vector length= 105
+ Exchanged CI vector length= 105
+ Cycle WALL time       0.062 s
+       USER time       0.062 s
+       SYS  time       0.000 s
+ Cumul. run time      11.950 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 320
+ 
+ Boosted CI vector length = 213
+ f boost=  6.58947295817020884E-2
+ Iterations to convergence 1
+ E   =  -109.12424042109436 from iter. diag.
+ Branched  CI vector length= 210
+ Pruned    CI vector length= 105    *** Full pruning ***
+ Exchanged CI vector length= 105
+ Cycle WALL time       0.063 s
+       USER time       0.063 s
+       SYS  time       0.000 s
+ Cumul. run time      12.013 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 321
+ 
+ Boosted CI vector length = 210
+ f boost=  3.73233010102735213E-2
+ Iterations to convergence 1
+ E   =  -109.12440741727562 from iter. diag.
+ Branched  CI vector length= 210
+ Pruned    CI vector length= 105
+ Exchanged CI vector length= 105
+ Cycle WALL time       0.068 s
+       USER time       0.068 s
+       SYS  time       0.000 s
+ Cumul. run time      12.081 s
+Wed Jul 28 17:52:41 2010
+ 
+ 
+ Diagonalization 322
+ 
+ Boosted CI vector length = 208
+ f boost=  3.73233010102735213E-2
+ Iterations to convergence 1
+ E   =  -109.12583888116430 from iter. diag.
+ Branched  CI vector length= 208
+ Pruned    CI vector length= 106    *** Full pruning ***
+ Exchanged CI vector length= 106
+ Cycle WALL time       0.064 s
+       USER time       0.062 s
+       SYS  time       0.002 s
+ Cumul. run time      12.145 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 323
+ 
+ Boosted CI vector length = 214
+ f boost=  5.63709200578925707E-2
+ Iterations to convergence 1
+ E   =  -109.12447878830980 from iter. diag.
+ Branched  CI vector length= 212
+ Pruned    CI vector length= 106
+ Exchanged CI vector length= 106
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time      12.204 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 324
+ 
+ Boosted CI vector length = 214
+ f boost=  3.75029955295906881E-2
+ Iterations to convergence 1
+ E   =  -109.12520701540052 from iter. diag.
+ Branched  CI vector length= 212
+ Pruned    CI vector length= 106    *** Full pruning ***
+ Exchanged CI vector length= 106
+ Cycle WALL time       0.068 s
+       USER time       0.068 s
+       SYS  time       0.000 s
+ Cumul. run time      12.272 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 325
+ 
+ Boosted CI vector length = 209
+ f boost=  1.8635071001288802E-2
+ Iterations to convergence 1
+ E   =  -109.12463480545927 from iter. diag.
+ Branched  CI vector length= 209
+ Pruned    CI vector length= 106
+ Exchanged CI vector length= 106
+ Cycle WALL time       0.061 s
+       USER time       0.060 s
+       SYS  time       0.001 s
+ Cumul. run time      12.333 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 326
+ 
+ Boosted CI vector length = 214
+ f boost=  4.69369577937416294E-2
+ Iterations to convergence 1
+ E   =  -109.12475369360465 from iter. diag.
+ Branched  CI vector length= 212
+ Pruned    CI vector length= 106    *** Full pruning ***
+ Exchanged CI vector length= 106
+ Cycle WALL time       0.061 s
+       USER time       0.060 s
+       SYS  time       0.001 s
+ Cumul. run time      12.394 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 327
+ 
+ Boosted CI vector length = 212
+ f boost=  2.80690332654397433E-2
+ Iterations to convergence 1
+ E   =  -109.12463789046495 from iter. diag.
+ Branched  CI vector length= 212
+ Pruned    CI vector length= 106
+ Exchanged CI vector length= 106
+ Cycle WALL time       0.061 s
+       USER time       0.060 s
+       SYS  time       0.001 s
+ Cumul. run time      12.455 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 328
+ 
+ Boosted CI vector length = 208
+ f boost=  2.80690332654397433E-2
+ Iterations to convergence 1
+ E   =  -109.12433771596972 from iter. diag.
+ Branched  CI vector length= 208
+ Pruned    CI vector length= 106    *** Full pruning ***
+ Exchanged CI vector length= 106
+ Cycle WALL time       0.059 s
+       USER time       0.058 s
+       SYS  time       0.001 s
+ Cumul. run time      12.514 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 329
+ 
+ Boosted CI vector length = 216
+ f boost=  6.5804882322043512E-2
+ Iterations to convergence 1
+ E   =  -109.12493160286328 from iter. diag.
+ Branched  CI vector length= 212
+ Pruned    CI vector length= 107
+ Exchanged CI vector length= 107
+ Cycle WALL time       0.062 s
+       USER time       0.062 s
+       SYS  time       0.000 s
+ Cumul. run time      12.576 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 330
+ 
+ Boosted CI vector length = 217
+ f boost=  2.80690332654397398E-2
+ Iterations to convergence 1
+ E   =  -109.12500665096121 from iter. diag.
+ Branched  CI vector length= 214
+ Pruned    CI vector length= 107    *** Full pruning ***
+ Exchanged CI vector length= 107
+ Cycle WALL time       0.062 s
+       USER time       0.062 s
+       SYS  time       0.000 s
+ Cumul. run time      12.638 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 331
+ 
+ Boosted CI vector length = 214
+ f boost=  3.16500878696467092E-5
+ Iterations to convergence 1
+ E   =  -109.12517691149273 from iter. diag.
+ Branched  CI vector length= 214
+ Pruned    CI vector length= 107
+ Exchanged CI vector length= 107
+ Cycle WALL time       0.062 s
+       USER time       0.062 s
+       SYS  time       0.000 s
+ Cumul. run time      12.700 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 332
+ 
+ Boosted CI vector length = 213
+ f boost=  3.16500878696467092E-5
+ Iterations to convergence 1
+ E   =  -109.12477603081001 from iter. diag.
+ Branched  CI vector length= 213
+ Pruned    CI vector length= 107    *** Full pruning ***
+ Exchanged CI vector length= 107
+ Cycle WALL time       0.060 s
+       USER time       0.059 s
+       SYS  time       0.001 s
+ Cumul. run time      12.760 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 333
+ 
+ Boosted CI vector length = 211
+ f boost=  9.3774444803930105E-3
+ Iterations to convergence 1
+ E   =  -109.12665008108786 from iter. diag.
+ Branched  CI vector length= 211
+ Pruned    CI vector length= 108
+ Exchanged CI vector length= 108
+ Cycle WALL time       0.063 s
+       USER time       0.062 s
+       SYS  time       0.001 s
+ Cumul. run time      12.823 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 334
+ 
+ Boosted CI vector length = 213
+ f boost=  3.74148276579631053E-2
+ Iterations to convergence 1
+ E   =  -109.12653980705090 from iter. diag.
+ Branched  CI vector length= 213
+ Pruned    CI vector length= 108    *** Full pruning ***
+ Exchanged CI vector length= 108
+ Cycle WALL time       0.062 s
+       USER time       0.061 s
+       SYS  time       0.001 s
+ Cumul. run time      12.885 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 335
+ 
+ Boosted CI vector length = 221
+ f boost=  6.51926054357408746E-2
+ Iterations to convergence 1
+ E   =  -109.12634819883735 from iter. diag.
+ Branched  CI vector length= 216
+ Pruned    CI vector length= 108
+ Exchanged CI vector length= 108
+ Cycle WALL time       0.063 s
+       USER time       0.063 s
+       SYS  time       0.000 s
+ Cumul. run time      12.948 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 336
+ 
+ Boosted CI vector length = 213
+ f boost=  1.88963091394445809E-2
+ Iterations to convergence 1
+ E   =  -109.12612507706390 from iter. diag.
+ Branched  CI vector length= 213
+ Pruned    CI vector length= 108    *** Full pruning ***
+ Exchanged CI vector length= 108
+ Cycle WALL time       0.060 s
+       USER time       0.060 s
+       SYS  time       0.000 s
+ Cumul. run time      13.008 s
+Wed Jul 28 17:52:42 2010
+ 
+ 
+ Diagonalization 337
+ 
+ Boosted CI vector length = 219
+ f boost=  4.66740869172223571E-2
+ Iterations to convergence 1
+ E   =  -109.12682164947026 from iter. diag.
+ Branched  CI vector length= 216
+ Pruned    CI vector length= 108
+ Exchanged CI vector length= 108
+ Cycle WALL time       0.063 s
+       USER time       0.063 s
+       SYS  time       0.000 s
+ Cumul. run time      13.071 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 338
+ 
+ Boosted CI vector length = 216
+ f boost=  1.88963091394445809E-2
+ Iterations to convergence 1
+ E   =  -109.12641296284309 from iter. diag.
+ Branched  CI vector length= 216
+ Pruned    CI vector length= 108    *** Full pruning ***
+ Exchanged CI vector length= 108
+ Cycle WALL time       0.067 s
+       USER time       0.067 s
+       SYS  time       0.000 s
+ Cumul. run time      13.138 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 339
+ 
+ Boosted CI vector length = 215
+ f boost=  1.88963091394445809E-2
+ Iterations to convergence 1
+ E   =  -109.12684649382160 from iter. diag.
+ Branched  CI vector length= 215
+ Pruned    CI vector length= 109
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.065 s
+       USER time       0.064 s
+       SYS  time       0.001 s
+ Cumul. run time      13.203 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 340
+ 
+ Boosted CI vector length = 221
+ f boost=  2.81555683987038396E-2
+ Iterations to convergence 1
+ E   =  -109.12773174363727 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 109    *** Full pruning ***
+ Exchanged CI vector length= 109
+ Cycle WALL time       0.067 s
+       USER time       0.067 s
+       SYS  time       0.000 s
+ Cumul. run time      13.270 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 341
+ 
+ Boosted CI vector length = 218
+ f boost=  1.90646593077947492E-2
+ Iterations to convergence 1
+ E   =  -109.12907038935438 from iter. diag.
+ Branched  CI vector length= 218
+ Pruned    CI vector length= 111
+ Exchanged CI vector length= 111
+ Cycle WALL time       0.079 s
+       USER time       0.077 s
+       SYS  time       0.002 s
+ Cumul. run time      13.349 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 342
+ 
+ Boosted CI vector length = 222
+ f boost=  1.90646593077947492E-2
+ Iterations to convergence 1
+ E   =  -109.12906618376306 from iter. diag.
+ Branched  CI vector length= 222
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.069 s
+       USER time       0.068 s
+       SYS  time       0.001 s
+ Cumul. run time      13.418 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 343
+ 
+ Boosted CI vector length = 221
+ f boost=  1.90646593077947492E-2
+ Iterations to convergence 1
+ E   =  -109.12891439742685 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.068 s
+       USER time       0.068 s
+       SYS  time       0.000 s
+ Cumul. run time      13.486 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 344
+ 
+ Boosted CI vector length = 215
+ f boost=  9.97375021688565871E-3
+ Iterations to convergence 1
+ E   =  -109.12926931013757 from iter. diag.
+ Branched  CI vector length= 215
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.066 s
+       USER time       0.066 s
+       SYS  time       0.000 s
+ Cumul. run time      13.552 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 345
+ 
+ Boosted CI vector length = 224
+ f boost=  5.54282956714311145E-2
+ Iterations to convergence 1
+ E   =  -109.12912951643256 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 111
+ Cycle WALL time       0.068 s
+       USER time       0.067 s
+       SYS  time       0.001 s
+ Cumul. run time      13.620 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 346
+ 
+ Boosted CI vector length = 219
+ f boost=  1.90646593077947527E-2
+ Iterations to convergence 1
+ E   =  -109.12908996041915 from iter. diag.
+ Branched  CI vector length= 219
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 111
+ Cycle WALL time       0.064 s
+       USER time       0.064 s
+       SYS  time       0.000 s
+ Cumul. run time      13.684 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 347
+ 
+ Boosted CI vector length = 225
+ f boost=  4.60916863348217812E-2
+ Iterations to convergence 1
+ E   =  -109.12948775002991 from iter. diag.
+ Branched  CI vector length= 222
+ Pruned    CI vector length= 111
+ Exchanged CI vector length= 111
+ Cycle WALL time       0.066 s
+       USER time       0.066 s
+       SYS  time       0.000 s
+ Cumul. run time      13.750 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 348
+ 
+ Boosted CI vector length = 222
+ f boost=  1.90646593077947527E-2
+ Iterations to convergence 1
+ E   =  -109.12979793298430 from iter. diag.
+ Branched  CI vector length= 222
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.061 s
+       USER time       0.061 s
+       SYS  time       0.000 s
+ Cumul. run time      13.811 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 349
+ 
+ Boosted CI vector length = 218
+ f boost=  1.90646593077947527E-2
+ Iterations to convergence 1
+ E   =  -109.12933173457787 from iter. diag.
+ Branched  CI vector length= 218
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.071 s
+       USER time       0.071 s
+       SYS  time       0.000 s
+ Cumul. run time      13.882 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 350
+ 
+ Boosted CI vector length = 219
+ f boost=  3.72464774896129336E-2
+ Iterations to convergence 1
+ E   =  -109.12946180200578 from iter. diag.
+ Branched  CI vector length= 219
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 111
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time      13.941 s
+Wed Jul 28 17:52:43 2010
+ 
+ 
+ Diagonalization 351
+ 
+ Boosted CI vector length = 224
+ f boost=  4.63373865805220275E-2
+ Iterations to convergence 1
+ E   =  -109.12972909653169 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.068 s
+       USER time       0.067 s
+       SYS  time       0.001 s
+ Cumul. run time      14.009 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 352
+ 
+ Boosted CI vector length = 221
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12960788938392 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.063 s
+       USER time       0.063 s
+       SYS  time       0.000 s
+ Cumul. run time      14.072 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 353
+ 
+ Boosted CI vector length = 219
+ f boost=  8.82841125976575186E-4
+ Iterations to convergence 1
+ E   =  -109.12945886542332 from iter. diag.
+ Branched  CI vector length= 219
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.062 s
+       USER time       0.062 s
+       SYS  time       0.000 s
+ Cumul. run time      14.134 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 354
+ 
+ Boosted CI vector length = 218
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12972785129321 from iter. diag.
+ Branched  CI vector length= 218
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.063 s
+       USER time       0.063 s
+       SYS  time       0.000 s
+ Cumul. run time      14.197 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 355
+ 
+ Boosted CI vector length = 222
+ f boost=  2.81555683987038466E-2
+ Iterations to convergence 1
+ E   =  -109.12976043734068 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.066 s
+       USER time       0.065 s
+       SYS  time       0.001 s
+ Cumul. run time      14.263 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 356
+ 
+ Boosted CI vector length = 218
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12928395096688 from iter. diag.
+ Branched  CI vector length= 218
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.061 s
+       USER time       0.061 s
+       SYS  time       0.000 s
+ Cumul. run time      14.324 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 357
+ 
+ Boosted CI vector length = 222
+ f boost=  2.81555683987038466E-2
+ Iterations to convergence 1
+ E   =  -109.12970485357286 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.063 s
+       USER time       0.063 s
+       SYS  time       0.000 s
+ Cumul. run time      14.387 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 358
+ 
+ Boosted CI vector length = 220
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12969110999262 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.066 s
+       USER time       0.065 s
+       SYS  time       0.001 s
+ Cumul. run time      14.453 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 359
+ 
+ Boosted CI vector length = 219
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12981045069458 from iter. diag.
+ Branched  CI vector length= 219
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.067 s
+       USER time       0.067 s
+       SYS  time       0.000 s
+ Cumul. run time      14.520 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 360
+ 
+ Boosted CI vector length = 221
+ f boost=  1.90646593077947561E-2
+ Iterations to convergence 1
+ E   =  -109.12947932057693 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.064 s
+       USER time       0.063 s
+       SYS  time       0.001 s
+ Cumul. run time      14.584 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 361
+ 
+ Boosted CI vector length = 220
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12926790194172 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.061 s
+       USER time       0.061 s
+       SYS  time       0.000 s
+ Cumul. run time      14.645 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 362
+ 
+ Boosted CI vector length = 212
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12976503540150 from iter. diag.
+ Branched  CI vector length= 212
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.059 s
+       USER time       0.059 s
+       SYS  time       0.000 s
+ Cumul. run time      14.704 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 363
+ 
+ Boosted CI vector length = 224
+ f boost=  8.27010229441583894E-2
+ Iterations to convergence 1
+ E   =  -109.12967267804197 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.064 s
+       USER time       0.063 s
+       SYS  time       0.001 s
+ Cumul. run time      14.768 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 364
+ 
+ Boosted CI vector length = 224
+ f boost=  4.63373865805220275E-2
+ Iterations to convergence 1
+ E   =  -109.13031153945295 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.064 s
+       USER time       0.064 s
+       SYS  time       0.000 s
+ Cumul. run time      14.832 s
+Wed Jul 28 17:52:44 2010
+ 
+ 
+ Diagonalization 365
+ 
+ Boosted CI vector length = 217
+ f boost=  9.97375021688566565E-3
+ Iterations to convergence 1
+ E   =  -109.12947143526782 from iter. diag.
+ Branched  CI vector length= 217
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.064 s
+       USER time       0.063 s
+       SYS  time       0.001 s
+ Cumul. run time      14.896 s
+Wed Jul 28 17:52:45 2010
+ 
+ 
+ Diagonalization 366
+ 
+ Boosted CI vector length = 223
+ f boost=  3.72464774896129336E-2
+ Iterations to convergence 1
+ E   =  -109.12925556218127 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.061 s
+       USER time       0.061 s
+       SYS  time       0.000 s
+ Cumul. run time      14.957 s
+Wed Jul 28 17:52:45 2010
+ 
+ 
+ Diagonalization 367
+ 
+ Boosted CI vector length = 219
+ f boost=  9.97375021688566218E-3
+ Iterations to convergence 1
+ E   =  -109.12981973053874 from iter. diag.
+ Branched  CI vector length= 219
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.063 s
+       USER time       0.063 s
+       SYS  time       0.000 s
+ Cumul. run time      15.020 s
+Wed Jul 28 17:52:45 2010
+ 
+ 
+ Diagonalization 368
+ 
+ Boosted CI vector length = 215
+ f boost=  1.90646593077947527E-2
+ Iterations to convergence 1
+ E   =  -109.12955072049783 from iter. diag.
+ Branched  CI vector length= 215
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.062 s
+       USER time       0.062 s
+       SYS  time       0.000 s
+ Cumul. run time      15.082 s
+Wed Jul 28 17:52:45 2010
+ 
+ 
+ Diagonalization 369
+ 
+ Boosted CI vector length = 224
+ f boost=  6.45192047623402154E-2
+ Iterations to convergence 1
+ E   =  -109.12964277124289 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.068 s
+       USER time       0.068 s
+       SYS  time       0.000 s
+ Cumul. run time      15.150 s
+Wed Jul 28 17:52:45 2010
+ 
+ 
+ Diagonalization 370
+ 
+ Boosted CI vector length = 221
+ f boost=  2.81555683987038535E-2
+ Iterations to convergence 1
+ E   =  -109.12934476434498 from iter. diag.
+ Branched  CI vector length= 220
+ Pruned    CI vector length= 110    *** Full pruning ***
+ Exchanged CI vector length= 110
+ Cycle WALL time       0.063 s
+       USER time       0.062 s
+       SYS  time       0.001 s
+ Cumul. run time      15.213 s
+Wed Jul 28 17:52:45 2010
+ 
+ 
+ Diagonalization 371
+ 
+ Iterations to convergence 1
+ E   =  -109.12916790889608 from iter. diag.
+ Branched  CI vector length= 110
+ Cycle WALL time       0.040 s
+       USER time       0.040 s
+       SYS  time       0.000 s
+ Cumul. run time      15.253 s
+Wed Jul 28 17:52:45 2010
