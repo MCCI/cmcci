@@ -1,35 +1,61 @@
+module mcci_in
+  use commonarrays
+  use precision 
+
+  integer :: iword
+
+  integer  ::  maxbfs,irmax,max1,max2,maxocc,maxc,kmax,maxh,maxs
+  
+  integer  ::  maxtry          ! the number of diagonalisations
+  integer  ::  lmin            ! min vector length
+  integer  ::  nbyte           ! number of bytes / integer word
+  integer  ::  int_bits        ! bits / integer word
+  integer  ::  npfull          ! perform full pruning after npfull steps
+  integer  ::  lref            ! length of ref vector; <=length; if =0 then =length
+  integer  ::  lkeep           ! cnfgs #1 to #lkeep never touched in pruning
+  integer  ::  conv_average    ! for making E(iter) and length(iter) func. smoother
+  integer  ::  conv_history    ! how many DE amd Dlength values being tracked
+  
+  real(kind=pr)  ::  cmin
+  real(kind=pr)  ::  hmin            ! h matrix threshold
+  real(kind=pr)  ::  davidson_stop   ! stop for convergence in davidson
+  real(kind=pr)  ::  bmin            ! min vector boost
+  real(kind=pr)  ::  bmax            ! max vector boost
+  real(kind=pr)  ::  cref            ! c>cref is treated as a ref. for branching
+  real(kind=pr)  ::  frac            ! rand < frac for branching
+  real(kind=pr)  ::  conv_thresh_e   ! <DE> < conv_thresh_e to stop
+  real(kind=pr)  ::  conv_thresh_l   ! <Dlength> < conv_thresh_l to stop
+  
+  logical  :: test            ! error checking
+  logical  :: time            ! timing information, general
+  logical  :: time_all        ! timing information, detailed
+  logical  :: generate_cfgs   ! running with/without generating new cfgs
+  logical  :: nobrnch_first   ! no branching in the first step
+  logical  :: nodiag          ! only for collecting CSFs
+  logical  :: i_want_conv     ! stop mcci by using convergence crit.
+  logical  :: npfull_conv     ! convergence test only in npfull steps
+  logical  :: caps            ! true if we are running in complex mode
+
+contains
+
 subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
                         icij,inflg,n_alpha,n_beta,ntotal,i_sx2, &
                         SCF_integral_filename,wints_filename,   &
                         ieig,nfreeze,ifreeze,nactive,iactive)
 
-  use commonarrays, only: me
-  use dyn_par,      only: maxtry, lmin,nbyte,int_bits,npfull,   &
-                          lref,lkeep,conv_average,conv_history, &
-                          cmin,hmin,davidson_stop,bmin,bmax,    &
-                          cref,frac,conv_thresh_e,conv_thresh_l,&
-                          test,time,time_all,generate_cfgs,     &
-                          nobrnch_first,nodiag,i_want_conv,     &
-                          npfull_conv, caps
 
   ! written by Paul Delaney 25 October 2005.
   
   use precision 
 
-  implicit none                   ! just say no
+  implicit none
 
-  !common  /para/    me, nproc
-
-  ! input variables
   integer, intent(in)  :: iword
   integer, intent(in)  :: maxc
   integer, intent(in)  :: maxocc
   integer, intent(in)  :: maxbfs
 
-  ! parameters which used to be in params, whether with defaults or not
-
   ! parameters for which there are no defaults.
-
   integer,        intent(out) :: inflg
   integer,        intent(out) :: n_alpha
   integer,        intent(out) :: n_beta
@@ -37,9 +63,12 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   ! also maxtry,cmin
 
   ! parameters for which there are defaults.
-
-  character (len=12), intent(out) :: SCF_integral_filename  ! standard one- and two-electron integrals of the mos.
-  character (len=12), intent(out) :: wints_filename  ! one-electron integrals of the CAP.
+  character (len=12), intent(out) :: SCF_integral_filename  ! standard one- and
+                                                            ! two-electron
+                                                            ! integrals of the
+                                                            !mos.
+  character (len=12), intent(out) :: wints_filename  ! one-electron integrals
+                                                     ! of the CAP.
   integer,            intent(out) :: ieig
   integer,            intent(out) :: nfreeze
   integer,            intent(out) :: ifreeze(maxocc)
@@ -549,92 +578,281 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
 8010 format (1x, a, i6)             ! integers
 8020 format (1x, a, 5x, l1)         ! logicals
     
-contains
+end subroutine read_mcci_in
     
-  subroutine parse_line(line, keyword_string, value_string)
+subroutine read_params()
+  !This subroutine is similar to read_mcci_in.f90.  mcci.in is
+  !scanned for parameter keywords.
+  ! March 2010
 
-    implicit none                          ! just say no
+  implicit none   
+  integer  :: i
 
-    ! input variables
-    character (len=*), intent(in) :: line
+  ! local variables
+  integer, parameter   :: line_length           = 79             ! the length of the line we read in from the control file
+  integer, parameter   :: num_nondefault_params =  4             ! the number of program parameters for which there are no default values
+  integer              :: rubbish(4)
 
-    ! output variables
-    character (len=len(line)), intent(out) :: keyword_string
-    character (len=len(line)), intent(out) :: value_string
+  ! variables related to reading info from turbomole
+  integer, allocatable :: idim(:),nlamda(:),norbs(:)
+  integer              :: isym, isym_temp
+  character, allocatable :: ityp(:)
 
-    ! local variables
-    integer                    :: comment_position
-    character (len=len(line))  :: working_line
-    integer                    :: i
-    integer                    :: equals_leftmost_position
-    integer                    :: equals_rightmost_position
-    integer                    :: equals_position
+  character (len=6)            :: format_string
+  character (len=line_length)  :: line
+  character (len=line_length)  :: keyword_string
+  character (len=line_length)  :: value_string
+  character (len=12)  :: SCF_integral_filename
 
-    ! Start of executable
+  logical                      :: nondefault_param_set (num_nondefault_params)
+  character (len=line_length)  :: nondefault_param_name(num_nondefault_params)
 
-    working_line = line
+  open(10, file='mcci.in', form='formatted', status='old')
+  rewind(10)
+
+  nondefault_param_name(1)  = 'maxh'
+  nondefault_param_name(2)  = 'kmax'
+  nondefault_param_name(3)  = 'maxc'
+  nondefault_param_name(4)  = 'SCF_integral_filename'
+
+  nondefault_param_set = .FALSE.
+  int_bits = 32
+
+  select case (line_length)
+  case (10:99)
+     write(format_string, '(a2,i2,a1)' ) '(a',line_length,')'            ! (a79),  for example
+  case (100:999)
+     write(format_string, '(a2,i3,a1)' ) '(a',line_length,')'            ! (a132), for example
+  case default
+     if (me.eq.0) then
+        write(50,*)
+        write(50,*) 'Problem in subroutine read_mcci_in.f90'
+        write(50,*) 'The parameter line_length is ',line_length
+        write(50,*) 'and we are only set up to deal with line_length in the range 10 ... 999'
+        write(50,*) 'Stopping...'
+     endif
+     stop
+  end select
+
+  do
+     read(10, format_string, end=7000) line
+     call parse_line(line, keyword_string, value_string)
+     keyword_string = to_lower_case(keyword_string)
+
+     select case (trim(adjustl(keyword_string)))
+
+     case ('skip')  ! This means a blank line, or one with only a comment.
+
+     case ('maxh')
+        read(value_string,*) maxh
+        call non_negative_integer(maxh, 'maxh')
+        nondefault_param_set (1) = .TRUE.
+
+     case ('kmax')
+        read(value_string,*) kmax
+        call non_negative_integer(kmax, 'kmax')
+        nondefault_param_set (2) = .TRUE.
+
+     case ('maxc')
+        read(value_string,*) maxc
+        call non_negative_integer(maxc, 'maxc')
+        nondefault_param_set (3) = .TRUE.
+
+     case ('scf_integral_filename')
+        read(value_string,*) SCF_integral_filename
+        SCF_integral_filename = trim(adjustl(SCF_integral_filename))
+        select case (trim(SCF_integral_filename))
+        case ('moints.TM')
+        case ('moints.ascii')
+        case default
+           if (me.eq.0) then
+              write(50,*)
+              write(50,*) 'SCF_integral_filename must be moints.TM or moints.ascii'
+              write(50,*) 'Stopping...'
+           endif
+           stop
+        end select
+        nondefault_param_set(4) = .TRUE.
+
+     case default
+
+     end select
+
+  end do
+     
+7000 continue
+
+  if ( any( .NOT. nondefault_param_set) ) then
+     if (me.eq.0) then
+        write(50,*)
+        write(50,*) 'Problem in subroutine read_params.f90'
+        write(50,*)
+        write(50,*) 'In reading in the control file "mcci.in", we could not'
+        write(50,*) 'find values for the following parameter(s):'
+        write(50,*)
+     endif
+     
+     do i=1,num_nondefault_params
+        if (me.eq.0) then
+           if (.NOT. nondefault_param_set(i)) write(50,*) nondefault_param_name(i)
+        endif
+     end do
+     
+     if (me.eq.0) then
+        write(50,*) 'These parameter(s) do not have default values, and so must be set explicitly.'
+        write(50,*) 'Stopping...'
+     endif
+     stop
+  end if
+
+  close(10)
+
+  select case (trim(SCF_integral_filename))
+
+  case('moints.ascii')
+     open(20, file='moints.ascii', form='formatted')
+     read(20,'(6i9)') rubbish(1), irmax, maxbfs, rubbish(2), rubbish(3), rubbish(4)
+     close(20)
+
+  case('moints.TM')
+     open(20,file='moints.TM',form='formatted')
+     rewind(20)
+     do i=1,40
+        read(20,*)
+     enddo
+
+     read(20,*) irmax
+     allocate(ityp   (irmax))
+     allocate(idim   (irmax))
+     allocate(nlamda(irmax))
+     allocate(norbs  (irmax))
+     do i=1,6  ! Skip blank, "for each irr", "----", blank, "number :", blank
+          read (20,*)
+     end do
+     ityp  (:) = '    '
+     idim  (:) = 0
+     nlamda(:) = 0
+     norbs (:) = 0
+
+     maxbfs = 0
+
+     do isym = 1,irmax
+
+        read(20,1000) isym_temp, ityp(isym), idim(isym),& 
+                       nlamda(isym), norbs(isym)
 
 
-    ! First, look for "!", the comment sign, and convert it and everything rightwards of it to spaces.
+        maxbfs = maxbfs + idim(isym)*norbs(isym)
 
-    comment_position = index(working_line,'!')
+        if (isym /= isym_temp) then
+           write(50,*)
+           write(50,*) 'Problem in get_int_skip_TM.f'
+           write(50,*) 'isym     =',isym
+           write(50,*) 'isym_temp=',isym_temp
+           write(50,*) 'These should be equal.'
+           write(50,*) 'Stopping...'
+           stop
+        end if
+     end do
+     close(20) 
+  end select
 
-    if (comment_position /= 0) working_line = working_line(1:comment_position-1)
+  iword  = maxbfs/int_bits + 1
+  max1   = maxbfs*(maxbfs+1)/2
+  max2   =  max1*(max1+1)/2
+  maxocc = 2*maxbfs
+  maxs   = maxh/50
 
-
-    ! Remove all funny control characters, like CTRL-x's and TABS, and convert them all to spaces.
-
-    do i=1,len(line)
-       if (iachar(working_line(i:i)) <= 31) working_line(i:i) = ' ' 
-    end do
-
-
-
-    ! Now see if we have a purely blank line.        
-    if (len_trim(working_line) == 0) then
-       keyword_string = 'skip'
-       return
-    end if
-
-    ! From here on, we assume we have a line with a KEYWORD = VALUE statement in it
-    ! The keyword is defined to be the connected component before the = sign, and the value that after.
-
-    ! First, check we have one "=" present
-
-    equals_leftmost_position  = index(working_line, '=', back=.FALSE.)
-    equals_rightmost_position = index(working_line, '=', back=.TRUE.)
-
-    if (equals_leftmost_position == 0) then
-       if(me.eq.0) then
-          write(50,*)
-          write(50,*) 'Problem in subroutine read_mcci_in.f90'
-          write(50,*) 'The line we are processing from the control file is:'
-          write(50,*) line
-          write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find no equal-to sign "=" '
-          write(50,*) 'Stopping...'
-       endif
-       stop
-    end if
-
-    if (equals_leftmost_position /= equals_rightmost_position) then
-       if(me.eq.0) then
-          write(50,*)
-          write(50,*) 'Problem in subroutine read_mcci_in.f90'
-          write(50,*) 'The line we are processing from the control file is:'
-          write(50,*) line
-          write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find more than one equal-to sign "=" '
-          write(50,*) 'Stopping...'
-       endif
-       stop
-    end if
-
-    ! Now we know we have precisely one equal-to sign
-    equals_position = equals_leftmost_position
+      
+8010 format (1x, a, i6)             ! integers
+1000 format(2x,i3,7x,a4,6x,i3,8x,i5,5x,i5) !moints.TM
     
-    keyword_string  = working_line(1:equals_position-1)
-    value_string    = working_line(equals_position+1:)
-    
-  end subroutine parse_line
+end subroutine read_params
+
+subroutine parse_line(line, keyword_string, value_string)
+
+  implicit none                          ! just say no
+
+  ! input variables
+  character (len=*), intent(in) :: line
+
+  ! output variables
+  character (len=len(line)), intent(out) :: keyword_string
+  character (len=len(line)), intent(out) :: value_string
+
+  ! local variables
+  integer                    :: comment_position
+  character (len=len(line))  :: working_line
+  integer                    :: i
+  integer                    :: equals_leftmost_position
+  integer                    :: equals_rightmost_position
+  integer                    :: equals_position
+
+  ! Start of executable
+
+  working_line = line
+
+
+  ! First, look for "!", the comment sign, and convert it and everything rightwards of it to spaces.
+
+  comment_position = index(working_line,'!')
+
+  if (comment_position /= 0) working_line = working_line(1:comment_position-1)
+
+
+  ! Remove all funny control characters, like CTRL-x's and TABS, and convert them all to spaces.
+
+  do i=1,len(line)
+     if (iachar(working_line(i:i)) <= 31) working_line(i:i) = ' ' 
+  end do
+
+
+
+  ! Now see if we have a purely blank line.        
+  if (len_trim(working_line) == 0) then
+     keyword_string = 'skip'
+     return
+  end if
+
+  ! From here on, we assume we have a line with a KEYWORD = VALUE statement in it
+  ! The keyword is defined to be the connected component before the = sign, and the value that after.
+
+  ! First, check we have one "=" present
+
+  equals_leftmost_position  = index(working_line, '=', back=.FALSE.)
+  equals_rightmost_position = index(working_line, '=', back=.TRUE.)
+
+  if (equals_leftmost_position == 0) then
+     if(me.eq.0) then
+        write(50,*)
+        write(50,*) 'Problem in subroutine read_mcci_in.f90'
+        write(50,*) 'The line we are processing from the control file is:'
+        write(50,*) line
+        write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find no equal-to sign "=" '
+        write(50,*) 'Stopping...'
+     endif
+     stop
+  end if
+
+  if (equals_leftmost_position /= equals_rightmost_position) then
+     if(me.eq.0) then
+        write(50,*)
+        write(50,*) 'Problem in subroutine read_mcci_in.f90'
+        write(50,*) 'The line we are processing from the control file is:'
+        write(50,*) line
+        write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find more than one equal-to sign "=" '
+        write(50,*) 'Stopping...'
+     endif
+     stop
+  end if
+
+  ! Now we know we have precisely one equal-to sign
+  equals_position = equals_leftmost_position
+  
+  keyword_string  = working_line(1:equals_position-1)
+  value_string    = working_line(equals_position+1:)
+  
+end subroutine parse_line
 
   
   subroutine read_orbital_list(line_in, list_out, num_orbs, syntax_error)
@@ -958,6 +1176,8 @@ contains
   end subroutine non_negative_real
 
 
+  
+
   function to_lower_case(string)
      
     ! replace all upper case characters in "string" with lower case ones
@@ -988,6 +1208,5 @@ contains
     end do
 
   end function to_lower_case
-  
-end subroutine read_mcci_in
 
+end module mcci_in

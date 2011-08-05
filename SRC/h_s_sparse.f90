@@ -1,6 +1,6 @@
 subroutine h_s_sparse(length,llast)
   use commonarrays
-  use dyn_par
+  use mcci_in
   use precision
   implicit none
 

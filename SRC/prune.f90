@@ -1,6 +1,6 @@
 subroutine prune(length,llast,i_got_hit,prune_all,ieig)
   use commonarrays, only: icij, nword, c, b, s
-  use dyn_par
+  use mcci_in
   use precision
 
   implicit none

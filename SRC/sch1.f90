@@ -1,6 +1,6 @@
 subroutine sch1(element,i_am_mu,i_am_nu,nu_doubly,idiff1,kck,n_2p,ep) 
   !use commonarrays, only: list, nsym, nbft, nbpsy !none of these are used ?
-  use dyn_par
+  use mcci_in
   implicit none
 
   complex(kind=pr),  intent(out)     :: element

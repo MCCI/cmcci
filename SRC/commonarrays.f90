@@ -1,6 +1,5 @@
 module commonarrays
   use precision
-  use dyn_par
   
   integer ,allocatable     ::   icij(:,:,:)
   integer ,allocatable     ::   ijh(:), ijs(:)

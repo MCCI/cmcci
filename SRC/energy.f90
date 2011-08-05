@@ -1,6 +1,6 @@
 subroutine energy(length,eval,dnorm)
   use commonarrays, only: c, h, ijh, s, ijs
-  use dyn_par
+  use mcci_in
   use precision
 
   implicit none

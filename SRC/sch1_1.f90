@@ -1,6 +1,6 @@
 subroutine sch1_1(element,i_am_mu,i_am_nu,nu_doubly,idiff1,kck,n_2p,ep)
   use commonarrays, only: nbft, e1ints, e2ints, ntotal, i_sx2, ipoint, list
-  use dyn_par
+  use mcci_in
   implicit none
 
 

@@ -1,8 +1,8 @@
 subroutine init(seed,ecore,inflg,ieig)
   use precision
   use commonarrays 
-  use dyn_par
   use rng
+  use mcci_in
 
   implicit none
 

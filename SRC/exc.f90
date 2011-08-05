@@ -1,6 +1,6 @@
 subroutine exc(l_end,l_begin,l_to,iexc)
   use commonarrays, only: c, icij, me
-  use dyn_par
+  use mcci_in
   use precision
 
   implicit none

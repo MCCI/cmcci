@@ -1,6 +1,6 @@
 subroutine s_move(length,llast) 
   use commonarrays, only: s, ijs
-  use dyn_par
+  use mcci_in
 
   implicit  none
 

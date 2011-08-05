@@ -1,6 +1,6 @@
 subroutine chk_list(l2,l1)
   use commonarrays, only: icij,nword
-  use dyn_par
+  use mcci_in
 
   implicit none
 

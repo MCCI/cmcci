@@ -1,5 +1,5 @@
 subroutine sch2(element,i_am_mu,i_am_nu,nu_doubly,idiff1,idiff2,kck,n_2p,ep)
-  use dyn_par
+  use mcci_in
   implicit none
 
   complex(kind=pr),  intent(out)     :: element

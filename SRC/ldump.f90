@@ -1,6 +1,6 @@
 subroutine ldump(i_am_nu,i_am_mu,nu_doubly)
   use commonarrays
-  use dyn_par
+  use mcci_in
 
   implicit none
 

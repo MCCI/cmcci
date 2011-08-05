@@ -1,6 +1,6 @@
 subroutine swap(m,n,ep,i_am_mu,swapped)
   use commonarrays, only: list, nbft, my_pair
-  use dyn_par
+  use mcci_in
   implicit none
   
   integer, intent(in)          :: m, n

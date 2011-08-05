@@ -1,6 +1,6 @@
 subroutine init_bk(ieig,length,inflg)
   use commonarrays, only: c, b
-  use dyn_par
+  use mcci_in
   use precision
 
   implicit none

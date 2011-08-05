@@ -1,6 +1,6 @@
 subroutine get_int_TM(ecore)
   use commonarrays, only:ipoint,icij,nword,nsym,nbft,nbpsy,e1ints,e2ints
-  use dyn_par
+  use mcci_in
   use precision
   !     get one- and two-electron integrals from Turbomole, plus some other data
 

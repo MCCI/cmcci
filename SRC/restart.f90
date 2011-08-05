@@ -1,6 +1,6 @@
 subroutine restart(length)
   use commonarrays, only: c, icij, nword
-  use dyn_par
+  use mcci_in
   use precision
 
   implicit none

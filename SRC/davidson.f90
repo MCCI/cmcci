@@ -1,6 +1,6 @@
 subroutine davidson(length,ieig,idiag)
   use commonarrays, only: hf, sf, b, h, ijh, s, ijs, c, e
-  use dyn_par
+  use mcci_in
   use precision
   use matrixtools
 

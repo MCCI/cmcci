@@ -1,6 +1,6 @@
 subroutine sym_init
   use commonarrays, only: irrep
-  use dyn_par
+  use mcci_in
   integer        :: i
   !common /sym/  irrep(0:irmax-1)
 

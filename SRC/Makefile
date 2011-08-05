@@ -33,8 +33,8 @@ OBJS =  mcci.o get_int.o branch.o singles.o doubles.o reorder.o swap.o\
         get_case1.o get_case2.o restart.o muHnu.o matrixtools.o \
         wxmxv_sparse.o h_move.o s_move.o timer.o ck.o dump.o   \
         ldump.o genealogy.o davidson.o h_s_reduced.o init_bk.o exc.o \
-        get_int_TM.o get_int_bTM.o get_int_W.o precision.o read_mcci_in.o \
-        commonarrays.o dyn_par.o read_params.o rng.o
+        get_int_TM.o get_int_bTM.o get_int_W.o precision.o mcci_in.o \
+        commonarrays.o rng.o
 
 mcci:   $(OBJS)
 	$(FC) $(FFLAGS) $(LFLAGS) -o $(DEST)$@ $(OBJS) $(LIBS) 
@@ -43,23 +43,23 @@ mcci:   $(OBJS)
 clean:
 	rm -f *.o *.mod mcci
  
-mcci.o:	      dyn_par.o commonarrays.o read_params.o precision.o matrixtools.o rng.o
-get_int.o:              dyn_par.o commonarrays.o               precision.o
-init.o:              dyn_par.o commonarrays.o               precision.o
-h_s_sparse.o:           dyn_par.o commonarrays.o               precision.o
+mcci.o:	      mcci_in.o commonarrays.o precision.o matrixtools.o rng.o
+get_int.o:              mcci_in.o commonarrays.o               precision.o
+init.o:              mcci_in.o mcci_in.o commonarrays.o               precision.o
+h_s_sparse.o:           mcci_in.o commonarrays.o               precision.o
 h_s_reduced.o:                    commonarrays.o matrixtools.o precision.o
-muHnu.o:		dyn_par.o commonarrays.o               precision.o
-reorder.o:		dyn_par.o commonarrays.o               precision.o
+muHnu.o:		mcci_in.o commonarrays.o               precision.o
+reorder.o:		mcci_in.o commonarrays.o               precision.o
 swap.o:   		          commonarrays.o               precision.o
 matrixtools.o:		          commonarrays.o               precision.o
 wxmxv_sparse.o:		          commonarrays.o               precision.o
 h_move.o:		          commonarrays.o               precision.o
 s_move.o:		          commonarrays.o               precision.o
-branch.o:		dyn_par.o commonarrays.o               precision.o  rng.o
-genealogy.o:		dyn_par.o commonarrays.o               precision.o  rng.o
-prune.o: 		dyn_par.o commonarrays.o               precision.o
-singles.o:      	dyn_par.o commonarrays.o               precision.o  rng.o
-doubles.o:	        dyn_par.o commonarrays.o               precision.o  rng.o
+branch.o:		mcci_in.o commonarrays.o               precision.o  rng.o
+genealogy.o:		mcci_in.o commonarrays.o               precision.o  rng.o
+prune.o: 		mcci_in.o commonarrays.o               precision.o
+singles.o:      	mcci_in.o commonarrays.o               precision.o  rng.o
+doubles.o:	        mcci_in.o commonarrays.o               precision.o  rng.o
 chk_list.o:		          commonarrays.o               precision.o
 sym_init.o:		          commonarrays.o               precision.o
 energy.o:  		          commonarrays.o               precision.o
@@ -80,19 +80,17 @@ get_case2.o:		          commonarrays.o               precision.o
 restart.o:		          commonarrays.o               precision.o
 dump.o:  		          commonarrays.o               precision.o
 ldump.o:  		          commonarrays.o               precision.o
-davidson.o:		dyn_par.o commonarrays.o matrixtools.o  precision.o
+davidson.o:		mcci_in.o commonarrays.o matrixtools.o  precision.o
 init_bk.o:		          commonarrays.o               precision.o
-get_int_TM.o:		dyn_par.o commonarrays.o               precision.o
-get_int_bTM.o:		dyn_par.o commonarrays.o               precision.o
-get_int_W.o:		dyn_par.o commonarrays.o               precision.o
+get_int_TM.o:		mcci_in.o commonarrays.o               precision.o
+get_int_bTM.o:		mcci_in.o commonarrays.o               precision.o
+get_int_W.o:		mcci_in.o commonarrays.o               precision.o
 precision.o: 
-exc.o:                  dyn_par.o commonarrays.o               precision.o
-read_mcci_in.o:	        dyn_par.o commonarrays.o               precision.o 
+exc.o:                  mcci_in.o commonarrays.o               precision.o
+mcci_in.o:	                  commonarrays.o               precision.o 
 commonarrays.o:                                                precision.o
-dyn_par.o:                                                     precision.o
 timer.o:                                                       precision.o
 ck.o:                                                          precision.o
-read_params.o:		                                       precision.o
 rng.o:     		          commonarrays.o               precision.o
 
 .SUFFIXES:

@@ -1,6 +1,6 @@
 subroutine h_move(length,llast) 
   use commonarrays, only: h, ijh
-  use dyn_par
+  use mcci_in
 
   implicit  none
 

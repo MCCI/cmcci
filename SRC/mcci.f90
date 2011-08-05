@@ -1,6 +1,6 @@
 program mcci
   use commonarrays
-  use dyn_par
+  use mcci_in
   use precision
   use matrixtools
   use rng

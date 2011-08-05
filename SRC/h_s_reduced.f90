@@ -1,6 +1,6 @@
 subroutine h_s_reduced(length,kl,ku)
   use commonarrays, only: h, ijh, s, ijs, hf, sf, b
-  use dyn_par
+  use mcci_in
   use precision
   use matrixtools
 

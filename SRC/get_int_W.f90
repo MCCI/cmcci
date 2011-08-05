@@ -1,6 +1,6 @@
 subroutine get_int_W(filename)
   use commonarrays
-  use dyn_par
+  use mcci_in
   use precision
 
   implicit none

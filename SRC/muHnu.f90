@@ -1,6 +1,6 @@
 subroutine muHnu(ici,jci,element,n_2p,s_overlap)
   use commonarrays, only: nbft, icij, nword, i_sx2
-  use dyn_par
+  use mcci_in
   use precision
   implicit none
 

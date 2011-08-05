@@ -1,6 +1,6 @@
 subroutine sch2_3(element,i_am_mu,i_am_nu,idiff1,idiff2,nu_doubly,kck,n_2p,ep)
   use commonarrays, only: list, nbft, e2ints, ntotal, i_sx2, ipoint
-  use dyn_par
+  use mcci_in
   use precision
   implicit none
   

@@ -1,6 +1,6 @@
 subroutine get_case1(idiff1,i_am_mu,i_am_nu,my_case)
   use commonarrays, only: nbft, ntotal, list, my_pair
-  use dyn_par
+  use mcci_in
 
   implicit none
 

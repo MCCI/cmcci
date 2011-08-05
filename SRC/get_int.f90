@@ -1,6 +1,6 @@
 subroutine get_int(ecore)
   use commonarrays, only: nsym, nbft, nbpsy, e1ints, e2ints, ipoint, nword
-  use dyn_par
+  use mcci_in
   implicit real*8  (a-h,o-z)
   !common  /aodat/   nsym, nbft, nbpsy(irmax)
   !common  /ints/    e1ints(max1), e2ints(max2)

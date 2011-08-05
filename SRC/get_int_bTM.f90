@@ -1,6 +1,6 @@
 subroutine get_int_bTM(ecore)
       use commonarrays
-      use dyn_par
+      use mcci_in
 !     Read in the one- and two-electron integrals from disk.
 !     Do this in binary format, from the modified dscf/mpgrad turbomole calculation
 
