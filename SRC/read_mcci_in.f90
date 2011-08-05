@@ -116,7 +116,7 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   nodiag            = .FALSE.      ! only for collecting CSFs
   i_want_conv       = .FALSE.      ! stop mcci by using convergence crit.
   npfull_conv       = .TRUE.       ! convergence test only in npfull steps
-  caps              = .TRUE.       ! use complex absorbing potentials
+  caps              = .FALSE.       ! use complex absorbing potentials
 
   open(10, file='mcci.in', form='formatted', status='old')
   rewind(10)
