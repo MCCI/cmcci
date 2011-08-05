@@ -1,4 +1,4 @@
-Fri Aug  5 15:25:49 
+Fri Aug  5 15:49:31 
 
                     m c c i  3.0
 
@@ -80,10 +80,10 @@ Fri Aug  5 15:25:49
  Branched  CI vector length=           79
  Pruned    CI vector length=            2    *** Full pruning ***
  Cycle WALL time       0.170 s
-       USER time       0.110 s
-       SYS  time       0.060 s
+       USER time       0.120 s
+       SYS  time       0.050 s
  Cumul. run time       0.170 s
-Fri Aug  5 15:25:52 
+Fri Aug  5 15:49:33 
 
 
  Diagonalization            2
@@ -95,4 +95,4 @@ Fri Aug  5 15:25:52
        USER time       0.050 s
        SYS  time       0.050 s
  Cumul. run time       0.270 s
-Fri Aug  5 15:25:52 
+Fri Aug  5 15:49:33 
