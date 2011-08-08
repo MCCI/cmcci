@@ -1,4 +1,4 @@
-subroutine init_bk(ieig,length,inflg)
+subroutine init_bk(ieig,length)
   use commonarrays, only: c, b
   use mcci_in
   use precision
@@ -7,7 +7,6 @@ subroutine init_bk(ieig,length,inflg)
 
   integer, intent(in)  :: ieig
   integer, intent(in)  :: length
-  integer, intent(in)  :: inflg
 
   integer          :: i, j
   integer          :: k, kk

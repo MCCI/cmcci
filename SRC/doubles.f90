@@ -1,6 +1,6 @@
 subroutine doubles(iprev,ilength,ispin,seed)
-  use commonarrays, only: icij,nword,ntotal,n_alpha,n_beta,i_sx2,&
-                          nsym,nbft,nbpsy,irrep,nfreeze,ifreeze,nactive,iactive
+  use commonarrays, only: icij,nword,ntotal, &
+                          nsym,nbft,nbpsy,irrep,nfreeze,nactive
   use mcci_in
   use precision
   use rng

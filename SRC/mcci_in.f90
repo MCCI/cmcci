@@ -1,11 +1,15 @@
 module mcci_in
-  use commonarrays
+  !use commonarrays
   use precision 
 
   integer :: iword
 
   integer  ::  maxbfs,irmax,max1,max2,maxocc,maxc,kmax,maxh,maxs
   
+  integer  :: inflg
+  integer  :: n_alpha          ! number of spin alpha electrons (n_up)
+  integer  :: n_beta           ! number of spin beta electrons  (n_dn)
+  integer  :: i_sx2            ! spin of the system times 2
   integer  ::  maxtry          ! the number of diagonalisations
   integer  ::  lmin            ! min vector length
   integer  ::  nbyte           ! number of bytes / integer word
@@ -15,6 +19,10 @@ module mcci_in
   integer  ::  lkeep           ! cnfgs #1 to #lkeep never touched in pruning
   integer  ::  conv_average    ! for making E(iter) and length(iter) func. smoother
   integer  ::  conv_history    ! how many DE amd Dlength values being tracked
+  integer, allocatable  :: mo_up(:) ! MOs occupied by a spin alpha electron
+  integer, allocatable  :: mo_dn(:) ! MOs occupied by a spin beta electron
+  integer, allocatable  :: ifreeze(:) ! MOs which may not be excited from
+  integer, allocatable  :: iactive(:) ! MOs which may be excited to
   
   real(kind=pr)  ::  cmin
   real(kind=pr)  ::  hmin            ! h matrix threshold
@@ -36,12 +44,14 @@ module mcci_in
   logical  :: npfull_conv     ! convergence test only in npfull steps
   logical  :: caps            ! true if we are running in complex mode
 
+  character(len=12) :: SCF_integral_filename  ! file with the MO integrals of H
+  character(len=12) :: wints_filename         ! file with the MO ints of CAP
+
 contains
 
 subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
-                        icij,inflg,n_alpha,n_beta,ntotal,i_sx2, &
-                        SCF_integral_filename,wints_filename,   &
-                        ieig,nfreeze,ifreeze,nactive,iactive)
+                        icij,ntotal, &
+                        ieig,nfreeze,nactive)
 
 
   ! written by Paul Delaney 25 October 2005.
@@ -56,35 +66,22 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   integer, intent(in)  :: maxbfs
 
   ! parameters for which there are no defaults.
-  integer,        intent(out) :: inflg
-  integer,        intent(out) :: n_alpha
-  integer,        intent(out) :: n_beta
-  integer,        intent(out) :: i_sx2
   ! also maxtry,cmin
 
   ! parameters for which there are defaults.
-  character (len=12), intent(out) :: SCF_integral_filename  ! standard one- and
-                                                            ! two-electron
-                                                            ! integrals of the
-                                                            !mos.
-  character (len=12), intent(out) :: wints_filename  ! one-electron integrals
-                                                     ! of the CAP.
   integer,            intent(out) :: ieig
   integer,            intent(out) :: nfreeze
-  integer,            intent(out) :: ifreeze(maxocc)
   integer,            intent(out) :: nactive
-  integer,            intent(out) :: iactive(maxocc)
   ! also lmin,nbyte,int_bits,npfull,lref,lkeep,hmin,davidson_stop,bmin,bmax,cref,frac,test,time,time_all,generate_cfgs,nobrnch_first,nodiag
   ! conv_average,conv_history,conv_thresh_e,conv_thresh_l,i_want_conv,npfull_conv
   ! other output variables
   integer,            intent(out) :: ntotal
   integer,            intent(out) :: icij(2,iword,maxc)   ! mo_up and mo_dn tell us this
 
-
-  ! local variables
-  integer, parameter  :: line_length           = 79             ! the length of the line we read in from the control file
-  integer, parameter  :: num_nondefault_params =  6             ! the number of program parameters for which there are no default values
-
+  ! the length of the line we read in from the control file
+  integer, parameter  :: line_length = 79
+  ! the number of program parameters for which there are no default values
+  integer, parameter  :: num_nondefault_params = 6
 
   character (len=6)            :: format_string
   character (len=line_length)  :: line
@@ -100,14 +97,10 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   integer             :: n_alpha_list
   integer             :: n_beta_list
   real (kind=pr)      :: s
-  integer             :: mo_up(maxocc)
-  integer             :: mo_dn(maxocc)
   logical             :: is_up_occupied(maxbfs)
   logical             :: is_dn_occupied(maxbfs)
   integer             :: j, jshift, n
-  !integer             :: me, nproc   !declaration moved to commonarrays.f90
 
-  ! start of executable
 
   ! values of parameters for which there are defaults; nactive and iactive have defaults depending on nbft, nfreeze
   ! so work out these default values properly outside this subroutine, once we know nbft.
@@ -116,11 +109,7 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   wints_filename    =  "moints.CAP"
   ieig              =   1
   nfreeze           =   0
-  ifreeze(:)        =  -1
-  mo_up(:)          =   0
-  mo_dn(:)          =   0
   nactive           =   0
-  iactive(:)        =  -1
   lmin              = 100          ! min vector length
   nbyte             =   4          ! number of bytes / integer word
   int_bits          =  8*nbyte     ! bits / integer word
@@ -162,19 +151,23 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   n_alpha_list = 0
   n_beta_list  = 0  
 
+  allocate(mo_up(maxocc), mo_dn(maxocc), ifreeze(maxocc), iactive(maxocc))
+  mo_up(:)          =   0
+  mo_dn(:)          =   0
+  ifreeze(:)        =  -1
+  iactive(:)        =  -1
+
   select case (line_length)
   case (10:99)
      write(format_string, '(a2,i2,a1)' ) '(a',line_length,')'            ! (a79),  for example
   case (100:999)
      write(format_string, '(a2,i3,a1)' ) '(a',line_length,')'            ! (a132), for example
   case default
-     if (me.eq.0) then
-        write(50,*)
-        write(50,*) 'Problem in subroutine read_mcci_in.f90'
-        write(50,*) 'The parameter line_length is ',line_length
-        write(50,*) 'and we are only set up to deal with line_length in the range 10 ... 999'
-        write(50,*) 'Stopping...'
-     endif
+     write(50,*)
+     write(50,*) 'Problem in subroutine read_mcci_in.f90'
+     write(50,*) 'The parameter line_length is ',line_length
+     write(50,*) 'and we are only set up to deal with line_length in the range 10 ... 999'
+     write(50,*) 'Stopping...'
      stop
   end select
 
@@ -189,7 +182,8 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
 
      case ('skip')  ! This means a blank line, or one with only a comment.
 
-        ! First, list the parameters for which there are no defaults, and so must be set in the control file
+     ! First, list the parameters for which there are no defaults, and so must
+     ! be set in the control file
 
      case ('restart')
         read(value_string,*) restart
@@ -203,7 +197,7 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
 
      case ('n_up')
         read(value_string,*) n_alpha
-        call non_negative_integer(n_alpha, 'n_dn')
+        call non_negative_integer(n_alpha, 'n_up')
         nondefault_param_set (2) = .TRUE.
 
      case ('n_dn')
@@ -234,20 +228,16 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
      case ('mo_up')
         call read_orbital_list(value_string, mo_up, n_alpha_list, syntax_error)
         if (syntax_error) then
-           if (me.eq.0) then
-              write(50,*) 'Could not read the list of up orbitals in mcci.in'
-              write(50,*) 'the list is ', value_string
-           endif
+           write(50,*) 'Could not read the list of up orbitals in mcci.in'
+           write(50,*) 'the list is ', value_string
            stop
         end if
 
      case ('mo_dn')
         call read_orbital_list(value_string, mo_dn, n_beta_list, syntax_error)
         if (syntax_error) then
-           if (me.eq.0) then
-              write(50,*) 'Could not read the list of down orbitals in mcci.in'
-              write(50,*) 'the list is ', value_string
-           endif
+           write(50,*) 'Could not read the list of down orbitals in mcci.in'
+           write(50,*) 'the list is ', value_string
            stop
         end if
 
@@ -259,11 +249,9 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
         case ('moints.TM')
         case ('moints.ascii')
         case default
-           if (me.eq.0) then
-              write(50,*) 
-              write(50,*) 'SCF_integral_filename must be one of moints.bTM, moints.TM or moints.ascii'
-              write(50,*) 'Stopping...'
-           endif
+           write(50,*) 
+           write(50,*) 'SCF_integral_filename must be one of moints.bTM, moints.TM or moints.ascii'
+           write(50,*) 'Stopping...'
            stop
         end select
      case ('wints_filename') ! Added for the CAPS
@@ -277,20 +265,16 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
      case ('frozen_doubly')
         call read_orbital_list(value_string, ifreeze, nfreeze, syntax_error)
         if (syntax_error) then
-           if (me.eq.0) then
-              write(50,*) 'Could not read the list of frozen doubly occupied orbitals in mcci.in'
-              write(50,*) 'the list is ', value_string
-           endif
+           write(50,*) 'Could not read the list of frozen doubly occupied orbitals in mcci.in'
+           write(50,*) 'the list is ', value_string
            stop
         end if
 
      case ('mo_active')
         call read_orbital_list(value_string, iactive, nactive, syntax_error)
         if (syntax_error) then
-           if (me.eq.0) then
-              write(50,*) 'Could not read the list of active orbitals in mcci.in'
-              write(50,*) 'the list is ', value_string
-           endif
+           write(50,*) 'Could not read the list of active orbitals in mcci.in'
+           write(50,*) 'the list is ', value_string
            stop
         end if
         iactive(nactive+1:) = -1  ! restore Werner's default, overwritten by read_orbital_list
@@ -402,18 +386,16 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
      case ('maxh')
 
      case default
-        if (me.eq.0) then
-           write(50,*)
-           write(50,*) 'Problem in subroutine read_mcci_in.f90'
-           write(50,*) 'The line we''re processing from the control file is:'
-           write(50,*) line
-           write(50,*) 'and this has been parsed to yield'
-           write(50,*) 'Keyword :', keyword_string
-           write(50,*) 'Value   :', value_string
-           write(50,*)
-           write(50,*) 'This Keyword is not recognised.'
-           write(50,*) 'Stopping...'
-        endif
+        write(50,*)
+        write(50,*) 'Problem in subroutine read_mcci_in.f90'
+        write(50,*) 'The line we''re processing from the control file is:'
+        write(50,*) line
+        write(50,*) 'and this has been parsed to yield'
+        write(50,*) 'Keyword :', keyword_string
+        write(50,*) 'Value   :', value_string
+        write(50,*)
+        write(50,*) 'This Keyword is not recognised.'
+        write(50,*) 'Stopping...'
         stop
 
      end select
@@ -423,47 +405,37 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
 7000 continue
     
   if ( any( .NOT. nondefault_param_set) ) then
-     if (me.eq.0) then
         write(50,*)
         write(50,*) 'Problem in subroutine read_mcci_in.f90'
         write(50,*)
         write(50,*) 'In reading in the control file "mcci.in", we could not'
         write(50,*) 'find values for the following parameter(s):'
         write(50,*)
-     endif
      
      do i=1,num_nondefault_params
-        if (me.eq.0) then
            if (.NOT. nondefault_param_set(i)) write(50,*) nondefault_param_name(i)
-        endif
      end do
      
-     if (me.eq.0) then
         write(50,*) 'These parameter(s) do not have default values, and so must be set explicitly.'
         write(50,*) 'Stopping...'
-     endif
      stop
   end if
 
   close(10)
       
   if (n_alpha /= n_alpha_list) then
-     if (me.eq.0) then
-        write(50,*)
-        write(50,*) 'Problem in subroutine read_mcci_in.f90'
-        write(50,*) 'n_alpha = ',n_alpha,' but ',n_alpha_list,' up orbitals are listed'
-        write(50,*) 'Stopping...'
-     endif
+     write(50,*)
+     write(50,*) 'Problem in subroutine read_mcci_in.f90'
+     write(50,*) 'n_alpha = ',n_alpha,' but ',n_alpha_list,' up orbitals are listed'
+     write(50,*) 'Stopping...'
      stop
   end if
 
   if (n_beta /= n_beta_list) then
-     if (me.eq.0) then
-        write(50,*)
-        write(50,*) 'Problem in subroutine read_mcci_in.f90'
-        write(50,*) 'n_beta = ',n_beta,' but ',n_beta_list,' up orbitals are listed'
-        write(50,*) 'Stopping...'
-     endif
+     write(50,*)
+     write(50,*) 'Problem in subroutine read_mcci_in.f90'
+     write(50,*) 'n_beta = ',n_beta,' but ',n_beta_list,' up orbitals are listed'
+     write(50,*) 'Stopping...'
      stop
   end if
 
@@ -497,89 +469,90 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   do i=1,nfreeze
      
      if (.not.(is_up_occupied(ifreeze(i)).and.is_dn_occupied(ifreeze(i)))) then
-     if (me.eq.0) then
-        write(50,*)
-        write(50,*) 'Frozen orbital isn''t doubly occupied in the reference. Stopping.'
-     endif
+     write(50,*)
+     write(50,*) 'Frozen orbital isn''t doubly occupied in the reference. Stopping.'
      stop
      end if
   end do
   
   
-  if (me.eq.0) then
-     write(50,*)
-     write(50,*) 'The following parameters were read from mcci.in'
-     write(50,*)
-     write(50,*) 'parameters with no default values:'
-     write(50,*) '----------------------------------'
+    
+end subroutine read_mcci_in
+    
+subroutine mcci_in_write_e_summary()
+
+  write(50,*)
+  write(50,*) 'The following parameters were read from mcci.in'
+  write(50,*)
+  write(50,*) 'parameters with no default values:'
+  write(50,*) '----------------------------------'
   
-     write(50,*)
-     write(50,8010) 'inflg                        = ', inflg
-     write(50,8010) 'n_alpha                      = ', n_alpha
-     write(50,8010) 'n_beta                       = ', n_beta
-     write(50,8000) 's                            = ', s
-     write(50,8002) 'cmin                         = ', cmin
-     write(50,8010) 'maxtry                       = ', maxtry
-
-     write(50,*)
-     write(50,*)
-     write(50,*) 'parameters with default values:'
-     write(50,*) '-------------------------------'
-
-     write(50,*)
-     write(50,*)    'SCF_integral_filename        = ', SCF_integral_filename
-     write(50,*)    'Wints_filename               = ', wints_filename
-
-     write(50,*)  
-     write(50,8010) 'ieig                         = ', ieig
-
-     write(50,'(1x,a,100i4)')    'mo_up(1:n_alpha)             =   ', mo_up(1:n_alpha)
-     write(50,'(1x,a,100i4)')    'mo_dn(1:n_beta)              =   ', mo_dn(1:n_beta)
-
-     write(50,*)  
-     write(50,8010) 'nfreeze                      = ', nfreeze
-     if (nfreeze /= 0) &
-        write(50,'(1x,a,100i4)')    'ifreeze(1:nfreeze)           =   ', ifreeze(1:nfreeze)
-
-     write(50,*)  
-     write(50,8010) 'nactive                      = ', nactive
-     if (nactive /= 0) &
-        write(50,'(1x,a,100i4)')    'iactive(1:nactive)           =   ', iactive(1:nactive)
-
-     write(50,8010) 'lmin                         = ', lmin
-     write(50,8010) 'nbyte                        = ', nbyte
-     write(50,8010) 'int_bits                     = ', int_bits
-     write(50,8010) 'npfull                       = ', npfull
-     write(50,8010) 'lref                         = ', lref
-     write(50,8010) 'lkeep                        = ', lkeep
-     write(50,8010) 'conv_average                 = ', conv_average
-     write(50,8010) 'conv_history                 = ', conv_history
-     write(50,8002) 'hmin                         = ', hmin
-     write(50,8002) 'davidson_stop                = ', davidson_stop
-     write(50,8000) 'bmin                         = ', bmin
-     write(50,8000) 'bmax                         = ', bmax
-     write(50,8000) 'cref                         = ', cref
-     write(50,8000) 'total frac                   = ', frac
-     write(50,8000) 'conv_thresh_e                = ', conv_thresh_e
-     write(50,8000) 'conv_thresh_l                = ', conv_thresh_l
-     write(50,8020) 'test                         = ', test
-     write(50,8020) 'time                         = ', time
-     write(50,8020) 'time_all                     = ', time_all
-     write(50,8020) 'generate_cfgs                = ', generate_cfgs
-     write(50,8020) 'nobrnch_first                = ', nobrnch_first
-     write(50,8020) 'nodiag                       = ', nodiag       
-     write(50,8020) 'i_want_conv                  = ', i_want_conv  
-     write(50,8020) 'npfull_conv                  = ', npfull_conv  
-     write(50,8020) 'caps                         = ', caps  
-  endif
+  write(50,*)
+  write(50,8010) 'inflg                        = ', inflg
+  write(50,8010) 'n_alpha                      = ', n_alpha
+  write(50,8010) 'n_beta                       = ', n_beta
+  write(50,8000) 's                            = ', s
+  write(50,8002) 'cmin                         = ', cmin
+  write(50,8010) 'maxtry                       = ', maxtry
+  
+  write(50,*)
+  write(50,*)
+  write(50,*) 'parameters with default values:'
+  write(50,*) '-------------------------------'
+  
+  write(50,*)
+  write(50,*)    'SCF_integral_filename        = ', SCF_integral_filename
+  write(50,*)    'Wints_filename               = ', wints_filename
+  
+  write(50,*)  
+  write(50,8010) 'ieig                         = ', ieig
+  
+  write(50,'(1x,a,100i4)')    'mo_up(1:n_alpha)             =   ', mo_up(1:n_alpha)
+  write(50,'(1x,a,100i4)')    'mo_dn(1:n_beta)              =   ', mo_dn(1:n_beta)
+  
+  write(50,*)  
+  write(50,8010) 'nfreeze                      = ', nfreeze
+  if (nfreeze /= 0) &
+     write(50,'(1x,a,100i4)')    'ifreeze(1:nfreeze)           =   ', ifreeze(1:nfreeze)
+  
+  write(50,*)  
+  write(50,8010) 'nactive                      = ', nactive
+  if (nactive /= 0) &
+     write(50,'(1x,a,100i4)')    'iactive(1:nactive)           =   ', iactive(1:nactive)
+  
+  write(50,8010) 'lmin                         = ', lmin
+  write(50,8010) 'nbyte                        = ', nbyte
+  write(50,8010) 'int_bits                     = ', int_bits
+  write(50,8010) 'npfull                       = ', npfull
+  write(50,8010) 'lref                         = ', lref
+  write(50,8010) 'lkeep                        = ', lkeep
+  write(50,8010) 'conv_average                 = ', conv_average
+  write(50,8010) 'conv_history                 = ', conv_history
+  write(50,8002) 'hmin                         = ', hmin
+  write(50,8002) 'davidson_stop                = ', davidson_stop
+  write(50,8000) 'bmin                         = ', bmin
+  write(50,8000) 'bmax                         = ', bmax
+  write(50,8000) 'cref                         = ', cref
+  write(50,8000) 'total frac                   = ', frac
+  write(50,8000) 'conv_thresh_e                = ', conv_thresh_e
+  write(50,8000) 'conv_thresh_l                = ', conv_thresh_l
+  write(50,8020) 'test                         = ', test
+  write(50,8020) 'time                         = ', time
+  write(50,8020) 'time_all                     = ', time_all
+  write(50,8020) 'generate_cfgs                = ', generate_cfgs
+  write(50,8020) 'nobrnch_first                = ', nobrnch_first
+  write(50,8020) 'nodiag                       = ', nodiag       
+  write(50,8020) 'i_want_conv                  = ', i_want_conv  
+  write(50,8020) 'npfull_conv                  = ', npfull_conv  
+  write(50,8020) 'caps                         = ', caps  
 
 8000 format (1x, a, 2x, f9.4)       ! normal reals
 8002 format (1x, a, 4x, es9.2)      ! reals that are very big or small
 8010 format (1x, a, i6)             ! integers
 8020 format (1x, a, 5x, l1)         ! logicals
-    
-end subroutine read_mcci_in
-    
+
+end subroutine mcci_in_write_e_summary
+
 subroutine read_params()
   !This subroutine is similar to read_mcci_in.f90.  mcci.in is
   !scanned for parameter keywords.
@@ -602,7 +575,6 @@ subroutine read_params()
   character (len=line_length)  :: line
   character (len=line_length)  :: keyword_string
   character (len=line_length)  :: value_string
-  character (len=12)  :: SCF_integral_filename
 
   logical                      :: nondefault_param_set (num_nondefault_params)
   character (len=line_length)  :: nondefault_param_name(num_nondefault_params)
@@ -624,13 +596,11 @@ subroutine read_params()
   case (100:999)
      write(format_string, '(a2,i3,a1)' ) '(a',line_length,')'            ! (a132), for example
   case default
-     if (me.eq.0) then
-        write(50,*)
-        write(50,*) 'Problem in subroutine read_mcci_in.f90'
-        write(50,*) 'The parameter line_length is ',line_length
-        write(50,*) 'and we are only set up to deal with line_length in the range 10 ... 999'
-        write(50,*) 'Stopping...'
-     endif
+     write(50,*)
+     write(50,*) 'Problem in subroutine read_mcci_in.f90'
+     write(50,*) 'The parameter line_length is ',line_length
+     write(50,*) 'and we are only set up to deal with line_length in the range 10 ... 999'
+     write(50,*) 'Stopping...'
      stop
   end select
 
@@ -665,11 +635,9 @@ subroutine read_params()
         case ('moints.TM')
         case ('moints.ascii')
         case default
-           if (me.eq.0) then
-              write(50,*)
-              write(50,*) 'SCF_integral_filename must be moints.TM or moints.ascii'
-              write(50,*) 'Stopping...'
-           endif
+           write(50,*)
+           write(50,*) 'SCF_integral_filename must be moints.TM or moints.ascii'
+           write(50,*) 'Stopping...'
            stop
         end select
         nondefault_param_set(4) = .TRUE.
@@ -683,25 +651,19 @@ subroutine read_params()
 7000 continue
 
   if ( any( .NOT. nondefault_param_set) ) then
-     if (me.eq.0) then
-        write(50,*)
-        write(50,*) 'Problem in subroutine read_params.f90'
-        write(50,*)
-        write(50,*) 'In reading in the control file "mcci.in", we could not'
-        write(50,*) 'find values for the following parameter(s):'
-        write(50,*)
-     endif
+     write(50,*)
+     write(50,*) 'Problem in subroutine read_params.f90'
+     write(50,*)
+     write(50,*) 'In reading in the control file "mcci.in", we could not'
+     write(50,*) 'find values for the following parameter(s):'
+     write(50,*)
      
      do i=1,num_nondefault_params
-        if (me.eq.0) then
-           if (.NOT. nondefault_param_set(i)) write(50,*) nondefault_param_name(i)
-        endif
+         if (.NOT. nondefault_param_set(i)) write(50,*) nondefault_param_name(i)
      end do
      
-     if (me.eq.0) then
         write(50,*) 'These parameter(s) do not have default values, and so must be set explicitly.'
         write(50,*) 'Stopping...'
-     endif
      stop
   end if
 
@@ -823,26 +785,22 @@ subroutine parse_line(line, keyword_string, value_string)
   equals_rightmost_position = index(working_line, '=', back=.TRUE.)
 
   if (equals_leftmost_position == 0) then
-     if(me.eq.0) then
-        write(50,*)
-        write(50,*) 'Problem in subroutine read_mcci_in.f90'
-        write(50,*) 'The line we are processing from the control file is:'
-        write(50,*) line
-        write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find no equal-to sign "=" '
-        write(50,*) 'Stopping...'
-     endif
+     write(50,*)
+     write(50,*) 'Problem in subroutine read_mcci_in.f90'
+     write(50,*) 'The line we are processing from the control file is:'
+     write(50,*) line
+     write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find no equal-to sign "=" '
+     write(50,*) 'Stopping...'
      stop
   end if
 
   if (equals_leftmost_position /= equals_rightmost_position) then
-     if(me.eq.0) then
-        write(50,*)
-        write(50,*) 'Problem in subroutine read_mcci_in.f90'
-        write(50,*) 'The line we are processing from the control file is:'
-        write(50,*) line
-        write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find more than one equal-to sign "=" '
-        write(50,*) 'Stopping...'
-     endif
+     write(50,*)
+     write(50,*) 'Problem in subroutine read_mcci_in.f90'
+     write(50,*) 'The line we are processing from the control file is:'
+     write(50,*) line
+     write(50,*) 'This seems to be a KEYWORD=VALUE type line, but we find more than one equal-to sign "=" '
+     write(50,*) 'Stopping...'
      stop
   end if
 
@@ -905,10 +863,8 @@ end subroutine parse_line
 
        num_orbs = num_orbs + 1
        if (num_orbs > list_length) then
-          if (me.eq.0) then
-             write(50,*)
-             write(50,*) 'Too many orbitals in read_orbital_list. Stopping.'
-          endif
+          write(50,*)
+          write(50,*) 'Too many orbitals in read_orbital_list. Stopping.'
           stop
        end if
 
@@ -952,10 +908,8 @@ end subroutine parse_line
 
           if (num_orbs + (end_int-start_int) > list_length) then
           write(*,*) num_orbs + (end_int-start_int),list_length
-             if (me.eq.0) then
-                write(50,*)
-                write(50,*) 'Too many orbitals in read_orbital_list. Stopping.'
-             endif
+             write(50,*)
+             write(50,*) 'Too many orbitals in read_orbital_list. Stopping.'
              stop
           end if
 
@@ -1133,16 +1087,14 @@ end subroutine parse_line
     ! start of executable
     
     if (check_int < 0) then
-       if(me.eq.0) then
-          write(50,*)
-          write(50,*) 'Control file error:'
-          write(50,*) '-------------------'
+       write(50,*)
+       write(50,*) 'Control file error:'
+       write(50,*) '-------------------'
        
-          write(50,*) 'In the control file "mcci.in"'
-          write(50,*) 'the parameter ', check_int_name, ' has been set to the value ', check_int
-          write(50,*) 'This parameter must have a non-negative value.'
-          write(50,*) 'Stopping...'
-       endif
+       write(50,*) 'In the control file "mcci.in"'
+       write(50,*) 'the parameter ', check_int_name, ' has been set to the value ', check_int
+       write(50,*) 'This parameter must have a non-negative value.'
+       write(50,*) 'Stopping...'
        stop
     end if
 
@@ -1160,16 +1112,14 @@ end subroutine parse_line
     ! start of executable
     
     if (check_real < 0.0_pr) then
-       if(me.eq.0) then
-          write(50,*)
-          write(50,*) 'Control file error:'
-          write(50,*) '-------------------'
+       write(50,*)
+       write(50,*) 'Control file error:'
+       write(50,*) '-------------------'
        
-          write(50,*) 'In the control file "mcci.in"'
-          write(50,*) 'the parameter ', check_real_name, ' has been set to the value ', check_real
-          write(50,*) 'This parameter must have a non-negative value.'
-          write(50,*) 'Stopping...'
-       endif
+       write(50,*) 'In the control file "mcci.in"'
+       write(50,*) 'the parameter ', check_real_name, ' has been set to the value ', check_real
+       write(50,*) 'This parameter must have a non-negative value.'
+       write(50,*) 'Stopping...'
        stop
     end if
 

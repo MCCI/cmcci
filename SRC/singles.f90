@@ -1,5 +1,5 @@
 subroutine singles(ilength,ispin,seed)
-  use commonarrays, only: icij, n_alpha, n_beta, nsym, nbft, nbpsy, nfreeze, nactive, iactive
+  use commonarrays, only: icij, nsym, nbft, nbpsy, nfreeze, nactive
   use mcci_in
   use precision
   use rng

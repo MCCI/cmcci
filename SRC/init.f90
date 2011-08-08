@@ -1,4 +1,4 @@
-subroutine init(seed,ecore,inflg,ieig)
+subroutine init(seed,ecore,ieig)
   use precision
   use commonarrays 
   use rng
@@ -8,20 +8,20 @@ subroutine init(seed,ecore,inflg,ieig)
 
   real(kind=pr), intent(inout) :: seed
   real(kind=pr), intent(out)   :: ecore
-  integer,       intent(out)   :: inflg
   integer,       intent(out)   :: ieig
 
   integer              :: icount, i
-  character(len=12)    :: SCF_integral_filename
-  character(len=12)    :: wints_filename
   logical              :: is_frozen(maxbfs)
 
 
   call sym_init
 
   call read_mcci_in(iword,maxc,maxocc,maxbfs,icij,&
-       inflg,n_alpha,n_beta,ntotal,i_sx2,SCF_integral_filename,&
-       wints_filename,ieig,nfreeze,ifreeze,nactive,iactive)
+       ntotal,ieig,nfreeze,nactive)
+
+  if (me.eq.0) then
+    call mcci_in_write_e_summary()  ! write the read parameters to the e_summary file
+  end if
 
   if (me.eq.0) write(50,*)
 

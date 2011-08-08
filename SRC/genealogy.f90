@@ -1,5 +1,5 @@
 subroutine genealogy(length,llast,seed)
-  use commonarrays, only: nbft, icij, nword, ntotal, n_alpha, n_beta, i_sx2
+  use commonarrays, only: nbft, icij, nword, ntotal
   use mcci_in
   use precision
   use rng

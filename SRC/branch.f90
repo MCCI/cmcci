@@ -1,5 +1,5 @@
 subroutine branch(nu_configs,length,llast,seed)
-  use commonarrays, only: icij, nword, c, n_alpha, n_beta, nfreeze
+  use commonarrays, only: icij, nword, c, nfreeze
   use mcci_in
   use precision
   use rng

@@ -1,5 +1,5 @@
 subroutine sch2_5(element,i_am_mu,i_am_nu,idiff1,idiff2,kck,n_2p,ep)
-  use commonarrays, only: list, nbft, e2ints, ipoint, i_sx2, my_pair
+  use commonarrays, only: list, nbft, e2ints, ipoint,  my_pair
   use mcci_in
   use precision
   implicit none

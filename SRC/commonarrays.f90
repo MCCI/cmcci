@@ -3,8 +3,6 @@ module commonarrays
   
   integer ,allocatable     ::   icij(:,:,:)
   integer ,allocatable     ::   ijh(:), ijs(:)
-  integer ,allocatable     ::   ifreeze(:)
-  integer ,allocatable     ::   iactive(:)
   integer ,allocatable     ::   nbpsy(:)
   integer ,allocatable     ::   irrep(:)
   integer ,allocatable     ::   list(:,:)
@@ -23,7 +21,7 @@ module commonarrays
   real     (kind=pr)   ,allocatable     ::   s(:)
   integer                  ::   nword,nfreeze,nactive
   integer                  ::   me, nproc
-  integer                  ::   ntotal, n_alpha, n_beta, i_sx2
+  integer                  ::   ntotal
   integer                  ::   nsym, nbft
 
 end module commonarrays
