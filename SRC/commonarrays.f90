@@ -21,7 +21,6 @@ module commonarrays
   real     (kind=pr)   ,allocatable     ::   s(:)
   integer                  ::   nword
   integer                  ::   me, nproc
-  integer                  ::   ntotal
   integer                  ::   nsym, nbft
 
 end module commonarrays

@@ -50,10 +50,11 @@ module mcci_in
   character(len=12) :: SCF_integral_filename  ! file with the MO integrals of H
   character(len=12) :: wints_filename         ! file with the MO ints of CAP
 
+  integer                         :: ntotal ! Total #of electrons
+
 contains
 
-subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
-                        icij,ntotal)
+subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,icij)
 
 
   ! written by Paul Delaney 25 October 2005.
@@ -70,11 +71,7 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   ! parameters for which there are no defaults.
   ! also maxtry,cmin
 
-  ! parameters for which there are defaults.
-  ! also lmin,nbyte,int_bits,npfull,lref,lkeep,hmin,davidson_stop,bmin,bmax,cref,frac,test,time,time_all,generate_cfgs,nobrnch_first,nodiag
-  ! conv_average,conv_history,conv_thresh_e,conv_thresh_l,i_want_conv,npfull_conv
   ! other output variables
-  integer,            intent(out) :: ntotal
   integer,            intent(out) :: icij(2,iword,maxc)   ! mo_up and mo_dn tell us this
 
   ! the length of the line we read in from the control file

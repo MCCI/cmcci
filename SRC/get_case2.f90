@@ -1,5 +1,5 @@
 subroutine get_case2(idiff1,idiff2,nu_doubly,i_am_mu,i_am_nu,ep,kck,my_case)
-  use commonarrays, only: nbft, ntotal, list, my_pair 
+  use commonarrays, only: nbft, list, my_pair 
   use mcci_in
   implicit none
 

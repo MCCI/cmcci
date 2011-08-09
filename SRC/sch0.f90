@@ -1,5 +1,5 @@
 subroutine sch0(element,i_am_mu,i_am_nu,nu_doubly,kck,n_2p,ep)
-  use commonarrays, only: nbft, ntotal, e1ints, e2ints, ipoint, list
+  use commonarrays, only: nbft, e1ints, e2ints, ipoint, list
   use mcci_in
   use precision
   implicit none
