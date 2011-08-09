@@ -1,5 +1,5 @@
 subroutine muHnu(ici,jci,element,n_2p,s_overlap)
-  use commonarrays, only: nbft, icij, nword
+  use commonarrays, only: nbft, nword
   use mcci_in
   use precision
   implicit none

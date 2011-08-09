@@ -1,5 +1,13 @@
 module mcci_in
-  !use commonarrays
+  ! portable module to read mcci.in files as required by the mcci,
+  ! analytic_integrals, and vici programs.
+  ! Since there are interdependencies within this module's global variables
+  ! (some array dimensions depend on dynamic parameters), it is required that
+  ! read_params() be called before read_mcci_in. There is no reason other than
+  ! developer time that the two can not be fused together some time.
+  !
+  ! Based on code by Paul Delaney and Thomas Kelly, modified for modularity by
+  ! Mark Szepieniec.
   use precision 
 
   integer :: iword
@@ -51,28 +59,17 @@ module mcci_in
   character(len=12) :: wints_filename         ! file with the MO ints of CAP
 
   integer                         :: ntotal ! Total #of electrons
+  integer, allocatable            :: icij(:,:,:)
 
 contains
 
-subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,icij)
-
+subroutine read_mcci_in()
 
   ! written by Paul Delaney 25 October 2005.
   
   use precision 
 
   implicit none
-
-  integer, intent(in)  :: iword
-  integer, intent(in)  :: maxc
-  integer, intent(in)  :: maxocc
-  integer, intent(in)  :: maxbfs
-
-  ! parameters for which there are no defaults.
-  ! also maxtry,cmin
-
-  ! other output variables
-  integer,            intent(out) :: icij(2,iword,maxc)   ! mo_up and mo_dn tell us this
 
   ! the length of the line we read in from the control file
   integer, parameter  :: line_length = 79
@@ -437,6 +434,7 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,icij)
 
   ntotal = n_alpha + n_beta
 
+  allocate(icij(2,iword,maxc))
   icij(:,:,1) = 0
 
   is_up_occupied(:) = .FALSE.

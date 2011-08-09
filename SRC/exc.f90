@@ -1,5 +1,5 @@
 subroutine exc(l_end,l_begin,l_to,iexc)
-  use commonarrays, only: c, icij, me
+  use commonarrays, only: c, me
   use mcci_in
   use precision
 

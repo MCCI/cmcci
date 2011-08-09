@@ -1,5 +1,5 @@
 subroutine chk_list(l2,l1)
-  use commonarrays, only: icij,nword
+  use commonarrays, only: nword
   use mcci_in
 
   implicit none

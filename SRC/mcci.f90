@@ -21,7 +21,7 @@ program mcci
   real(kind=pr)                 :: statnave(2),dn(7)
   real(kind=pr)                 :: dnorm, vnorm
   integer                       :: statn(7)
-  integer                       :: ialloc(20)
+  integer                       :: ialloc(19)
   integer                       :: ierr
   integer                       :: length
   real(kind=pr)                 :: ecore
@@ -336,25 +336,24 @@ program mcci
 
   subroutine allocate_memory
      allocate(e(kmax),             stat=ialloc(1))
-     allocate(icij(2,iword,maxc),  stat=ialloc(2))
-     allocate(h(maxh),             stat=ialloc(3))
-     allocate(s(maxs),             stat=ialloc(4))
-     allocate(ijh(maxh),           stat=ialloc(5))
-     allocate(ijs(maxs),           stat=ialloc(6))
-     allocate(c(maxc),             stat=ialloc(7))
-     allocate(hf(kmax*(kmax+1)/2), stat=ialloc(8))
-     allocate(sf(kmax*(kmax+1)/2), stat=ialloc(9))
-     allocate(b(maxc,kmax),        stat=ialloc(10))
-     allocate(irrep(0:irmax-1),    stat=ialloc(11))
-     allocate(list(2,maxocc),      stat=ialloc(12))
-     allocate(my_pair(2,maxocc),   stat=ialloc(13))
-     allocate(icase(16),           stat=ialloc(14))
-     allocate(ipoint(max2),        stat=ialloc(15))
-     allocate(e1ints(max1),        stat=ialloc(16))
-     allocate(e2ints(max2),        stat=ialloc(17))
-     allocate(nbpsy(irmax),        stat=ialloc(18))
-     allocate(cnorm(maxc),         stat=ialloc(19))
-     allocate(w(maxc),             stat=ialloc(20))
+     allocate(h(maxh),             stat=ialloc(2))
+     allocate(s(maxs),             stat=ialloc(3))
+     allocate(ijh(maxh),           stat=ialloc(4))
+     allocate(ijs(maxs),           stat=ialloc(5))
+     allocate(c(maxc),             stat=ialloc(6))
+     allocate(hf(kmax*(kmax+1)/2), stat=ialloc(7))
+     allocate(sf(kmax*(kmax+1)/2), stat=ialloc(8))
+     allocate(b(maxc,kmax),        stat=ialloc(9))
+     allocate(irrep(0:irmax-1),    stat=ialloc(10))
+     allocate(list(2,maxocc),      stat=ialloc(11))
+     allocate(my_pair(2,maxocc),   stat=ialloc(12))
+     allocate(icase(16),           stat=ialloc(13))
+     allocate(ipoint(max2),        stat=ialloc(14))
+     allocate(e1ints(max1),        stat=ialloc(15))
+     allocate(e2ints(max2),        stat=ialloc(16))
+     allocate(nbpsy(irmax),        stat=ialloc(17))
+     allocate(cnorm(maxc),         stat=ialloc(18))
+     allocate(w(maxc),             stat=ialloc(19))
      if(any(ialloc /=0)) STOP "Error allocating memory in mcci.f90"
   end subroutine allocate_memory
 

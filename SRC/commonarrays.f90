@@ -1,7 +1,6 @@
 module commonarrays
   use precision
   
-  integer ,allocatable     ::   icij(:,:,:)
   integer ,allocatable     ::   ijh(:), ijs(:)
   integer ,allocatable     ::   nbpsy(:)
   integer ,allocatable     ::   irrep(:)

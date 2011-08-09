@@ -1,5 +1,5 @@
 subroutine prune(length,llast,i_got_hit,prune_all,ieig)
-  use commonarrays, only: icij, nword, c, b, s
+  use commonarrays, only: nword, c, b, s
   use mcci_in
   use precision
 

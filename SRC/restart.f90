@@ -1,5 +1,5 @@
 subroutine restart(length)
-  use commonarrays, only: c, icij, nword
+  use commonarrays, only: c, nword
   use mcci_in
   use precision
 

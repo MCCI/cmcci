@@ -1,6 +1,6 @@
 subroutine reorder(ici,jci,i_am_mu,i_am_nu,nu_doubly,ndiff,idiff1,idiff2, &
                    kck,n_2p,ep)
-  use commonarrays, only: icij, nword, nbft, list, my_pair
+  use commonarrays, only: nword, nbft, list, my_pair
   use mcci_in
   implicit none
   !implicit real*8   (a-h,o-z)
