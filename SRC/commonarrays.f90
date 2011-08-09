@@ -19,7 +19,7 @@ module commonarrays
   complex  (kind=pr)   ,allocatable     ::   c(:)
   complex  (kind=pr)   ,allocatable     ::   h(:)
   real     (kind=pr)   ,allocatable     ::   s(:)
-  integer                  ::   nword,nfreeze,nactive
+  integer                  ::   nword
   integer                  ::   me, nproc
   integer                  ::   ntotal
   integer                  ::   nsym, nbft
