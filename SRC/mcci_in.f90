@@ -23,8 +23,8 @@ module mcci_in
   integer, allocatable  :: mo_dn(:) ! MOs occupied by a spin beta electron
   integer, allocatable  :: ifreeze(:) ! MOs which may not be excited from
   integer, allocatable  :: iactive(:) ! MOs which may be excited to
-  integer  :: nfreeze
-  integer  :: nactive
+  integer  :: nfreeze          ! number of MOs in ifreeze(:)
+  integer  :: nactive          ! number of MOs in iactive(:)
   integer  :: ieig             ! which eigenstate we want to calculate
   
   real(kind=pr)  ::  cmin
