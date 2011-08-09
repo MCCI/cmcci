@@ -1,4 +1,4 @@
-subroutine init(seed,ecore,ieig)
+subroutine init(seed,ecore)
   use precision
   use commonarrays 
   use rng
@@ -8,7 +8,6 @@ subroutine init(seed,ecore,ieig)
 
   real(kind=pr), intent(inout) :: seed
   real(kind=pr), intent(out)   :: ecore
-  integer,       intent(out)   :: ieig
 
   integer              :: icount, i
   logical              :: is_frozen(maxbfs)
@@ -17,7 +16,7 @@ subroutine init(seed,ecore,ieig)
   call sym_init
 
   call read_mcci_in(iword,maxc,maxocc,maxbfs,icij,&
-       ntotal,ieig,nfreeze,nactive)
+       ntotal,nfreeze,nactive)
 
   if (me.eq.0) then
     call mcci_in_write_e_summary()  ! write the read parameters to the e_summary file

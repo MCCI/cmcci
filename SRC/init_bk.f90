@@ -1,11 +1,10 @@
-subroutine init_bk(ieig,length)
+subroutine init_bk(length)
   use commonarrays, only: c, b
   use mcci_in
   use precision
 
   implicit none
 
-  integer, intent(in)  :: ieig
   integer, intent(in)  :: length
 
   integer          :: i, j

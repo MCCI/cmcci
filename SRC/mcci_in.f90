@@ -23,6 +23,7 @@ module mcci_in
   integer, allocatable  :: mo_dn(:) ! MOs occupied by a spin beta electron
   integer, allocatable  :: ifreeze(:) ! MOs which may not be excited from
   integer, allocatable  :: iactive(:) ! MOs which may be excited to
+  integer  :: ieig             ! which eigenstate we want to calculate
   
   real(kind=pr)  ::  cmin
   real(kind=pr)  ::  hmin            ! h matrix threshold
@@ -51,7 +52,7 @@ contains
 
 subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
                         icij,ntotal, &
-                        ieig,nfreeze,nactive)
+                        nfreeze,nactive)
 
 
   ! written by Paul Delaney 25 October 2005.
@@ -69,7 +70,6 @@ subroutine read_mcci_in(iword,maxc,maxocc,maxbfs,               &
   ! also maxtry,cmin
 
   ! parameters for which there are defaults.
-  integer,            intent(out) :: ieig
   integer,            intent(out) :: nfreeze
   integer,            intent(out) :: nactive
   ! also lmin,nbyte,int_bits,npfull,lref,lkeep,hmin,davidson_stop,bmin,bmax,cref,frac,test,time,time_all,generate_cfgs,nobrnch_first,nodiag

@@ -23,7 +23,7 @@ program mcci
   integer                       :: statn(7)
   integer                       :: ialloc(20)
   integer                       :: ierr
-  integer                       :: length, ieig
+  integer                       :: length
   real(kind=pr)                 :: ecore
   logical                       :: ecnvrgd,ncnvrgd,crit
   complex(kind=pr)              :: eref
@@ -62,7 +62,7 @@ program mcci
 
   call read_params()
   call allocate_memory
-  call init(seed,ecore,ieig)
+  call init(seed,ecore)
   ! initialize variables for diagonalization steps
   c(1)   = 1.0_pr
   length = 1
@@ -96,7 +96,7 @@ program mcci
 
   t_cumulative = 0.0_pr
 
-  call init_bk(ieig,length)
+  call init_bk(length)
 
   !Divide frac among processors
   frac = frac/nproc
