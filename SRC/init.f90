@@ -12,9 +12,7 @@ subroutine init(seed,ecore)
   integer              :: icount, i
   logical              :: is_frozen(maxbfs)
 
-
   call sym_init
-
 
   if (me.eq.0) write(50,*)
 

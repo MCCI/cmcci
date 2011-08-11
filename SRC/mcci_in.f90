@@ -3,8 +3,8 @@ module mcci_in
   ! analytic_integrals, and vici programs.
   ! Since there are interdependencies within this module's global variables
   ! (some array dimensions depend on dynamic parameters), it is required that
-  ! read_params() be called before read_mcci_in. There is no reason other than
-  ! developer time that the two can not be fused together some time.
+  ! read_dyn_params() be called before read_stat_params(). There is no reason
+  ! other than developer time that the two can not be fused together some time.
   !
   ! Based on code by Paul Delaney and Thomas Kelly, modified for modularity by
   ! Mark Szepieniec.
@@ -63,7 +63,20 @@ module mcci_in
 
 contains
 
-subroutine read_mcci_in()
+subroutine read_mcci_in(me)
+  implicit none
+
+  integer, intent(in)  :: me
+
+  call read_dyn_params()
+  call read_stat_params()
+  if (me.eq.0) then
+    call mcci_in_write_e_summary()  ! write the read parameters to the e_summary file
+  end if
+
+end subroutine read_mcci_in
+
+subroutine read_stat_params()
 
   ! written by Paul Delaney 25 October 2005.
   
@@ -471,7 +484,7 @@ subroutine read_mcci_in()
   
   
     
-end subroutine read_mcci_in
+end subroutine read_stat_params
     
 subroutine mcci_in_write_e_summary()
 
@@ -547,7 +560,7 @@ subroutine mcci_in_write_e_summary()
 
 end subroutine mcci_in_write_e_summary
 
-subroutine read_params()
+subroutine read_dyn_params()
   !This subroutine is similar to read_mcci_in.f90.  mcci.in is
   !scanned for parameter keywords.
   ! March 2010
@@ -723,7 +736,7 @@ subroutine read_params()
 8010 format (1x, a, i6)             ! integers
 1000 format(2x,i3,7x,a4,6x,i3,8x,i5,5x,i5) !moints.TM
     
-end subroutine read_params
+end subroutine read_dyn_params
 
 subroutine parse_line(line, keyword_string, value_string)
 
