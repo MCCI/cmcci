@@ -94,10 +94,9 @@ subroutine read_mcci_in()
   logical             :: is_dn_occupied(maxbfs)
   integer             :: j, jshift, n
 
-  ! some of the arrays' lengths depend on dynamic parameters (eg maxocc), so
-  ! we read those in fisrt. This could be cleaned up further, but it works
-  !for now.
-  call read_params()
+
+  ! values of parameters for which there are defaults; nactive and iactive have defaults depending on nbft, nfreeze
+  ! so work out these default values properly outside this subroutine, once we know nbft.
 
   SCF_integral_filename = "moints.ascii"  ! standard one- and two-electron integrals of the mos.
   wints_filename    =  "moints.CAP"

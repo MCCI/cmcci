@@ -14,7 +14,7 @@
 
         FC     = /usr/local/pgi108/linux86-64/2010/mpi/mpich/bin/mpif90
 #        FFLAGS =  -i4 -r8 -O4 
-        FFLAGS = -g -C -i4
+        FFLAGS = -g -i4
         LIBS   = -llapack -lblas
    
   
