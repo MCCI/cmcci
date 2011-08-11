@@ -61,6 +61,11 @@ program mcci
   end if
 
   call read_params()
+  call read_mcci_in()
+  if (me.eq.0) then
+    call mcci_in_write_e_summary()  ! write the read parameters to the e_summary file
+  end if
+
   call allocate_memory
   call init(seed,ecore)
   ! initialize variables for diagonalization steps

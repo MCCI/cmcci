@@ -15,11 +15,6 @@ subroutine init(seed,ecore)
 
   call sym_init
 
-  call read_mcci_in()
-
-  if (me.eq.0) then
-    call mcci_in_write_e_summary()  ! write the read parameters to the e_summary file
-  end if
 
   if (me.eq.0) write(50,*)
 
