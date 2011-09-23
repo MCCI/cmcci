@@ -1,3 +1,5 @@
 *_debug
 mcci
 *.swp
+*.o
+*.mod
