@@ -380,12 +380,10 @@ program mcci
         do i=1,length
            do n=1,nword
               if(n.eq.1) then
-                 write(40,*)&
-                 !write(40,'(i6,2x,e23.17,2x,i11,2x,i11)')&
+                 write(40,'(i6,2x,e23.17,2x,e23.17,2x,i11,2x,i11)')&
                       i,c(i)/sqrt(dnorm),icij(1,n,i),icij(2,n,i)
               else
-                 write(40,*)&
-                 !write(40,'(33x,i11,2x,i11)')&
+                 write(40,'(58x,i11,2x,i11)')&
                       icij(1,n,i),icij(2,n,i)
               endif
            enddo
