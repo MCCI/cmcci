@@ -12,11 +12,17 @@
 
 #------PGF90 on sfi400.tyndall.ie----------------
 
-        FC     = /usr/local/pgi108/linux86-64/2010/mpi/mpich/bin/mpif90
+#        FC     = /usr/local/pgi108/linux86-64/2010/mpi/mpich/bin/mpif90
+#        FFLAGS =  -i4 -r8 -O4 
+#        FFLAGS = -g -C -i4
+#        LIBS   = -llapack -lblas
+   
+#------PGF90 on rocks-hpc.tyndall.ie----------------
+
+        FC     = /local/pgi/linux86-64/2011/mpi/mpich/bin/mpif90
 #        FFLAGS =  -i4 -r8 -O4 
         FFLAGS = -g -C -i4
         LIBS   = -llapack -lblas
-   
   
 #------PATHF90 on sfi400.tyndall.ie--------------
 #         FC     = /opt/mpi/bin/mpif90
