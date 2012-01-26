@@ -41,6 +41,13 @@ subroutine davidson_main(length,ieig,idiag)
 
   idiag = 1
 
+  if (ieig > length) then
+    write(*,*) "Davidson: Error: ieig cannot be greater than ci vector length"
+    write(*,*) "ieig: ", ieig, "    length: ", length
+    write(*,*) "Stopping..."
+    stop
+  end if
+
 111 continue
 
   klim = min(kmax,length)
