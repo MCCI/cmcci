@@ -49,7 +49,7 @@ mcci:   $(OBJS)
 clean:
 	rm -f *.o *.mod mcci
  
-mcci.o:	      mcci_in.o commonarrays.o precision.o matrixtools.o rng.o
+mcci.o:	      mcci_in.o commonarrays.o precision.o matrixtools.o rng.o davidson.o
 get_int.o:              mcci_in.o commonarrays.o               precision.o
 init.o:              mcci_in.o mcci_in.o commonarrays.o               precision.o
 h_s_sparse.o:           mcci_in.o commonarrays.o               precision.o

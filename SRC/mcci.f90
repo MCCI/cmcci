@@ -4,6 +4,7 @@ program mcci
   use precision
   use matrixtools
   use rng
+  use davidson
   !use mpi
 
   implicit none
@@ -199,7 +200,7 @@ program mcci
 
      !The davidson routine is responsible for diagonalising the hamiltonian
      print*, 'iteration: ', i_try
-     call davidson(length,ieig,idiag)
+     call davidson_main(length,ieig,idiag)
 
      ! write(50,*)'edavidson', e(ieig) + ecore
      eval = e(ieig)

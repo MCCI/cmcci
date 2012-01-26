@@ -26,8 +26,8 @@ subroutine h_s_reduced(length,kl,ku)
         hf(i+(j-1)*j/2) = (0.0_pr, 0.0_pr)
         sf(i+(j-1)*j/2) = (0.0_pr, 0.0_pr)
         do k = 1, length   
-           hf(i+(j-1)*j/2) = hf(i+(j-1)*j/2) + conjg(b(k,i))*ai(k)
-           sf(i+(j-1)*j/2) = sf(i+(j-1)*j/2) + conjg(b(k,i))*di(k)
+           hf(i+(j-1)*j/2) = hf(i+(j-1)*j/2) + b(k,i)*ai(k)
+           sf(i+(j-1)*j/2) = sf(i+(j-1)*j/2) + b(k,i)*di(k)
         enddo
 
      enddo

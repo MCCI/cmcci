@@ -1,8 +1,14 @@
-subroutine davidson(length,ieig,idiag)
+module davidson
   use commonarrays, only: hf, sf, b, h, ijh, s, ijs, c, e
   use mcci_in
   use precision
   use matrixtools
+
+  implicit none
+
+contains
+
+subroutine davidson_main(length,ieig,idiag)
 
   implicit none
 
@@ -11,7 +17,8 @@ subroutine davidson(length,ieig,idiag)
   integer, intent(out)  :: idiag
 
   real(kind=pr), parameter         :: eps = 1.0d-18
-  integer,       parameter         :: maxit = 100
+  !integer,       parameter         :: maxit = 100
+  integer,       parameter         :: maxit = 10
   integer                          :: info
   integer                          :: i, j, ici, k, kk, kkk, klim
   complex(kind=pr), allocatable    :: vl(:,:), vr(:,:)
@@ -19,7 +26,7 @@ subroutine davidson(length,ieig,idiag)
   complex(kind=pr), allocatable    :: sf_unpacked(:,:)
   complex(kind=pr), allocatable    :: alpha(:), beta(:)
   complex(kind=pr)                 :: btemp(maxc,kmax)
-  real(kind=pr)                    :: vnorm, rnorm
+  complex(kind=pr)                 :: vnorm, rnorm
   complex(kind=pr)                 :: a(maxc), d(maxc), r(maxc)
   !real(kind=pr)                   :: work(3*kmax)
   complex(kind=pr), allocatable    :: work(:)
@@ -148,25 +155,25 @@ subroutine davidson(length,ieig,idiag)
      enddo
 
      !     Undo the premultiplication by S: S_inv might be hard to calculate, so...
-      !do ici=1,length
-      !   r(ici)=r(ici)/s(ici) 
-      !end do
+     do ici=1,length
+        r(ici)=r(ici)/s(ici) 
+     end do
      !     approximate correction to get closer to the true residual: r is now the
      !     exact residual if S is diagonal which should be nearly true
      !     (S diagonally dominant) - PD. Does not seem to make much difference to
      !     convergence anyway.
 
      !     residual norm
-     vnorm = 0.0
+     vnorm = (0.0_pr, 0.0_pr)
      do ici = 1, length
          ! approximate norm:diag. dom.
-        !vnorm = vnorm + s(ici)*real(conjg(r(ici))*r(ici), kind=pr)
-        vnorm = vnorm + real(conjg(r(ici))*r(ici), kind=pr)
+        vnorm = vnorm + s(ici)*conjg(r(ici))*r(ici)
+        !vnorm = vnorm + real(conjg(r(ici))*r(ici), kind=pr)
      enddo
          rnorm = sqrt(vnorm)
 !        write(34,*) 'idiag,kk,rnorm=',idiag,kk,rnorm
 
-         if(rnorm.lt.davidson_stop) goto 222 ! finished?
+         if(sqrt(real(rnorm)**2 + aimag(rnorm)**2).lt.davidson_stop) goto 222 ! finished?
          
 !     form correction vector and orthogonalize to b_ks
          if(kk.lt.klim) then
@@ -177,17 +184,17 @@ subroutine davidson(length,ieig,idiag)
                   b(ici,kk+1) = r(ici)/(e(ieig)*s(ici)-h(ici))
                endif
             enddo
-            vnorm = sqrt(real(dot_product(b(:,kk+1),b(:,kk+1)), kind=pr))
+            vnorm = sqrt(dot_product(conjg(b(:,kk+1)),b(:,kk+1)))
             do ici= 1,length
                b(ici,kk+1) = b(ici,kk+1)/vnorm
             enddo
 
 !     orthogonalize b_k vectors               
             do k=kk,1, -1
-               dot = dot_product(b(:,k), b(:,kk+1))
+               dot = dot_product(conjg(b(:,k)), b(:,kk+1))
                b(:,kk+1) = b(:,kk+1) - dot*b(:,k)
             enddo
-            vnorm = sqrt(real(dot_product(b(:,kk+1), b(:,kk+1)), kind=pr))
+            vnorm = sqrt(dot_product(conjg(b(:,kk+1)), b(:,kk+1)))
             do ici= 1,length
                b(ici,kk+1) = b(ici,kk+1)/vnorm
             enddo
@@ -224,10 +231,10 @@ subroutine davidson(length,ieig,idiag)
 !     next times around will not be as close to the identity as it could be
 !     (on that part where k1,k2 <= ieig).
       do k=1, ieig
-         vnorm = 0.0
+         vnorm = (0.0_pr, 0.0_pr)
          do ici=1, length
             b(ici,k) = btemp(ici,k)
-            vnorm  = vnorm + real(conjg(b(ici,k))*b(ici,k), kind=pr)
+            vnorm  = vnorm + conjg(b(ici,k))*b(ici,k)
          enddo
          vnorm = sqrt(vnorm)
          do ici=1, length
@@ -240,10 +247,10 @@ subroutine davidson(length,ieig,idiag)
 !     orthogonalize the new b_k vectors
       do kkk=2, ieig
          do k=kkk-1, 1, -1
-            dot2 = dot_product(b(:,k), b(:,kkk))
+            dot2 = dot_product(conjg(b(:,k)), b(:,kkk))
             b(:,kkk) = b(:,kkk) - dot2*b(:,k)
          enddo
-         vnorm = sqrt(real(dot_product(b(:,kkk), b(:,kkk)), kind=pr))
+         vnorm = sqrt(dot_product(conjg(b(:,kkk)), b(:,kkk)))
          do ici = 1, length
             b(ici,kkk) = b(ici,kkk)/vnorm
          enddo
@@ -307,8 +314,6 @@ subroutine davidson(length,ieig,idiag)
       do ici= 1, length
          c(ici) = b(ici,ieig)
       enddo
-      !b = (0.0_pr, 0.0_pr)  !TEMPORARY!!!
-      !b(1,1) = (1.0_pr, 0.0_pr)
 
      if (allocated(vl)) then
        deallocate(vl)
@@ -318,5 +323,29 @@ subroutine davidson(length,ieig,idiag)
      end if
       
       return
-      end
+  end subroutine davidson_main
 
+! subroutine hs_red(kk, hf, sf)
+! implicit none
+!
+! integer,          intent(in)  :: kk
+! complex(kind=pr), intent(out) :: hf
+! complex(kind=pr), intent(out) :: sf
+! 
+! complex(kind=pr)  :: ai(maxc), di(maxc)
+! integer           :: i,j
+!
+! do i=1, kk
+!   do j=1, kk
+!       call mxv_sparse(length,h,ijh,b(:,j),ai)
+!       call mxv_sparse(length,s,ijs,b(:,j),di)
+!
+!       hf(i+(j-1)*j/2) = (0.0_pr, 0.0_pr)
+!       sf(i+(j-1)*j/2) = (0.0_pr, 0.0_pr)
+!       do k = 1, length   
+!          hf(i+(j-1)*j/2) = hf(i+(j-1)*j/2) + conjg(b(k,i))*ai(k)
+!          sf(i+(j-1)*j/2) = sf(i+(j-1)*j/2) + conjg(b(k,i))*di(k)
+!       enddo
+! end subroutine hs_red
+!
+end module
