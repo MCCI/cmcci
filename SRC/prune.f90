@@ -76,12 +76,12 @@ subroutine prune(length,llast,i_got_hit,prune_all,ieig)
   !     re-orthogonalize the pruned b_k vectors
   do kkk=2, ieig
      do k=kkk-1, 1, -1
-        dot = dot_product(b(:,k), b(:,kkk))
+        dot = dot_product(conjg(b(:,k)), b(:,kkk))
         do ici = 1, length
            b(ici,kkk) = b(ici,kkk) - dot*b(ici,k)
         enddo
      enddo
-     vnorm = sqrt(real(dot_product(b(:,kkk),b(:,kkk)), kind=pr))
+     vnorm = sqrt(real(dot_product(conjg(b(:,kkk)),b(:,kkk)), kind=pr))
      do ici = 1, length
         b(ici,kkk) = b(ici,kkk)/vnorm
      enddo
