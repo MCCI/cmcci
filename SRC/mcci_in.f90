@@ -44,6 +44,8 @@ module mcci_in
   real(kind=pr)  ::  frac            ! rand < frac for branching
   real(kind=pr)  ::  conv_thresh_e   ! <DE> < conv_thresh_e to stop
   real(kind=pr)  ::  conv_thresh_l   ! <Dlength> < conv_thresh_l to stop
+  real(kind=pr)  ::  spin            ! spin of the system (can't call it s
+                                     ! because of nameclash with overlap matrix)
   
   logical  :: test            ! error checking
   logical  :: time            ! timing information, general
@@ -102,7 +104,6 @@ subroutine read_stat_params()
   logical             :: syntax_error
   integer             :: n_alpha_list
   integer             :: n_beta_list
-  real (kind=pr)      :: s
   logical             :: is_up_occupied(maxbfs)
   logical             :: is_dn_occupied(maxbfs)
   integer             :: j, jshift, n
@@ -212,11 +213,11 @@ subroutine read_stat_params()
         nondefault_param_set (3) = .TRUE.
 
      case ('s')
-        read(value_string,*) s
-        call non_negative_real(s, 's')
+        read(value_string,*) spin
+        call non_negative_real(spin, 's')
 
         ! convert to spin times 2
-        i_sx2 = int(2*s + 0.1_pr)    ! plus .1 in case of round-off
+        i_sx2 = int(2*spin + 0.1_pr)    ! plus .1 in case of round-off
         nondefault_param_set (4) = .TRUE.
 
      case ('cmin')
@@ -498,7 +499,7 @@ subroutine mcci_in_write_e_summary()
   write(50,8010) 'inflg                        = ', inflg
   write(50,8010) 'n_alpha                      = ', n_alpha
   write(50,8010) 'n_beta                       = ', n_beta
-  write(50,8000) 's                            = ', s
+  write(50,8000) 's                            = ', spin
   write(50,8002) 'cmin                         = ', cmin
   write(50,8010) 'maxtry                       = ', maxtry
   
