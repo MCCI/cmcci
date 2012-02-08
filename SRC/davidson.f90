@@ -17,8 +17,8 @@ subroutine davidson_main(length,ieig,idiag)
   integer, intent(out)  :: idiag
 
   real(kind=pr), parameter         :: eps = 1.0d-18
-  !integer,       parameter         :: maxit = 100
-  integer,       parameter         :: maxit = 10
+  integer,       parameter         :: maxit = 100
+  !integer,       parameter         :: maxit = 10
   integer                          :: info
   integer                          :: i, j, ici, k, kk, kkk, klim
   complex(kind=pr), allocatable    :: vl(:,:), vr(:,:)
