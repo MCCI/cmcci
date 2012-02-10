@@ -12,7 +12,7 @@ subroutine prune(length,llast,i_got_hit,prune_all,ieig)
   integer, intent(in)     :: ieig
 
   integer           :: lshift
-  real(kind=pr)     :: sum_diag_s
+  complex(kind=pr)     :: sum_diag_s
   real(kind=pr)     :: cutoff
   integer           :: lower_limit
   integer           :: n, i, k, kkk, ici
@@ -24,9 +24,9 @@ subroutine prune(length,llast,i_got_hit,prune_all,ieig)
   lshift = 0
   i_got_hit = maxc
 
-  sum_diag_s = 0.0
+  sum_diag_s = (0.0_pr, 0.0_pr)
   do,i=1,length
-     sum_diag_s = sum_diag_s + real(conjg(c(i))*c(i))*s(i)
+     sum_diag_s = sum_diag_s + c(i)*c(i)*s(i)
   enddo
 
   !     cutoff = cmin*dsqrt(dnorm)

@@ -20,7 +20,7 @@ program mcci
   complex(kind=pr), allocatable :: w(:)
   real(kind=pr)                 :: state(7),stateave(2),de(7)
   real(kind=pr)                 :: statnave(2),dn(7)
-  real(kind=pr)                 :: dnorm, vnorm
+  complex(kind=pr)                 :: dnorm, vnorm
   integer                       :: statn(7)
   integer                       :: ialloc(19)
   integer                       :: ierr

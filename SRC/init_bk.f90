@@ -10,7 +10,7 @@ subroutine init_bk(length)
   integer          :: i, j
   integer          :: k, kk
   complex(kind=pr) :: dot
-  real(kind=pr)    :: vnorm
+  complex(kind=pr)    :: vnorm
 
   do j=1, kmax
      do i= 1, maxc
@@ -32,10 +32,10 @@ subroutine init_bk(length)
   
   do kk = 2, kmax
     do k = kk-1, 1, -1
-      dot = dot_product(b(:,k), b(:,kk))
+      dot = dot_product(conjg(b(:,k)), b(:,kk))
       b(:,kk) = b(:,kk) - dot*b(:,k)
     end do
-    vnorm = sqrt(real(dot_product(b(:,kk),b(:,kk)), kind=pr))
+    vnorm = sqrt(dot_product(conjg(b(:,kk)),b(:,kk)))
     b(:,kk) = b(:,kk)/vnorm
   end do
 

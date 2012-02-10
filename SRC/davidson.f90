@@ -177,7 +177,7 @@ subroutine davidson_main(length,ieig,idiag)
      vnorm = (0.0_pr, 0.0_pr)
      do ici = 1, length
          ! approximate norm:diag. dom.
-        vnorm = vnorm + s(ici)*conjg(r(ici))*r(ici)
+        vnorm = vnorm + s(ici)*r(ici)*r(ici)
         !vnorm = vnorm + real(conjg(r(ici))*r(ici), kind=pr)
      enddo
          rnorm = sqrt(vnorm)
@@ -244,7 +244,7 @@ subroutine davidson_main(length,ieig,idiag)
          vnorm = (0.0_pr, 0.0_pr)
          do ici=1, length
             b(ici,k) = btemp(ici,k)
-            vnorm  = vnorm + conjg(b(ici,k))*b(ici,k)
+            vnorm  = vnorm + b(ici,k)*b(ici,k)
          enddo
          vnorm = sqrt(vnorm)
          do ici=1, length
