@@ -20,10 +20,11 @@ subroutine init_bk(length)
   enddo
 
   if (inflg .ne. 0) then
-     do i= 1, length
-        b(i,ieig) = c(i)     ! copy input civ_in vector to b(:,ieig)
-        !            b(i,1) = c(i)        ! copy input civ_in vector to b(:,1)
-     enddo
+     if (ieig == 1) then
+       do i= 1, length
+          b(i,1) = c(i)     ! copy input civ_in vector to b(:,ieig)
+       end do
+     end if
   end if
 
   ! Orthogonalize b_k vectors, keeping in mind they are complex
@@ -32,13 +33,12 @@ subroutine init_bk(length)
   
   do kk = 2, kmax
     do k = kk-1, 1, -1
-      dot = dot_product(conjg(b(:,k)), b(:,kk))
+      dot = dot_product(b(:,k), b(:,kk))
       b(:,kk) = b(:,kk) - dot*b(:,k)
     end do
-    vnorm = sqrt(dot_product(conjg(b(:,kk)),b(:,kk)))
+    vnorm = sqrt(dot_product(b(:,kk),b(:,kk)))
     b(:,kk) = b(:,kk)/vnorm
   end do
-
 
   return
 end subroutine init_bk
