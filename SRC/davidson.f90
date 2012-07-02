@@ -104,15 +104,14 @@ subroutine davidson_main(length,ieig,idiag)
     ! beta(i). We need to check the conditioning and put the reults in 
     ! the e array.
     do k = 1, kk
-      if(abs(beta(k)) .lt.1.0d-10) then
-        write(0,*) 'Error in davidson iteration ', kk
-        write(0,*) 'k: ', k
-        write(0,*) 'alpha(k): ', alpha(k)
-        write(0,*) 'beta(k): ', beta(k)
-        STOP 'davidson: Dangerously low beta(k)'
-      else
+     !if(abs(beta(k)) .lt.1.0d-10) then
+     !  write(0,*) 'Error in davidson iteration ', kk
+     !  write(0,*) 'k: ', k
+     !  write(0,*) 'alpha(k): ', alpha(k)
+     !  write(0,*) 'beta(k): ', beta(k)
+     !  STOP 'davidson: Dangerously low beta(k)'
         e(k) = alpha(k) / beta(k)
-      end if
+     !end if
     end do
     deallocate(alpha, beta)
 
