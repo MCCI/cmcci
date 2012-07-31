@@ -12,8 +12,6 @@ subroutine get_int_W(filename)
   integer           :: i, j, ij
   complex(kind=pr)  :: eint
 
-  !stop "succesfully tried to read CAP mo file"
-
   filename = trim(filename)
   open(11, file=filename, form='formatted')
   rewind(11)
