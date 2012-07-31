@@ -87,7 +87,7 @@ subroutine read_stat_params()
   implicit none
 
   ! the length of the line we read in from the control file
-  integer, parameter  :: line_length = 79
+  integer, parameter  :: line_length = 160
   ! the number of program parameters for which there are no default values
   integer, parameter  :: num_nondefault_params = 6
 
