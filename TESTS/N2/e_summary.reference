@@ -1,4 +1,4 @@
-Tue Jan 31 14:28:28 
+Fri Jul 20 16:38:19 
 
                     m c c i  3.0
 
@@ -76,14 +76,14 @@ Tue Jan 31 14:28:28
  Diagonalization            1
 
  Iterations to convergence            1
- E   =    (-108.9876031401437,0.000000000000000) from iter. diag.
+ E   =    (-108.9876031401438,0.000000000000000) from iter. diag.
  Branched  CI vector length=           79
  Pruned    CI vector length=            2    *** Full pruning ***
- Cycle WALL time       0.330 s
-       USER time       0.300 s
-       SYS  time       0.030 s
- Cumul. run time       0.330 s
-Tue Jan 31 14:28:34 
+ Cycle WALL time       1.340 s
+       USER time       1.290 s
+       SYS  time       0.050 s
+ Cumul. run time       1.340 s
+Fri Jul 20 16:38:27 
 
 
  Diagonalization            2
@@ -91,8 +91,8 @@ Tue Jan 31 14:28:34
  Iterations to convergence            1
  E   =    (-108.9870067345476,0.000000000000000) from iter. diag.
  Branched  CI vector length=            2
- Cycle WALL time       0.100 s
-       USER time       0.060 s
+ Cycle WALL time       0.160 s
+       USER time       0.120 s
        SYS  time       0.040 s
- Cumul. run time       0.430 s
-Tue Jan 31 14:28:34 
+ Cumul. run time       1.500 s
+Fri Jul 20 16:38:27 
