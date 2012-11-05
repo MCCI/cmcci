@@ -19,7 +19,8 @@
    
 #------PGF90 on rocks-hpc.tyndall.ie----------------
 
-        FC     = /local/pgi/linux86-64/2011/mpi/mpich/bin/mpif90
+        #FC     = /local/pgi/linux86-64/2011/mpi/mpich/bin/mpif90
+        FC     = mpif90
 #        FFLAGS =  -i4 -r8 -O4 
         FFLAGS = -g -C -i4
         LIBS   = -llapack -lblas
