@@ -1,5 +1,5 @@
 Monte Carlo Configuration Interaction
--------------------------------------
+=====================================
 
 MCCI computes energy estimates by an iterative process, starting from
 a set of CSFs (which initially may be a single CSF). In each step,
