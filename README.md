@@ -1,4 +1,3 @@
-
 Monte Carlo Configuration Interaction
 -------------------------------------
 
