@@ -70,13 +70,13 @@ Keywords for the mcci.in file
     conv_history      =  Window of npfull steps to be include in convergence checking
     frozen_doubly     =  Indices of orbitals to be frozen (i.e. no excitations are allowed from these molecular orbitals 
                          during the CI calculation). Note frozen orbitals must be doubly occupied.
-    mo_active           =  Orbital lists of active orbitals, includes all occupied and (initially) unoccupied orbitals to include 
+    mo_active         =  Orbital lists of active orbitals, includes all occupied and (initially) unoccupied orbitals to include 
                          in the CI calculations. Note excludes frozen_doubly and all inactive virtual orbitals
     lref              =  Branch (i.e. generate new CSFs) relative to only the first lref CSFs in a CI vector
 
 
-Filling in orbital labels in mcci for D2h symmetry using mpgrad_ints
---------------------------------------------------------------------
+Example: setting up a calculation in a higher symmetry
+------------------------------------------------------
 
 From the original control file that is obtained from the geometry relaxed
 system, note the numbers for the occupied symmetries, e.g.
