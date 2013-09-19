@@ -20,18 +20,15 @@ keeping the computations tractable.
 Compile Instructions
 --------------------
 
-Firstly set path for mcci, $MCCI = whatever_path
-This directory contains the source code, a Makefile for
-a serial machine, a Makefile for a parallel calculation and
-the parameter file, params, details of which may be found in
-the accompanying paper.
+The provided Makefile assumes the availability of an MPI-enabled
+Fortran 90 compiler under the name 'mpif90'. This can be changed
+manually, but the user needs to check that all the flags used in
+the Makefile are supported by the other compiler.
 
-In the Makefiles, the paths for the LAPACK and BLAS libraries
-will be changed, depending on where the user has them installed.
-Also, the compiler name and associated compiler
-flags may be changed. If the compiler is changed, please note
-that the system clock called in the subroutine gen_seed.f may also
-need to be changed.
+If the compiler is changed, please note that the system clock
+called in the subroutine gen_seed.f90 may also need to be
+changed, depending on the behaviour of the system_clock standard
+subroutine on the platform used.
 
 
 Keywords for the mcci.in file
