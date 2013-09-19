@@ -80,10 +80,11 @@ Filling in orbital labels in mcci for D2h symmetry using mpgrad_ints
 
 From the original control file that is obtained from the geometry relaxed
 system, note the numbers for the occupied symmetries, e.g.
-A1 1-7
-A2 1-3
-B1 1-9
-B2 1-2
+
+    A1 1-7
+    A2 1-3
+    B1 1-9
+    B2 1-2
 
 Then run eiger -a and go as high up in energy as required and note the numbers
 of orbitals that you want to run for mpgrad. Make sure to leave no gaps
@@ -97,17 +98,17 @@ control file.
 Fill in the n_up and n_down as required. Then we must label the symmetry
 representations in correct order, so if have:
 
-MPGRAD control     MCCI counting
-
-A1 1-10            1-10
-A2 1-5             11-16
-B1 1-15            17-...
-B2 1-4             .......
+    MPGRAD control     MCCI counting
+    
+    A1 1-10            1-10
+    A2 1-5             11-16
+    B1 1-15            17-...
+    B2 1-4             .......
 
 The general rule is: for the first representation it stays as is, for the
 following :
 
-#orbitals + #electrons -1
+(#orbitals) + (#electrons) -1
 
 And when filling in the mcci.in file , the same rule applies.
 
